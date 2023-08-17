@@ -4,20 +4,19 @@ Below we have sortArrayOfObjectsByKey. Currently, all types of the function para
 
 The function should take in:
     an array of objects
-    a key to sort by
-    the order to sort by.
+    a key to sort by (string)
+    the order to sort by (number)
 
  
 
 Add types to the arguments and return of sortArrayOfObjectsByKey such that:
     arr is an array of objects 
-    key is a key that exists in the arrobject
+    key is a key that exists in the array object
     sortOrder should only be able to be 1 or -1. 
     Each object in arr must contain the specified key. 
 
 Update SortList and SortListProps similarly, except constrain
  each item to also have an id property that must be either string or number. 
- This will be the specified key that we sort by.
 */
 
 function sortArrayOfObjectsByKey(arr, key, sortOrder) {
@@ -42,11 +41,6 @@ function sortArrayOfObjectsByKey(arr, key, sortOrder) {
     { id: 2, name: "Mary", age: 23 },
     { id: 3, name: "Andrew", age: 20 },
   ];
-  
-  /*
-    const sortedArrOfObjects = sortArrayOfObjectsByKey(users, "age", 1);
-    console.log(sortedArrOfObjects); // [{ name: 'Andrew', age: 20 }, { name: 'John', age: 21 }, { name: 'Mary', age: 23 }]
-  */
   
   interface SortListProps {
     list: /* implementation details */
