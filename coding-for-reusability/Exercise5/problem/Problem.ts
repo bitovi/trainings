@@ -5,3 +5,5 @@ This generic function has no constraints, and thus Typescript cannot determine i
 function getProperty<Type , Key>(obj: Type, key: Key) {
     return obj[key];
 }
+
+getProperty({firstKey: 'firstKey', secondKey: 'secondKey'}, 'firstKey')

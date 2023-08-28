@@ -6,3 +6,5 @@ function identity<Type>(value: string, id: Type): Type {
         identifier: id
     }
 }
+
+identity('Christina', 12345)

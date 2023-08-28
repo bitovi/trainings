@@ -1,6 +1,6 @@
 # Code Sandbox links
 
-[Exercise 1](https://codesandbox.io/s/github/bitovi/trainings/tree/coding-for-reusability?file=/coding-for-reusability/Exercise1/problem/App.tsx)
+[Exercise 1](https://codesandbox.io/s/github/bitovi/trainings/tree/coding-for-reusability?file=/coding-for-reusability/Exercise1/problem/Problem.ts)
 
 [Exercise 2](https://codesandbox.io/s/github/bitovi/trainings/tree/coding-for-reusability?file=/coding-for-reusability/Exercise2/problem/Problem.tsx)
 

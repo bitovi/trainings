@@ -43,9 +43,9 @@ function sortArrayOfObjectsByKey(arr, key, sortOrder) {
   ];
   
   interface SortListProps {
-    list: /* implementation details */
-    sortKey: /* implementation details */
-    sortOrder: /* implementation details */
+    list: /* TODO: implementation details */
+    sortKey: /* TODO: implementation details */
+    sortOrder: /* TODO: implementation details */
   }
   
   function SortList({ list, sortKey, sortOrder }) {
