@@ -9,7 +9,7 @@ The types UsersApiResponse and ProductsApiResponse have already
  Replace the UsersApiResponse and ProductsApiResponse types with a new generic ApiResponse type that accepts a single parameter, Data, to specify 
 each function's generic API response format. The value of Data should only be allowed 
 to be something that extends Entity.
-(Bonus) Create a generic fetchMock() function to minimize the code of the fetchProducts() 
+(Bonus) Create a generic fetchMock() function to minimize the code inside of the fetchProducts() 
 and fetchUsers() functions.
 */
 

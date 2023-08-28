@@ -49,5 +49,5 @@ function SortedUsers() {
   return <SortList list={users} sortKey="age" sortOrder={1} />;
 }
 
-//In application:
+//In app code:
 <SortedUsers />;

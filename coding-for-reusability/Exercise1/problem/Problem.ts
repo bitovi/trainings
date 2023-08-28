@@ -1,9 +1,11 @@
 /*
 Create a new type called APIResponse. 
-This type should accept two parameters that will be used to 
+This type should have two type parameters that will be used to 
 create the response: one for its data property and another for 
 its error property. It can have other attributes such as 
 success, responseTime, etc.
+
+Create another type called PokemonResponse that is an APIResponse using Pokemon, and PokemonError as its type arguments.
 */
 
 type Pokemon = {
@@ -18,9 +20,12 @@ type PokemonError = {
 };
 
 type APIResponse = {
-  /* implementation details */
+  /*TODO: implementation details */
 };
 
 type PokemonResponse = {
-  /* implementation details */
+  /*TODO: implementation details */
 };
+
+
+export {};

@@ -17,7 +17,13 @@ Add types to the arguments and return of sortArrayOfObjectsByKey such that:
 
 Update SortList and SortListProps similarly, except constrain
  each item to also have an id property that must be either string or number. 
-*/
+
+HINT:
+sortArrayOfObjectsByKey should take two type parameters: an object, and a type that extends keyof that object.
+
+SortListProps should take one type parameter that extends an object that has an id property of type string | number
+ */
+
 
 function sortArrayOfObjectsByKey(itemList, key, sortOrder) {
     return itemList.sort((a, b) => {
