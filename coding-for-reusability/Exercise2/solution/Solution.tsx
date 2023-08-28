@@ -67,3 +67,6 @@
 //   async function fetchUsers(): Promise<ApiResponse<User>> {
 //     return fetchMock(mockUsers);
 //   }
+
+fetchProducts();
+fetchUsers();
