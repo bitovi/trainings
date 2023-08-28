@@ -1,9 +1,9 @@
 function sortArrayOfObjectsByKey<Data extends object, Key extends keyof Data>(
-  arr: Data[],
+  itemList: Data[],
   key: Key,
   sortOrder: -1 | 1
 ): Data[] {
-  return arr.sort((a, b) => {
+  return itemList.sort((a, b) => {
     const _a = a[key];
     const _b = b[key];
 

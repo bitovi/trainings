@@ -7,3 +7,6 @@ function getProperty<Type , Key>(obj: Type, key: Key) {
 }
 
 getProperty({firstKey: 'firstKey', secondKey: 'secondKey'}, 'firstKey')
+
+
+export {};

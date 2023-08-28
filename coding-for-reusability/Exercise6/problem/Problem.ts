@@ -8,3 +8,6 @@ function identity<Type>(value: string, id: Type): Type {
 }
 
 identity('Christina', 12345)
+
+
+export {};

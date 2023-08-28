@@ -75,3 +75,5 @@ async function fetchUsers(): Promise<UsersApiResponse> {
 
 fetchProducts();
 fetchUsers();
+
+export {};

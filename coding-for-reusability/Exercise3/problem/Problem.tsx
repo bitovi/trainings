@@ -10,7 +10,7 @@ The function should take in:
  
 
 Add types to the arguments and return of sortArrayOfObjectsByKey such that:
-    arr is an array of objects 
+    itemList is an array of objects 
     key is a key that exists in the array object
     sortOrder should only be able to be 1 or -1. 
     Each object in arr must contain the specified key. 
@@ -19,8 +19,8 @@ Update SortList and SortListProps similarly, except constrain
  each item to also have an id property that must be either string or number. 
 */
 
-function sortArrayOfObjectsByKey(arr, key, sortOrder) {
-    return arr.sort((a, b) => {
+function sortArrayOfObjectsByKey(itemList, key, sortOrder) {
+    return itemList.sort((a, b) => {
       const _a = a[key];
       const _b = b[key];
   
@@ -61,3 +61,6 @@ function sortArrayOfObjectsByKey(arr, key, sortOrder) {
   function SortedUsers() {
     return <SortList list={users} sortKey="age" sortOrder={1} />;
   }
+
+  //In app code:
+  <SortedUsers />
