@@ -4,10 +4,9 @@ Our frontend application needs to fetch some data from an API.
 The server API format:
 In case of success: { status: "success", data: RESPONSE_DATA }
 In case of error: { status: "error", error: ERROR_MESSAGE }
-The types UsersApiResponse and ProductApiResponse have already
+The types UsersApiResponse and ProductsApiResponse have already
  been created. But it will be extremely tedious to build all of them this way.
-Remove the UsersApiResponse and ProductsApiResponse types and 
-create a new ApiResponse type that accepts a single parameter, Data, to specify 
+ Replace the UsersApiResponse and ProductsApiResponse types with a new generic ApiResponse type that accepts a single parameter, Data, to specify 
 each function's generic API response format. The value of Data should only be allowed 
 to be something that extends Entity.
 (Bonus) Create a generic fetchMock() function to minimize the code of the fetchProducts() 
