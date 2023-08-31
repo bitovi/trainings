@@ -5,10 +5,10 @@ Constrain the function type to ensure that the length exists
 */
 
 function getLength<Type>(list: Type) {
-  return Array.isArray(list);
+  return Array.isArray(list); //should be returning length
 }
 
-getLength(7); //error Property 'length' does not exist
+getLength(7); //should error Property 'length' does not exist
 getLength([7, 8, 15]);
 getLength({ length: 45 });
 

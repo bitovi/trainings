@@ -2,11 +2,12 @@
 This generic function has no constraints, and thus Typescript cannot determine if key exists in the obj
 */
 
-function getProperty<Type , Key>(obj: Type, key: Key) {
-    return obj[key];
+//rename everything in here
+function getColor<ObjectType , Key>(colors: ObjectType, colorsKey: Key) {
+    return colors[colorsKey]; 
 }
 
-getProperty({firstKey: 'firstKey', secondKey: 'secondKey'}, 'firstKey')
-
+getColor({favoriteColor: 'purple', leastFavoriteColor: 'pink'}, 'favoriteColor')
+getColor({favoriteColor: 'green', leastFavoriteColor: 'blue'}, 'secondFavoriteColor') //this should error 
 
 export {};

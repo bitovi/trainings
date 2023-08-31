@@ -19,13 +19,15 @@ type PokemonError = {
   message: string;
 };
 
-type APIResponse = {
+type APIResponse<> = {
+/*TODO: implementation details */
+}
+
+type PokemonResponse<> = {
   /*TODO: implementation details */
 };
 
-type PokemonResponse = {
-  /*TODO: implementation details */
-};
+///add data so that there is an error at first and the user can come to solution wiht no errors
 
 
 export {};
