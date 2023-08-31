@@ -8,6 +8,7 @@ The function should take in:
     the order to sort by (number)
 
  
+Update sortArrayOfObjects to be a generic function that takes in two parameters.
 
 Add types to the arguments and return of sortArrayOfObjectsByKey such that:
     itemList is an array of objects 
