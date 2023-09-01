@@ -18,9 +18,9 @@ type PokemonError = {
   message: string;
 };
 
-type APIResponse<Error> = {
+type APIResponse<ResponseError> = {
   data: Data;
-  error: Error;
+  error: ResponseError;
   success: boolean;
   responseTime: number;
 };

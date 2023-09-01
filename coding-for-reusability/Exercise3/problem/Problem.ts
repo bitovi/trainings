@@ -1,5 +1,5 @@
 /*
-Define a type or interface and use it to constrain ID
+Define a type and use it to constrain ID
 ID can be a string or a number
 
 Define a generic type (or interface) as use it as the return type of the function

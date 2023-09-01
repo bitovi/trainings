@@ -1,4 +1,4 @@
-function sortArrayOfObjectsByKey<Data extends object, Key extends keyof Data>(
+function sortArrayOfObjectsByKey<Data extends Object, Key extends keyof Data>(
   itemList: Data[],
   key: Key,
   sortOrder: -1 | 1

@@ -1,29 +1,26 @@
 import React from "react"
 /*
-Below we have sortArrayOfObjectsByKey. Currently, all types of the function parameters are any.
+Below we have sortArrayOfObjectsByKey. Currently, all types of the function parameters are implicitly any.
 
-The function should take in:
-    an array of objects
-    a key to sort by (string)
-    the order to sort by (number)
+///add some examples of how sortArr... is called
 
- 
-Update sortArrayOfObjects to be a generic function that takes in two parameters.
+Update sortArrayOfObjects to be a generic function that takes in two type arguments.
 
-Add types to the arguments and return of sortArrayOfObjectsByKey such that:
-    itemList is an array of objects 
-    key is a key that exists in the array object
+Add types to the parameters and return of sortArrayOfObjectsByKey such that:
+    itemList is an array of Objects 
+    key is a key that exists in the array Object
     sortOrder should only be able to be 1 or -1. 
-    Each object in arr must contain the specified key. 
+    Each object in itemList must contain the specified key. <--loook at this line
 
 Update SortList and SortListProps similarly, except constrain
  each item to also have an id property that must be either string or number. 
 
 HINT:
-sortArrayOfObjectsByKey should take two type parameters: an object, and a type that extends keyof that object.
+sortArrayOfObjectsByKey should take two type parameters: an Object, and a type that extends keyof that object.
 
-SortListProps should take one type parameter that extends an object that has an id property of type string | number
+SortListProps should take one type arguments that extends an Object that has an id property of type string | number
  */
+
 
 
 function sortArrayOfObjectsByKey(itemList, key, sortOrder) {

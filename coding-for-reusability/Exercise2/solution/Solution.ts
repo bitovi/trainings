@@ -1,5 +1,5 @@
-function getColor<Type extends object , Key extends keyof Type>(obj: Type, key: Key): Type[Key] {
-    return obj[key];
+function getColor<Type extends Object , Key extends keyof Type>(colors: Type, colorsKey: Key): Type[Key] {
+    return colors[colorsKey];
 }
 
 getColor({firstKey: 'firstKey', secondKey: 'secondKey'}, 'firstKey')
