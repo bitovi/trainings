@@ -1,11 +1,10 @@
 /*
-Create a new type called APIResponse. 
-This type should have two type parameters that will be used to 
-create the response: one for its data property and another for 
-its error property. It can have other attributes such as 
-success, responseTime, etc.
+Fix our generic type APIResponse.
 
-Create another type called PokemonResponse that is an APIResponse using Pokemon, and PokemonError as its type arguments.
+This type should have two generic type parameters that will be used to 
+create the response: one for its data property and another for 
+its error property.
+
 */
 
 type Pokemon = {
@@ -19,15 +18,15 @@ type PokemonError = {
   message: string;
 };
 
-type APIResponse<> = {
-/*TODO: implementation details */
-}
-
-type PokemonResponse<> = {
-  /*TODO: implementation details */
+type APIResponse<Error> = {
+  data: Data;
+  error: Error;
+  success: boolean;
+  responseTime: number;
 };
 
-///add data so that there is an error at first and the user can come to solution wiht no errors
+type PokemonResponse = APIResponse<Pokemon>;
+
 
 
 export {};

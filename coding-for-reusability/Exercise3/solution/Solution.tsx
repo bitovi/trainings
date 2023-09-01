@@ -3,16 +3,16 @@ function sortArrayOfObjectsByKey<Data extends object, Key extends keyof Data>(
   key: Key,
   sortOrder: -1 | 1
 ): Data[] {
-  return itemList.sort((a, b) => {
-    const _a = a[key];
-    const _b = b[key];
+  return itemList.sort((first, second) => {
+    const firstItem = first[key];
+    const secondItem = second[key];
 
-    if (typeof _a === "string" && typeof _b === "string") {
-      return _a.localeCompare(_b) * sortOrder;
+    if (typeof firstItem === "string" && typeof secondItem === "string") {
+      return firstItem.localeCompare(secondItem) * sortOrder;
     }
 
-    if (typeof _a === "number" && typeof _b === "number") {
-      return (_a - _b) * sortOrder;
+    if (typeof firstItem === "number" && typeof secondItem === "number") {
+      return (firstItem - secondItem) * sortOrder;
     }
 
     return 0;

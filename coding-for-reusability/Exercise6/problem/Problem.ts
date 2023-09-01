@@ -1,21 +1,19 @@
-/*Fix the Typescript error in this function, and constrain ID.
+/*
+Define a type or interface and use it to constrain ID
+ID can be a string or a number
 
-We'll need to fix the return type of the function, and constrain the generic parameter ID.
+Define a generic type (or interface) as use it as the return type of the function
+*/
 
-ID can be a string, a number, or an object 
-
-Bonus: define a type or interface that will be used to constrain ID*/
-
-
-//go through this and make less confusing
-function identity<ID>(nameValue: string, id: ID): string {
+function formatIdentity<ID>(nameValue: string, id: ID) {
     return {
         name: nameValue,
         identifier: id
     }
 }
 
-identity('Christina', 12345)
-
+formatIdentity('Christina', 12345)
+formatIdentity<string>('Christina', "12345")
+formatIdentity('Christina', { id: 12345}) //this should throw an error
 
 export {};
