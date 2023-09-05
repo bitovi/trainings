@@ -29,7 +29,7 @@ type ApiResponse<Data extends Entity> =
       error: string;
     };
 
-async function fetchMock<Data extends Entity>(
+function mockResponse<Data extends Entity>(
   mockData: Data[]
 ): Promise<ApiResponse<Data>> {
   return new Promise((resolve) => {
@@ -41,11 +41,11 @@ async function fetchMock<Data extends Entity>(
 }
 
 async function fetchProducts(): Promise<ApiResponse<Product>> {
-  return fetchMock(mockProducts);
+  return mockResponse(mockProducts);
 }
 
 async function fetchUsers(): Promise<ApiResponse<User>> {
-  return fetchMock(mockUsers);
+  return mockResponse(mockUsers);
 }
 
 fetchProducts();

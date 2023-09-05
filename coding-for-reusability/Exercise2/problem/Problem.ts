@@ -1,8 +1,7 @@
 /*
-This generic function has no constraints, and thus Typescript cannot determine if key exists in the obj
+This generic function has no constraints, and thus Typescript cannot determine if key exists in the object
 */
 
-//rename everything in here
 function getColor<ObjectType , Key>(colors: ObjectType, colorsKey: Key) {
     return colors[colorsKey]; 
 }

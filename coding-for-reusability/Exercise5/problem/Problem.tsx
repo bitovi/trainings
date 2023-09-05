@@ -4,13 +4,15 @@ Our frontend application needs to fetch some data from an API.
 The server API format:
 In case of success: { status: "success", data: RESPONSE_DATA }
 In case of error: { status: "error", error: ERROR_MESSAGE }
+
 The types UsersApiResponse and ProductsApiResponse have already
- been created. But it will be extremely tedious to build all of them this way.
- Replace the UsersApiResponse and ProductsApiResponse types with a new generic ApiResponse type that accepts a single parameter, Data, to specify 
-each function's generic API response format. The value of Data should only be allowed 
-to be something that extends Entity.
-(Bonus) Create a generic fetchMock() function to minimize the code inside of the fetchProducts() 
-and fetchUsers() functions.
+been created, but it will be extremely tedious to build all of them this way.
+
+1) Replace the UsersApiResponse and ProductsApiResponse types with a new generic ApiResponse type that accepts a single parameter, Data, to specify 
+each function's generic API response format. The type of Data should be any Entity.
+
+2) mockResponse() parameter and return type is typed as `unknown`. Fix the typing to make it a generic function.
+  mockResponse() should have one type parameter and the return type of the function should use the ApiResponse type.
 */
 
 interface Entity {
@@ -34,6 +36,7 @@ const mockProducts: Product[] = [
   { id: "2", description: "Product 2" },
 ];
 
+//These two types are very similar, and would be a good case for turning into a generic
 type UsersApiResponse =
   | {
       status: "success";
@@ -54,22 +57,23 @@ type ProductsApiResponse =
       error: string;
     };
 
-async function fetchProducts(): Promise<ProductsApiResponse> {
-  return new Promise((resolve) =>
+type ApiResponse = never; //TODO: remove `never` and add types
+
+function mockResponse(mockData: unknown[]): Promise<unknown> {
+  return new Promise((resolve) => {
     resolve({
       status: "success",
-      data: mockProducts,
-    })
-  );
+      data: mockData,
+    });
+  });
+}
+
+async function fetchProducts(): Promise<ProductsApiResponse> {
+  return mockResponse(mockProducts);
 }
 
 async function fetchUsers(): Promise<UsersApiResponse> {
-  return new Promise((resolve) =>
-    resolve({
-      status: "success",
-      data: mockUsers,
-    })
-  );
+  return mockResponse(mockUsers);
 }
 
 fetchProducts();
