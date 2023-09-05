@@ -5,6 +5,7 @@ This type should have two generic type parameters that will be used to
 create the response: one for its data property and another for 
 its error property.
 
+
 */
 
 type Pokemon = {

@@ -1,9 +1,11 @@
 /*
-Define a type and use it to constrain ID
-ID can be a string or a number
+1) Define a type and use it to constrain ID
+    The type can be a string or a number
 
-Define a generic type (or interface) and use it as the return type of the function
+2) Create a generic type to use as the return type of the function
+    The type should take one type parameter for the identifier property
 */
+
 
 function formatIdentity<ID>(nameValue: string, id: ID) {
     return {

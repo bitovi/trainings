@@ -2,5 +2,5 @@ function getColor<Type extends Object , Key extends keyof Type>(colors: Type, co
     return colors[colorsKey];
 }
 
-getColor({firstKey: 'firstKey', secondKey: 'secondKey'}, 'firstKey')
-getColor({firstKey: 'firstKey', secondKey: 'secondKey'}, 'secondFavoriteColor')
+getColor({favoriteColor: 'purple', leastFavoriteColor: 'pink'}, 'favoriteColor')
+getColor({favoriteColor: 'purple', secondFavoriteColor: 'pink'}, 'leastFavoriteColor')
