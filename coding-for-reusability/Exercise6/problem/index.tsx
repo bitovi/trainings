@@ -2,23 +2,23 @@ import React from "react"
 /*
 Below we have sortArrayOfObjectsByKey. Currently, all types of the function parameters are implicitly any.
 
-Update sortArrayOfObjectsByKey to be a generic function that takes in two type arguments.
+1) Update sortArrayOfObjectsByKey to be a generic function that takes in two type arguments.
 
 Add types to the parameters and return of sortArrayOfObjectsByKey such that:
     itemList is an array of Objects 
     key is a property name that exists in the array Object
     sortOrder should only be able to be 1 or -1. 
 
-Update SortList and SortListProps similarly, except constrain
+2) Update SortList and SortListProps similarly, except constrain
  each item to also have an id property that must be either string or number. 
 
 HINT:
-sortArrayOfObjectsByKey should take two type parameters: an Object, and a type that extends keyof that object.
+sortArrayOfObjectsByKey should take two type parameters: an Object, and a type that extends keyof that Object.
 
 SortListProps should take one type argument that extends an Object that has an id property of type string | number
  */
 
-//Update to generic function and give parameters types
+//1)Update sortArrayOfObjectsByKey to be a generic function that takes in two type arguments.
 function sortArrayOfObjectsByKey(itemList, key, sortOrder) {
     return itemList.sort((first, second) => {
       const firstItem = first[key];
@@ -43,14 +43,19 @@ function sortArrayOfObjectsByKey(itemList, key, sortOrder) {
     { id: 3, name: "Andrew", age: 20 },
   ];
   
-  //Update to generic and constrain
+  /*
+  2) Update to a generic, constraining each item to also have an id property that must be either string or number.
+  */
   interface SortListProps {
     list: /* TODO: implementation details */
     sortKey: /* TODO: implementation details */
     sortOrder: /* TODO: implementation details */
   }
 
-  //Update to generic function and constrain
+  /*
+  2) Also update to a generic, constraining each item to also have an id property that must be either string or number.
+  Use SortListProps as the props type
+  */
   function SortList({ list, sortKey, sortOrder }) {
     return (
       <ul>

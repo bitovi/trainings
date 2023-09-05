@@ -36,7 +36,9 @@ const mockProducts: Product[] = [
   { id: "2", description: "Product 2" },
 ];
 
-//These two types are very similar, and would be a good case for turning into a generic
+/* 1) Replace the UsersApiResponse and ProductsApiResponse types with a new generic ApiResponse type that accepts a single parameter, Data, to specify 
+each function's generic API response format. The type of Data should be any Entity.
+*/
 type UsersApiResponse =
   | {
       status: "success";
@@ -59,6 +61,10 @@ type ProductsApiResponse =
 
 type ApiResponse = never; //TODO: remove `never` and add types
 
+/*
+2) mockResponse() parameter and return type is typed as `unknown`. Fix the typing to make it a generic function.
+  mockResponse() should have one type parameter and the return type of the function should use the ApiResponse type.
+*/
 function mockResponse(mockData: unknown[]): Promise<unknown> {
   return new Promise((resolve) => {
     resolve({
@@ -68,6 +74,8 @@ function mockResponse(mockData: unknown[]): Promise<unknown> {
   });
 }
 
+/* 1a) Use the new generic ApiResponse here
+ */
 async function fetchProducts(): Promise<ProductsApiResponse> {
   return mockResponse(mockProducts);
 }
