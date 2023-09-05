@@ -2,15 +2,12 @@ import React from "react"
 /*
 Below we have sortArrayOfObjectsByKey. Currently, all types of the function parameters are implicitly any.
 
-///add some examples of how sortArr... is called
-
-Update sortArrayOfObjects to be a generic function that takes in two type arguments.
+Update sortArrayOfObjectsByKey to be a generic function that takes in two type arguments.
 
 Add types to the parameters and return of sortArrayOfObjectsByKey such that:
     itemList is an array of Objects 
-    key is a key that exists in the array Object
+    key is a property name that exists in the array Object
     sortOrder should only be able to be 1 or -1. 
-    Each object in itemList must contain the specified key. <--loook at this line
 
 Update SortList and SortListProps similarly, except constrain
  each item to also have an id property that must be either string or number. 
@@ -18,11 +15,10 @@ Update SortList and SortListProps similarly, except constrain
 HINT:
 sortArrayOfObjectsByKey should take two type parameters: an Object, and a type that extends keyof that object.
 
-SortListProps should take one type arguments that extends an Object that has an id property of type string | number
+SortListProps should take one type argument that extends an Object that has an id property of type string | number
  */
 
-
-
+//Update to generic function and give parameters types
 function sortArrayOfObjectsByKey(itemList, key, sortOrder) {
     return itemList.sort((first, second) => {
       const firstItem = first[key];
@@ -40,18 +36,21 @@ function sortArrayOfObjectsByKey(itemList, key, sortOrder) {
     });
   }
   
+  
   const users = [
     { id: 1, name: "John", age: 21 },
     { id: 2, name: "Mary", age: 23 },
     { id: 3, name: "Andrew", age: 20 },
   ];
   
+  //Update to generic and constrain
   interface SortListProps {
     list: /* TODO: implementation details */
     sortKey: /* TODO: implementation details */
     sortOrder: /* TODO: implementation details */
   }
-  
+
+  //Update to generic function and constrain
   function SortList({ list, sortKey, sortOrder }) {
     return (
       <ul>
@@ -68,3 +67,16 @@ function sortArrayOfObjectsByKey(itemList, key, sortOrder) {
 
   //In app code:
   <SortedUsers />
+
+  
+  //Example usage
+  sortArrayOfObjectsByKey(users, 'name', -1);
+  sortArrayOfObjectsByKey(
+    [
+      { brand: "Expo", product: "marker", id: 1 },
+      { brand: "Swingline", product: "stapler", id: 2 },
+    ],
+    "brand",
+    1
+  );
+  sortArrayOfObjectsByKey(users, 'product', -1);//This should error, because product does not exist in users

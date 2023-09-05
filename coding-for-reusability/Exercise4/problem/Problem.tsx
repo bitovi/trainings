@@ -8,7 +8,6 @@ function getLength<Type>(list: Type) {
   return list.length;
 }
 
-//@ts-expect-error
 getLength(7); //should error Property 'length' does not exist
 getLength([7, 8, 15]);
 getLength({ length: 45 });

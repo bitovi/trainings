@@ -13,7 +13,7 @@ function formatIdentity<ID extends IdentityType>(value: string, id: ID): Formatt
 }
 
 formatIdentity('Christina', 12345)
-formatIdentity<string>('Christina', "12345")
+formatIdentity<string>('Christina', '12345')
 formatIdentity('Christina', { id: 12345})
 
 export {};

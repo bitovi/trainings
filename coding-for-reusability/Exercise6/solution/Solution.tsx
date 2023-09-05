@@ -51,3 +51,15 @@ function SortedUsers() {
 
 //In app code:
 <SortedUsers />;
+
+//Example usage
+sortArrayOfObjectsByKey(users, "name", -1);
+sortArrayOfObjectsByKey(
+  [
+    { brand: "Expo", product: "marker", id: 1 },
+    { brand: "Swingline", product: "stapler", id: 2 },
+  ],
+  "brand",
+  1
+);
+sortArrayOfObjectsByKey(users, "product", -1); //This errors, because product does not exist in users

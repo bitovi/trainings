@@ -29,7 +29,7 @@ type ApiResponse<Data extends Entity> =
       error: string;
     };
 
-async function mockResponse<Data extends Entity>(
+function mockResponse<Data extends Entity>(
   mockData: Data[]
 ): Promise<ApiResponse<Data>> {
   return new Promise((resolve) => {
