@@ -9,5 +9,3 @@
 [Exercise 4](https://codesandbox.io/s/github/bitovi/trainings/tree/main/utility-types/Exercise4/problem)
 
 [Exercise 5](https://codesandbox.io/s/github/bitovi/trainings/tree/main/utility-types/Exercise5/problem)
-
-[Exercise 6](https://codesandbox.io/s/github/bitovi/trainings/tree/main/utility-types/Exercise6/problem)
