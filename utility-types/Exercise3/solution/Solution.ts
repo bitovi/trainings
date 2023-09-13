@@ -30,8 +30,8 @@ const people: Person[] = [
     {
       role: "developer",
       email: "jane@developer.com",
-      firstName: "Dev",
-      lastName: "Eloper",
+      firstName: "Jane",
+      lastName: "Doe",
       team: "React",
       id: 2,
     },
