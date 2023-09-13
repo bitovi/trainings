@@ -1,3 +1,25 @@
+/**
+ * Improve the following component's UX by handling the different data fetching states:
+ * loading, error, empty, success, revalidating.
+ *
+ * 1. Handle the error state
+ *      Keep track of the error in the component’s local state. When there is an error,
+ *      display the error message below the table.
+ *
+ * 2. Handle the loading state
+ *       Keep track of loading in the component’s local state. When we are in a loading state,
+ *       indicate it to the user. Modify the button onClick functions to not trigger when we
+ *       are loading.
+ *
+ * 3. Handle the empty state
+ *      Display a message to the user notifying them that no records were found if we have
+ *      successfully completed our request and there is no data.
+ *
+ * 4. Handle the revalidating state
+ *      Notify the user that the data on the page is being revalidated by applying the loading
+ *      class to the tr in the table’s body.
+ */
+
 import { useEffect, useState } from "react";
 import "./styles.css";
 
