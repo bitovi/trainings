@@ -1,39 +1,47 @@
 /*
-1)
-
-Using partials is helpful for many reasons, including:
-
-Partial updates sent to PATCH endpoints
-
-Relaxing constraints when writing test
-
+Use the appropriate utility type to address the comments below.
 */
 
-//2)
+type Person = {
+  role: "developer";
+  email?: string;
+  id: number;
+  firstName: string;
+  lastName: string;
+  team: "React" | "Angular" | "backend";
+};
 
-type Person =
-  | {
-      role: "developer"
-      email: string
-      id: number
-      firstName: string
-      lastName: string
-      team: "React" | "Angular" | "backend"
-    }
-  | {
-      role: "user"
-      email: string
-      id: number
-      firstName: string
-      lastName: string
-      isVerified: boolean
-    }
-type ProfileData = Partial<Person>
+// 1. Which utility type can we use to get rid of the errow below?
+type UpdateablePerson = Partial<Person>;
 
-const myProfile: ProfileData = {
-    email: 'email@developer.com',
-    firstName: 'Dev',
-    lastName: 'Eloper',
-}
+// This should not give an error!
+const personToUpdate: UpdateablePerson = {
+  team: "React",
+};
 
-export {}
+// 2. Which utility type can we use so that typescript gives an error when we try to update a property?
+type NonEditablePerson = Readonly<Person>;
+
+const nonEditablePerson: NonEditablePerson = {
+  role: "developer",
+  email: "string",
+  id: 5,
+  firstName: "string",
+  lastName: "string",
+  team: "React",
+};
+
+// This should give an error!
+nonEditablePerson.firstName = "somethingelse";
+
+// 3. Which utility type can we use to make sure that all properties are defined?
+type FullyDefinedPerson = Required<Person>;
+
+// This *should* give an error!
+const fullyDefinedPerson: Person = {
+  role: "developer",
+  id: 5,
+  firstName: "string",
+  lastName: "string",
+  team: "React",
+};

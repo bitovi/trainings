@@ -1,41 +1,47 @@
 /*
-1) What are some instances where we’d want to use Partial<Person>?
-
-2) Create a type, ProfileData that is a Partial of Person for updating profile settings for the person. 
+Use the appropriate utility type to address the comments below.
 */
 
-type Person =
-  | {
-      role: "developer"
-      email: string
-      id: number
-      firstName: string
-      lastName: string
-      team: "React" | "Angular" | "backend"
-    }
-  | {
-      role: "user"
-      email: string
-      id: number
-      firstName: string
-      lastName: string
-      isVerified: boolean
-    }
+type Person = {
+  role: "developer";
+  email?: string;
+  id: number;
+  firstName: string;
+  lastName: string;
+  team: "React" | "Angular" | "backend";
+};
 
+// 1. Which utility type can we use to get rid of the errow below?
+type UpdateablePerson = Person; // Fix this!
 
-type ProfileData = Person //TODO: Fix this data type
+// This should not give an error!
+const personToUpdate: UpdateablePerson = {
+  team: "React",
+};
 
+// 2. Which utility type can we use so that typescript gives an error when we try to update a property?
+type NonEditablePerson = Person; // Fix this!
 
+const nonEditablePerson: NonEditablePerson = {
+  role: "developer",
+  email: "string",
+  id: 5,
+  firstName: "string",
+  lastName: "string",
+  team: "React",
+};
 
-//Usage:
+// This should give an error!
+nonEditablePerson.firstName = "somethingelse";
 
-const myProfile: ProfileData = {//This should not error after completion.
-    email: 'email@developer.com',
-    firstName: 'Dev',
-    lastName: 'Eloper',
-}
+// 3. Which utility type can we use to make sure that all properties are defined?
+type FullyDefinedPerson = Person; // Fix this!
 
-console.log(myProfile)
-
-
-export {}
+// This *should* give an error!
+const fullyDefinedPerson: Person = {
+  role: "developer",
+  id: 5,
+  firstName: "string",
+  lastName: "string",
+  team: "React",
+};
