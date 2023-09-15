@@ -1,59 +1,47 @@
-/*
-    Expanding on the implementation of FrontendDeveloper:
-        Create a type based on Developer where role is replaced by a permissions array
-*/
-
-type Person =
-| {
-    role: "developer"
-    email: string
-    id: number
-    firstName: string
-    lastName: string
-    team: "React" | "Angular" | "backend"
-  }
-| {
-    role: "user"
-    email: string
-    id: number
-    firstName: string
-    lastName: string
-    isVerified: boolean
-  }
-
-
-  type Developer = Extract<Person, { role: "developer" }>
-
-  interface FrontendDeveloper extends Developer {
-    team: Exclude<Developer["team"], "backend">
-  }
-
-  const brandNewDev: FrontendDeveloper = {
-    email: "newHire@developer.com",
-    team: "React",
-    firstName: "June",
-    lastName: "Jones",
-    id: 8,
-    role: "developer"
+interface BaseCharacter {
+  strength: number;
+  dexterity: number;
+  intelligence: number;
 }
 
-  //TODO: implementation details
-  interface Admin extends FrontendDeveloper {}
+interface Warrior {
+  weapon: "Sword";
+}
 
+interface Wizard {
+  weapon: "Staff";
+}
 
-  //useage
+interface Rogue {
+  weapon: "Bow";
+}
 
-   //permissions should not cause an error
-  const myAdmin: Admin = {
-    permissions: ["readData", "writeData"],
-    ...brandNewDev
-  }
+type Character = never; // Fix this!
 
-  //role should not exist
-  myAdmin.role
+const fighter: Character = {
+  strength: 15,
+  dexterity: 10,
+  intelligence: 8,
+  weapon: "Sword",
+};
 
-  
-  console.log(myAdmin)
+const mage: Character = {
+  strength: 5,
+  dexterity: 8,
+  intelligence: 15,
+  weapon: "Staff",
+};
 
+const thief: Character = {
+  strength: 10,
+  dexterity: 15,
+  intelligence: 8,
+  weapon: "Bow",
+};
 
-  export {}
+// This should be an error, a weapon is required on the Character type!
+const civilian: Character = {
+  strength: 8,
+  dexterity: 8,
+  intelligence: 8,
+};
