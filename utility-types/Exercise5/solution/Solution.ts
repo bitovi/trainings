@@ -1,47 +1,47 @@
-interface BaseCharacter {
-  strength: number;
-  dexterity: number;
-  intelligence: number;
+type Person =
+  | {
+      role: "developer";
+      email: string;
+      id: number;
+      firstName: string;
+      lastName: string;
+      team: "React" | "Angular" | "backend";
+    }
+  | {
+      role: "user";
+      email: string;
+      id: number;
+      firstName: string;
+      lastName: string;
+      isVerified: boolean;
+    };
+
+type Developer = Extract<Person, { role: "developer" }>;
+
+interface FrontendDeveloper extends Developer {
+  team: Exclude<Developer["team"], "backend">;
 }
 
-interface Warrior {
-  weapon: "Sword";
+const brandNewDev: FrontendDeveloper = {
+  email: "newHire@developer.com",
+  team: "React",
+  firstName: "June",
+  lastName: "Jones",
+  id: 8,
+  role: "developer",
+};
+
+interface Admin extends Omit<FrontendDeveloper, "role"> {
+  permissions: string[];
 }
 
-interface Wizard {
-  weapon: "Staff";
-}
+//useage
 
-interface Rogue {
-  weapon: "Bow";
-}
-
-type Character = BaseCharacter & (Warrior | Wizard | Rogue); // Fixed!
-
-const fighter: Character = {
-  strength: 15,
-  dexterity: 10,
-  intelligence: 8,
-  weapon: "Sword",
+const myAdmin: Admin = {
+  permissions: ["readData", "writeData"],
+  ...brandNewDev,
 };
 
-const mage: Character = {
-  strength: 5,
-  dexterity: 8,
-  intelligence: 15,
-  weapon: "Staff",
-};
+console.log(myAdmin);
 
-const thief: Character = {
-  strength: 10,
-  dexterity: 15,
-  intelligence: 8,
-  weapon: "Bow",
-};
-
-// This should be an error, a weapon is required on the Character type!
-const civilian: Character = {
-  strength: 8,
-  dexterity: 8,
-  intelligence: 8,
-};
+export {};

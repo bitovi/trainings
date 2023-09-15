@@ -1,6 +1,6 @@
 {
   "title": "Demo 1",
-  "description": "First demo in the Typescript Utility Types training",
+  "description": "First demo in the Typescript Union & Intersections training",
   "iconUrl": "https://www.bitovi.com/favicon.ico",
   "tags": [
     "Typescript"
