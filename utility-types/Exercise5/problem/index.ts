@@ -4,52 +4,56 @@
 */
 
 type Person =
-  | {
-      role: "developer";
-      email: string;
-      id: number;
-      firstName: string;
-      lastName: string;
-      team: "React" | "Angular" | "backend";
-    }
-  | {
-      role: "user";
-      email: string;
-      id: number;
-      firstName: string;
-      lastName: string;
-      isVerified: boolean;
-    };
+| {
+    role: "developer"
+    email: string
+    id: number
+    firstName: string
+    lastName: string
+    team: "React" | "Angular" | "backend"
+  }
+| {
+    role: "user"
+    email: string
+    id: number
+    firstName: string
+    lastName: string
+    isVerified: boolean
+  }
 
-type Developer = Extract<Person, { role: "developer" }>;
 
-interface FrontendDeveloper extends Developer {
-  team: Exclude<Developer["team"], "backend">;
+  type Developer = Extract<Person, { role: "developer" }>
+
+  interface FrontendDeveloper extends Developer {
+    team: Exclude<Developer["team"], "backend">
+  }
+
+  const brandNewDev: FrontendDeveloper = {
+    email: "newHire@developer.com",
+    team: "React",
+    firstName: "June",
+    lastName: "Jones",
+    id: 8,
+    role: "developer"
 }
 
-const brandNewDev: FrontendDeveloper = {
-  email: "newHire@developer.com",
-  team: "React",
-  firstName: "June",
-  lastName: "Jones",
-  id: 8,
-  role: "developer",
-};
+  //TODO: implementation details
+  interface Admin extends FrontendDeveloper {}
 
-//TODO: implementation details
-interface Admin extends FrontendDeveloper {}
 
-//useage
+  //useage
 
-//permissions should not cause an error
-const myAdmin: Admin = {
-  permissions: ["readData", "writeData"],
-  ...brandNewDev,
-};
+   //permissions should not cause an error
+  const myAdmin: Admin = {
+    permissions: ["readData", "writeData"],
+    ...brandNewDev
+  }
 
-//role should not exist
-myAdmin.role;
+  //role should not exist
+  myAdmin.role
 
-console.log(myAdmin);
+  
+  console.log(myAdmin)
 
-export {};
+
+  export {}
