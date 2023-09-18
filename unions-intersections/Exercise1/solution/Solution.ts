@@ -23,3 +23,5 @@ const dog: Pet = {
   age: 6,
   name: "Clifford",
 };
+
+console.info(cat, dog);

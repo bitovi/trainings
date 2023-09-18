@@ -29,3 +29,11 @@ const expenses: HomeMonthlyExpense = {
   interest: 100,
   principle: 900,
 };
+
+// This should give an error, because it's missing properties from NonMortgageExpenses and MonthlyExpenses
+const expenses2: HomeMonthlyExpense = {
+  interest: 100,
+  principle: 900,
+};
+
+console.info(expenses1, expenses2);

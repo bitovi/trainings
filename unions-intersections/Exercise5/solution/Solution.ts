@@ -1,37 +1,60 @@
-interface Sushi {
-  cuisine: "Japanese";
-  fish: string;
+interface BaseCharacter {
+  strength: number;
+  dexterity: number;
+  intelligence: number;
 }
 
-interface Taco {
-  cuisine: "Mexican";
-  meat: string;
+interface Warrior {
+  weapon: "Sword";
 }
 
-interface Curry {
-  cuisine: "Indian";
-  spicy: number;
+interface Wizard {
+  weapon: "Staff";
+  magic: true;
 }
 
-type Dish = Sushi | Taco | Curry; // Fixed!
+interface Rogue {
+  weapon: "Bow";
+}
 
-const sushi: Dish = {
-  cuisine: "Japanese",
-  fish: "Tuna",
+type Character = BaseCharacter & (Warrior | Wizard | Rogue); // Fixed!
+
+const fighter: Character = {
+  strength: 15,
+  dexterity: 10,
+  intelligence: 8,
+  weapon: "Sword",
 };
 
-const taco: Dish = {
-  cuisine: "Mexican",
-  meat: "Chicken",
+const mage: Character = {
+  strength: 5,
+  dexterity: 8,
+  intelligence: 15,
+  weapon: "Staff",
+  magic: true,
 };
 
-const curry: Dish = {
-  cuisine: "Indian",
-  spicy: 10,
+const thief: Character = {
+  strength: 10,
+  dexterity: 15,
+  intelligence: 8,
+  weapon: "Bow",
 };
 
-// This should be an error, spicy doesn't exist on the Sushi interface!
-const fusion: Dish = {
-  cuisine: "Japanese",
-  spicy: 5,
+// This should be an error, a sword character cannot be magic!
+const paladin: Character = {
+  strength: 15,
+  dexterity: 10,
+  intelligence: 8,
+  weapon: "Sword",
+  magic: true,
 };
+
+// This should be an error, a weapon is required on the Character type!
+const civilian: Character = {
+  strength: 8,
+  dexterity: 8,
+  intelligence: 8,
+};
+
+console.info(fighter, mage, thief, civilian);

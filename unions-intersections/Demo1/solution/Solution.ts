@@ -35,8 +35,9 @@ const pterodactyl: Dinosaur = {
   name: "pterodactyl",
   ableToFly: 1,
   wingLength: 1,
-  ableToWalk: 12,
 };
+
+console.info(pterodactyl);
 
 /*
  Walk through trying to define a pterodactyl:
@@ -47,7 +48,7 @@ const pterodactyl: Dinosaur = {
     - So let's add the ableToFly property
     
     - Now TypeScript is able to narrow down the type to AirDinosaur, and is complaining about the
-      missing wingLength property, so lets add it
+      missing wingLength property, so let's add it
     
     - TypeScript seems to be working, or is it?
     
@@ -60,7 +61,7 @@ const pterodactyl: Dinosaur = {
     - Now we can continue to add any of the types from the union, and TypeScript won't complain so
       long as the minimum properties for ONE of the union types are met
  
- Lets comment out all the `_length` properties and see what happens:
+ Let's comment out all the `_length` properties and see what happens:
     - TypeScript is complaining about the missing properties from one of the sub-Dinosaur types (ableTo_)
     
     - Without some type discrimination, we can't narrow down the type to one of the sub-Dinosaur types in a meaningful way!

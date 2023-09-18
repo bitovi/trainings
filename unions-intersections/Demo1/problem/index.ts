@@ -1,17 +1,14 @@
 type LandDinosaur = {
-  type: "land";
   name: string;
   ableToWalk: number;
   legLength: number;
 };
 type WaterDinosaur = {
-  type: "water";
   name: string;
   ableToSwim: number;
   finLength: number;
 };
 type AirDinosaur = {
-  type: "air";
   name: string;
   ableToFly: number;
   wingLength: number;
@@ -31,3 +28,5 @@ type Dinosaur = LandDinosaur | AirDinosaur | WaterDinosaur;
 */
 
 const pterodactyl: Dinosaur = {};
+
+console.info(pterodactyl);

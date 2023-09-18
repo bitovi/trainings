@@ -38,18 +38,20 @@ const person3: Person = {
   ownership: 2,
 };
 
-// TS should give an error here because we have not satisfied the minimum Customer interface
 const person4: Person = {
+  id: "5117a909-d2ae-4a73-a553-fd20f7f043f8",
+  fullName: "Daenerys",
+  lifeTimeValue: 6000,
+  // TS won't complain here because we have satisfied the minimum Customer interface
+  performance: "great",
+};
+
+// TS should give an error here because we have not satisfied the minimum Customer interface
+const person5: Person = {
   fullName: "Sam",
   lifeTimeValue: 5500,
   salary: 90000,
   performance: "great",
 };
 
-const person5: Person = {
-  id: "5117a909-d2ae-4a73-a553-fd20f7f043f8",
-  fullName: "Daenarys",
-  lifeTimeValue: 6000,
-  // TS won't complain here because we have satisfied the minimum Customer interface
-  performance: "great",
-};
+console.info(person1, person2, person3, person4, person5);
