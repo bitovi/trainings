@@ -48,4 +48,6 @@ const incorrectDev: FrontendDeveloper = {
   role: "developer",
 };
 
+console.log(brandNewDev, incorrectDev);
+
 export {};

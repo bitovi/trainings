@@ -1,5 +1,5 @@
 /* 
-Create a new objcet type in which the keys are the ids of the users and the values are the User type.
+Create a new object type in which the keys are the ids of the users and the values are the User type.
 Currently the UserMap type is unknown. Which utility type can we use here in conjunction with the Person type
 to create the appropriate UserMap type?
 
@@ -67,7 +67,7 @@ const people: Person[] = [
     firstName: "Super",
     lastName: "User",
     isVerified: false,
-    id: 3,
+    id: 4,
   },
 ];
 

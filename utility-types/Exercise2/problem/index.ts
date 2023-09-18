@@ -24,6 +24,7 @@ type Person =
 type Developer = unknown; // Fix this!
 
 const newDev: Developer = {
+  role: "developer",
   email: "email@developer.com",
   firstName: "Dev",
   lastName: "Eloper",

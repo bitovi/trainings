@@ -1,5 +1,5 @@
 /* 
-Create a new objcet type in which the keys are the ids of the users and the values are the User type.
+Create a new object type in which the keys are the ids of the users and the values are the User type.
 Currently the UserMap type is unknown. Which utility type can we use here in conjunction with the Person type
 to create the appropriate UserMap type?
 
@@ -20,7 +20,7 @@ type Person =
   | {
       role: "developer";
       email: string;
-      id: string;
+      id: number;
       firstName: string;
       lastName: string;
       team: "React" | "Angular" | "backend";
@@ -28,13 +28,13 @@ type Person =
   | {
       role: "user";
       email: string;
-      id: string;
+      id: number;
       firstName: string;
       lastName: string;
       isVerified: boolean;
     };
 
-type UserMap = Record<Person["id"], Person>; // Fixed!
+type UserMap = Record<Person["id"], Person>; // Fix this!
 
 const people: Person[] = [
   {
@@ -43,7 +43,7 @@ const people: Person[] = [
     firstName: "Dev",
     lastName: "Eloper",
     team: "React",
-    id: "1",
+    id: 1,
   },
   {
     role: "developer",
@@ -51,7 +51,7 @@ const people: Person[] = [
     firstName: "Dev",
     lastName: "Eloper",
     team: "React",
-    id: "2",
+    id: 2,
   },
   {
     role: "user",
@@ -59,7 +59,7 @@ const people: Person[] = [
     firstName: "Great",
     lastName: "User",
     isVerified: false,
-    id: "3",
+    id: 3,
   },
   {
     role: "user",
@@ -67,7 +67,7 @@ const people: Person[] = [
     firstName: "Super",
     lastName: "User",
     isVerified: false,
-    id: "3",
+    id: 4,
   },
 ];
 

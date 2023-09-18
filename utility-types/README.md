@@ -1,11 +1,26 @@
 # Code Sandbox links
 
-[Exercise 1](https://codesandbox.io/s/github/bitovi/trainings/tree/main/utility-types/Exercise1/problem)
+**Exercise 1**
 
-[Exercise 2](https://codesandbox.io/s/github/bitovi/trainings/tree/main/utility-types/Exercise2/problem)
+- [Problem](https://codesandbox.io/s/github/bitovi/trainings/tree/main/utility-types/Exercise1/problem)
+- [Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/utility-types/Exercise1/solution)
 
-[Exercise 3](https://codesandbox.io/s/github/bitovi/trainings/tree/main/utility-types/Exercise3/problem)
+**Exercise 2**
 
-[Exercise 4](https://codesandbox.io/s/github/bitovi/trainings/tree/main/utility-types/Exercise4/problem)
+- [Problem](https://codesandbox.io/s/github/bitovi/trainings/tree/main/utility-types/Exercise2/problem)
+- [Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/utility-types/Exercise2/solution)
 
-[Exercise 5](https://codesandbox.io/s/github/bitovi/trainings/tree/main/utility-types/Exercise5/problem)
+**Exercise 3**
+
+- [Problem](https://codesandbox.io/s/github/bitovi/trainings/tree/main/utility-types/Exercise3/problem)
+- [Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/utility-types/Exercise3/solution)
+
+**Exercise 4**
+
+- [Problem](https://codesandbox.io/s/github/bitovi/trainings/tree/main/utility-types/Exercise4/problem)
+- [Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/utility-types/Exercise4/solution)
+
+**Exercise 5**
+
+- [Problem](https://codesandbox.io/s/github/bitovi/trainings/tree/main/utility-types/Exercise5/problem)
+- [Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/utility-types/Exercise5/solution)

@@ -38,10 +38,12 @@ nonEditablePerson.firstName = "somethingelse";
 type FullyDefinedPerson = Person; // Fix this!
 
 // This *should* give an error!
-const fullyDefinedPerson: Person = {
+const fullyDefinedPerson: FullyDefinedPerson = {
   role: "developer",
   id: 5,
   firstName: "string",
   lastName: "string",
   team: "React",
 };
+
+console.info(personToUpdate, nonEditablePerson, fullyDefinedPerson);

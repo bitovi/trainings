@@ -42,7 +42,11 @@ interface AdminDeveloper extends FrontendDeveloper {}
 // This should not give an error!
 const myAdmin: AdminDeveloper = {
   permissions: ["readData", "writeData"],
-  ...brandNewDev,
+  email: "admin@developer.com",
+  team: "React",
+  firstName: "Admin",
+  lastName: "Jones",
+  id: 8,
 };
 
 // This should give an error!
