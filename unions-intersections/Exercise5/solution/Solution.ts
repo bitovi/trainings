@@ -57,4 +57,4 @@ const civilian: Character = {
   intelligence: 8,
 };
 
-console.info(fighter, mage, thief, civilian);
+console.info(fighter, mage, thief, paladin, civilian);
