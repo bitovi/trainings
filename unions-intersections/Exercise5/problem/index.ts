@@ -31,6 +31,7 @@ const mage: Character = {
   dexterity: 8,
   intelligence: 15,
   weapon: "Staff",
+  magic: true,
 };
 
 const thief: Character = {
