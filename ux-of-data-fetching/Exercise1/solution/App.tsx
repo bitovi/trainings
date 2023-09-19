@@ -87,15 +87,15 @@ function App() {
           </tr>
         </thead>
         <tbody>
-          {data &&
-            data.length > 0 &&
-            data.map((person: Person) => (
-              <tr key={person.name} className={loading ? "loading" : ""}>
-                <td>{person.name}</td>
-                <td>{person.age}</td>
-                <td>{person.occupation}</td>
-              </tr>
-            ))}
+          {error || !data || data.length === 0
+            ? null
+            : data.map((person: Person) => (
+                <tr key={person.name} className={loading ? "loading" : ""}>
+                  <td>{person.name}</td>
+                  <td>{person.age}</td>
+                  <td>{person.occupation}</td>
+                </tr>
+              ))}
         </tbody>
       </table>
 
