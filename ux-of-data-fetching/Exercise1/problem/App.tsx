@@ -44,7 +44,7 @@ function App() {
 
   return (
     <>
-      <div>
+      <nav>
         <button
           type="button"
           onClick={() => fetchData("/api/people?revalidate=true")}
@@ -63,26 +63,26 @@ function App() {
         >
           Simulate empty
         </button>
-      </div>
+      </nav>
 
       <table>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Occupation</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Occupation</th>
           </tr>
         </thead>
         <tbody>
-          {!data || data.length === 0
-            ? null
-            : data.map((person: any) => (
-                <tr key={person.name}>
-                  <td>{person.name}</td>
-                  <td>{person.age}</td>
-                  <td>{person.occupation}</td>
-                </tr>
-              ))}
+          {data &&
+            data.length > 0 &&
+            data.mapdata.map((person: Person) => (
+              <tr key={person.name}>
+                <td>{person.name}</td>
+                <td>{person.age}</td>
+                <td>{person.occupation}</td>
+              </tr>
+            ))}
         </tbody>
       </table>
     </>
