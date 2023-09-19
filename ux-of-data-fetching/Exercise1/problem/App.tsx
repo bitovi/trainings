@@ -76,7 +76,7 @@ function App() {
         <tbody>
           {data &&
             data.length > 0 &&
-            data.mapdata.map((person: Person) => (
+            data.map((person: Person) => (
               <tr key={person.name}>
                 <td>{person.name}</td>
                 <td>{person.age}</td>
