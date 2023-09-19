@@ -15,8 +15,11 @@ type Person = {
 type UpdateablePerson = Partial<Person>;
 
 // This should not give an error!
-const personToUpdate: UpdateablePerson = {
+const personToUpdate1: UpdateablePerson = {
   team: "React",
+};
+const personToUpdate2: UpdateablePerson = {
+  firstName: "John",
 };
 
 // 2. Which utility type can we use so that typescript gives an error when we try to update a property?
@@ -37,7 +40,7 @@ nonEditablePerson.firstName = "somethingelse";
 // 3. Which utility type can we use to make sure that all properties are defined?
 type FullyDefinedPerson = Required<Person>;
 
-// This *should* give an error!
+// This should give an error!
 const fullyDefinedPerson: FullyDefinedPerson = {
   role: "developer",
   id: 5,
@@ -46,4 +49,9 @@ const fullyDefinedPerson: FullyDefinedPerson = {
   team: "React",
 };
 
-console.info(personToUpdate, nonEditablePerson, fullyDefinedPerson);
+console.info(
+  personToUpdate1,
+  personToUpdate2,
+  nonEditablePerson,
+  fullyDefinedPerson
+);
