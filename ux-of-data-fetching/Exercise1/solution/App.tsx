@@ -101,7 +101,7 @@ function App() {
 
       {!loading && data?.length === 0 && <p>No records found</p>}
       {error && <p className="error">{error.message}</p>}
-      {loading && !data && <p>Loading...</p>}
+      {loading && (data?.length === 0 || !data) && <p>Loading...</p>}
     </>
   );
 }

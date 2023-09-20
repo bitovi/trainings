@@ -27,7 +27,7 @@ export const handlers = [
       return res(
         ctx.delay(2000),
         ctx.status(500),
-        ctx.json({ message: "Server Error: Failed to fetch data!" })
+        ctx.json({ message: "Too many requests. Please try again!" })
       );
     }
 
