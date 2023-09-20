@@ -11,6 +11,19 @@ const peopleData = [
   { name: "Jack Sparrow", age: 35, occupation: "Pirate" },
 ];
 
+const revalidatedData = [
+  { name: "Luke Skywalker", age: 32, occupation: "Jedi Knight" },
+  { name: "John Snow", age: 28, occupation: "King in the North" },
+  { name: "Buzz Lightyear", age: 32, occupation: "Space Ranger" },
+  { name: "John McClane", age: 55, occupation: "Retired Cop" },
+  { name: "Frodo Baggins", age: 60, occupation: "Ring Bearer" },
+  { name: "Harry Potter", age: 25, occupation: "Auror" },
+  { name: "Indiana Jones", age: 45, occupation: "Professor" },
+  { name: "James Bond", age: 45, occupation: "Double O Agent" },
+  { name: "Bruce Wayne", age: 45, occupation: "Batman" },
+  { name: "Jack Sparrow", age: 45, occupation: "Captain" },
+];
+
 function delay(delay: number, value: any, error = false) {
   return new Promise((resolve, reject) =>
     setTimeout(error ? reject : resolve, delay, value)
@@ -27,25 +40,7 @@ export const fetch = async (url: string): Promise<any> => {
       true
     );
   } else if (url.includes("revalidate")) {
-    peopleData[0].age = 32;
-    peopleData[0].occupation = "Jedi Knight";
-    peopleData[1].age = 28;
-    peopleData[1].occupation = "King in the North";
-    peopleData[3].age = 55;
-    peopleData[3].occupation = "Retired Cop";
-    peopleData[4].age = 60;
-    peopleData[4].occupation = "Ring Bearer";
-    peopleData[5].age = 25;
-    peopleData[5].occupation = "Auror";
-    peopleData[6].age = 45;
-    peopleData[6].occupation = "Professor";
-    peopleData[7].age = 45;
-    peopleData[7].occupation = "Double O Agent";
-    peopleData[8].age = 45;
-    peopleData[9].age = 45;
-    peopleData[9].occupation = "Captain";
-
-    return delay(2000, peopleData);
+    return delay(2000, revalidatedData);
   } else {
     return delay(2000, peopleData);
   }
