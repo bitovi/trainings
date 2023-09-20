@@ -1,0 +1,1 @@
+Note: this exercise does not involve writing code, but organizing files/folders.
