@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Buttons and Links</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        html {
+            font-family: system-ui, sans-serif;
+        }
+
+        .button {
+            background: #e00;
+            color: white;
+            display: inline-block;
+            outline: none;
+            padding: 1rem;
+            text-decoration: none;
+        }
+
+        .button:focus,
+        .button:hover {
+            background: darkred;
+            text-decoration: underline;
+        }
+
+        .button:active {
+            background: blue;
+            text-decoration: underline dotted white 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Buttons and Links</h1>
+
+    <p>Level up your frontend skills with courses on <a href="https://www.bitovi.com/academy/">Bitovi Academy</a>.</p>
+    <p><a class="button" href="https://www.bitovi.com/academy/#courses-section">Browse the courses</a></p>
+
+    <dialog id="firstDialog">
+        <h2>Dialog header</h2>
+        <form method="dialog">
+            <button>Close dialog</button>
+        </form>
+    </dialog>
+
+    <p>
+        <button onclick="window.firstDialog.showModal()">
+            Open the dialog
+        </button>
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Audio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        html {
+            font-family: system-ui, sans-serif;
+        }
+
+        code {
+            font-family: ui-monospace, monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Audio</h1>
+    <!--
+        Audio sources:
+        - audio/ogg: https://upload.wikimedia.org/wikipedia/en/5/55/HemingwayNobelSpeechIntro.ogg
+        - audio/mpeg: https://upload.wikimedia.org/wikipedia/en/transcoded/5/55/HemingwayNobelSpeechIntro.ogg/HemingwayNobelSpeechIntro.ogg.mp3
+
+        Captions source: ../HemingwayNobelSpeechIntro.ogg.en.srt.vtt
+    -->
+    <figure>
+        <figcaption><code>audio</code> element</figcaption>
+        <audio controls>
+            <source src="https://upload.wikimedia.org/wikipedia/en/5/55/HemingwayNobelSpeechIntro.ogg"
+                type="audio/ogg" />
+            <source
+                src="https://upload.wikimedia.org/wikipedia/en/transcoded/5/55/HemingwayNobelSpeechIntro.ogg/HemingwayNobelSpeechIntro.ogg.mp3"
+                type="audio/mpeg" />
+            <track default kind="captions" label="English" src="./HemingwayNobelSpeechIntro.ogg.en.srt.vtt"
+                srclang="en" />
+            <a
+                href="https://upload.wikimedia.org/wikipedia/en/transcoded/5/55/HemingwayNobelSpeechIntro.ogg/HemingwayNobelSpeechIntro.ogg.mp3">
+                Download the audio in MP3.
+            </a>
+        </audio>
+        <p>Read the transcription below.</p>
+    </figure>
+    <figure>
+        <figcaption><code>video</code> element</figcaption>
+        <video controls height="320" width="480">
+            <source src="https://upload.wikimedia.org/wikipedia/en/5/55/HemingwayNobelSpeechIntro.ogg"
+                type="audio/ogg" />
+            <source
+                src="https://upload.wikimedia.org/wikipedia/en/transcoded/5/55/HemingwayNobelSpeechIntro.ogg/HemingwayNobelSpeechIntro.ogg.mp3"
+                type="audio/mpeg" />
+            <track default kind="captions" label="English" src="./HemingwayNobelSpeechIntro.ogg.en.srt.vtt"
+                srclang="en" />
+            <a
+                href="https://upload.wikimedia.org/wikipedia/en/transcoded/5/55/HemingwayNobelSpeechIntro.ogg/HemingwayNobelSpeechIntro.ogg.mp3">
+                Download the audio in MP3.
+            </a>
+        </video>
+        <p>Read the transcription below.</p>
+    </figure>
+    <h2>Transcription</h2>
+    <p>
+        No writer who knows the great writers who did not receive the prize can accept it other than with humility.
+        There is no need to list these writers.
+        Everyone here may make his own list according to his knowledge and his conscience.
+    </p>
+</body>
+
+</html>
