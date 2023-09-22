@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Text Size, Color, and Contrast</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        html {
+            font-family: system-ui, sans-serif;
+        }
+
+        label {
+            display: block;
+            margin: 0.5rem 0;
+        }
+
+        label.required {
+            color: #e00;
+        }
+
+        label:not(.required) {
+            color: green;
+        }
+
+        label input {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Text Size, Color, and Contrast</h1>
+    <!--
+        You can use your browser’s DevTools or an online tool to fix contrast issues:
+        https://webaim.org/resources/contrastchecker/
+    -->
+
+    <section>
+        <form>
+            <p>Required fields are marked with red labels.</p>
+            <label class="required">
+                Email (required)
+                <input required type="email">
+            </label>
+            <label>
+                Name
+                <input type="text">
+            </label>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <section style="background: #00f">
+        <h2 style="color: #999">Header text (minimum 3:1 ratio)</h2>
+        <p style="color: #ccc">Paragraph text (minimum 4.5:1 ratio).</p>
+    </section>
+
+    <section style="background: green">
+        <p style="font-size: 2rem">X</p>
+    </section>
+
+    <p style="white-space: nowrap">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.
+    </p>
+</body>
+
+</html>

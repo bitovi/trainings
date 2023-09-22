@@ -1,0 +1,17 @@
+# Exercises
+
+| Exercise | Problem | Solution |
+| --- | --- | --- |
+| Text | [Problem](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/text/problem) | [Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/text/solution) |
+| Clear language | [Problem](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/clear-language/problem) | [Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/clear-language/solution) |
+| Forms | [Problem](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/forms/problem) | [Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/forms/solution) |
+| Buttons and links | [Problem](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/buttons-and-links/problem) | [Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/buttons-and-links/solution) |
+| Images | [Problem](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/images/problem) | [Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/images/solution) |
+| Video | [Problem](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/video/problem) | [Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/video/solution) |
+| Audio | [Problem](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/audio/problem) | [Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/audio/solution) |
+| Semantic sections | [Problem](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/semantic-sections/problem) | [Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/semantic-sections/solution) |
+| Keyboard navigation | [Problem](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/keyboard-nav/problem) | [Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/keyboard-nav/solution) |
+| Reduce motion | [Problem](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/reduce-motion/problem) | [Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/reduce-motion/solution) |
+| Consistent design | [Problem](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/consistent-design/problem) | [Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/consistent-design/solution) |
+| Target size | [Problem](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/target-size/problem) | [Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/target-size/solution) |
+| Contrast | [Problem](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/target-size/problem) | [Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/intro-to-accessibility-first/target-size/solution) |
