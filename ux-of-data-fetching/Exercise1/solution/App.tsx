@@ -20,7 +20,7 @@
  *      class to the tr in the table’s body.
  */
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles.css";
 
 interface Person {
@@ -40,11 +40,13 @@ function App() {
     fetch(url)
       .then(async (res) => {
         if (res.ok) return res.json();
+        // http errors
         const err = await res.json();
-        throw new Error(err.message);
+        setError(err);
       })
       .then((data) => setData(data))
       .catch((err) => {
+        // network errors
         setError(err);
         setData(undefined);
       })

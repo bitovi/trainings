@@ -20,7 +20,7 @@
  *      class to the tr in the table’s body.
  */
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { fetch } from "./fetch";
 import "./styles.css";
 
