@@ -1,5 +1,4 @@
-import { helloWorld } from "./index";
-import { isColorInArray } from "./index";
+import { helloWorld, isColorInArray } from "./index";
 
 // TODO: how does this magically not work?
 
@@ -9,9 +8,9 @@ import { isColorInArray } from "./index";
 // Does not test if `helloWorld` works properly. 
 // Does not test if `helloWorld` returns a string or what that string is.
 
+// Better naming:
+// test("smoke test", () => {
 describe("hello world", () => {
-	// Better naming:
-	// test("smoke test", () => {
 		test("Badly named initial test", () => {
 
 			const result = helloWorld();
