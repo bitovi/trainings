@@ -41,8 +41,6 @@ function App() {
 			<iframe
 				title="vehicle-selector"
 				src="https://bitovi.github.io/vehicle-selector-react/"
-				height="500"
-				width="800"
 			></iframe>
 		</div>
 	);
