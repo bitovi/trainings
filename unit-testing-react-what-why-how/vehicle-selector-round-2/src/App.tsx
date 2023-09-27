@@ -12,12 +12,12 @@ function App() {
 				height="800"
 			></iframe>
 			<p>Iframe 2</p>
-			<iframe
+			{/* <iframe
 				title="vehicle-selector"
 				src="https://bitovi.github.io/vehicle-selector-react/"
 				width="100%"
-				height="100%"
-			></iframe>
+				height="800"
+			></iframe> */}
 		</div>
 	);
 }
