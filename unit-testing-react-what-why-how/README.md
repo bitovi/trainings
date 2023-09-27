@@ -2,10 +2,10 @@
 
 TEMP base url: https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/unit-testing-react-what-why-how/unit-testing-react-what-why-how/
 
-| Exercise | Problem     | Solution     |
-| -------- | ----------- | ------------ |
-| ---      | [Problem]() | [Solution]() |
-| ---      | [Problem]() | [Solution]() |
-| ---      | [Problem]() | [Solution]() |
-| ---      | [Problem]() | [Solution]() |
-| ---      | [Problem]() | [Solution]() |
+| Exercise                | Problem                                                                                                                                                 | Solution                                                                                                                                                  |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| test - vehicle selector | https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/unit-testing-react-what-why-how/unit-testing-react-what-why-how/vehicle-selector-react    | ---                                                                                                                                                       |
+| Basics                  | [Problem](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/unit-testing-react-what-why-how/unit-testing-react-what-why-how/Basics/problem) | [Solution](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/unit-testing-react-what-why-how/unit-testing-react-what-why-how/Basics/solution) |
+| ---                     | [Problem]()                                                                                                                                             | [Solution]()                                                                                                                                              |
+| ---                     | [Problem]()                                                                                                                                             | [Solution]()                                                                                                                                              |
+| ---                     | [Problem]()                                                                                                                                             | [Solution]()                                                                                                                                              |

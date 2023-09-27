@@ -1,12 +1,13 @@
 import { helloWorld } from "./index";
 import { isColorInArray } from "./index";
 
-// Test codesandbox functionality.
+
 
 // 1. What does this test?
-// Smoke test to see if `helloWorld` doesn't immediately error
-// Does not test if `helloWorld` works properly. 
-// Does not test if `helloWorld` returns a string or what that string is.
+	// Smoke test to see if `helloWorld` doesn't immediately error.
+	// Also tests that codesandbox can run tests successfully.
+	// Does not test if `helloWorld` works properly. 
+	// Does not test if `helloWorld` returns a string or what that string is.
 
 describe("hello world", () => {
 	// Better naming:
@@ -29,6 +30,7 @@ describe("isColorInArray", () => {
 			expect(result);
 	});
 });
+
 // 3. Write a comprehensive test for the `isColorInArray` function
 describe("isColorInArray", () => {
 		test("returns true when `potentialColor` is in `colors`", () => {
