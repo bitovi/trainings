@@ -5,7 +5,7 @@ import { MyComponent } from "./MyComponent";
 function App() {
   return(
     <div>
-      <p>Landing tada</p>
+      <p>Yippy skippy</p>
       <iframe
         title="vehicle-selector"
         src="https://bitovi.github.io/vehicle-selector-react/"
