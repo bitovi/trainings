@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
 	return (
 		<div>
-			<p>Iframe of working site here: emptied app.tsx</p>
+			<p>Iframe of working site here: emptied app.tsx & wrappers</p>
 			<iframe
 				title="vehicle-selector"
 				src="https://bitovi.github.io/vehicle-selector-react/"
