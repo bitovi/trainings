@@ -1,12 +1,12 @@
 import { helloWorld, isColorInArray } from "./index";
 
 // 1. What does this test?
-// Smoke test to see if `helloWorld` doesn't immediately error.
-// Also tests that codesandbox can run tests successfully.
-// Does not test if `helloWorld` works properly. 
-// Does not test if `helloWorld` returns a string or what that string is.
+		// Smoke test to see if `helloWorld` doesn't immediately error.
+		// Also tests that codesandbox can run tests successfully.
+		// Does not test if `helloWorld` works properly. 
+		// Does not test if `helloWorld` returns a string or what that string is.
 
-// Better test name: "passes smoke test" or "is not on fire"
+// Note: acceptable test names could be "passes smoke test" or "is not on fire"
 describe("hello world", () => {
 		test("Badly named initial test", () => {
 
@@ -30,8 +30,15 @@ describe("isColorInArray", () => {
 describe("isColorInArray", () => {
 		test("returns true when `potentialColor` is in `colors`", () => {
 
-			const result = isColorInArray({potentialColor: "red", colors: ["red", "blue", "green"]});
+			// Arrange - group inputs and comparison values
+			const potentialColor = "red";
+			const colors = ["red", "blue", "green"];
+			// Note: missing comparison value. Why?
 
+			// Act - call the function just like you would elsewhere in code
+			const result = isColorInArray({potentialColor, colors});
+
+			// Assert - compare the result with the expected value
 			// `.toBe(true)`
 			expect(result).toBe(true);
 	});
