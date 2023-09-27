@@ -44,47 +44,6 @@ function App() {
 				height="500"
 				width="800"
 			></iframe>
-			<header className="header">
-				^^^^^^ THIS IS A TESTSLDKJF:SLDKJFS:DLFKJSD:LKFJS:DLKFJ
-				<div>
-					<a href="https://bitovi.com" target="_blank">
-						<img src={bitoviLogo} className="logo" alt="Bitovi logo" />
-					</a>
-				</div>
-				<h1>Vehicle Information</h1>
-			</header>
-			<main>
-				<div style={{ padding: "1rem 0" }}>
-					<button
-						disabled={version === "useState"}
-						onClick={() => setVersion("useState")}
-					>
-						useState
-					</button>
-					<button
-						disabled={version === "useStateWithEffects"}
-						onClick={() => setVersion("useStateWithEffects")}
-					>
-						useState w/Effects
-					</button>
-					<button
-						disabled={version === "useStateBetter"}
-						onClick={() => setVersion("useStateBetter")}
-					>
-						Better useState
-					</button>
-					<button
-						disabled={version === "useReducer"}
-						onClick={() => setVersion("useReducer")}
-					>
-						useReducer
-					</button>
-				</div>
-				{VehicleSelectors[version]}
-				<div className="code">
-					<Highlighter>{VehicleSelectorCode[version]}</Highlighter>
-				</div>
-			</main>
 		</div>
 	);
 }
