@@ -5,6 +5,8 @@ import { MyComponent } from "./MyComponent";
 // @testing-library/react -> DOM testing
 // react-test-renderer -> snapshot testing
 
+// note to self: This is proven to work in the Jest-react example
+
 afterEach(() => {
   cleanup();
 });
