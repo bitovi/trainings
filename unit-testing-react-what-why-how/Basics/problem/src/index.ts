@@ -1,9 +1,8 @@
 export function helloWorld() {
 	return "hello world";
 }
-// WIP TO BREAK UP starting example
 
-//code to test
+// code to test
 interface Props {
 	potentialColor: string;
 	colors: string[];
