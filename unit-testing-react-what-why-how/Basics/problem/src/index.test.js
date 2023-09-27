@@ -1,8 +1,7 @@
 import { helloWorld } from "./index";
 import { isColorInArray } from "./index";
 
-// Test codesandbox functionality.
-// 1. What does this test?
+// 1. What does this test for? What purpose does it serve?
 
 describe("hello world", () => {
 	test("should not fail immediately", () => {

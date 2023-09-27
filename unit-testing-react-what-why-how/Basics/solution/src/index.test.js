@@ -1,13 +1,13 @@
 import { helloWorld } from "./index";
 import { isColorInArray } from "./index";
 
-
+// TODO: how does this magically not work?
 
 // 1. What does this test?
-	// Smoke test to see if `helloWorld` doesn't immediately error.
-	// Also tests that codesandbox can run tests successfully.
-	// Does not test if `helloWorld` works properly. 
-	// Does not test if `helloWorld` returns a string or what that string is.
+// Smoke test to see if `helloWorld` doesn't immediately error.
+// Also tests that codesandbox can run tests successfully.
+// Does not test if `helloWorld` works properly. 
+// Does not test if `helloWorld` returns a string or what that string is.
 
 describe("hello world", () => {
 	// Better naming:
