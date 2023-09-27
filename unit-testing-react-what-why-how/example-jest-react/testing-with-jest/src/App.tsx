@@ -1,7 +1,7 @@
 function App() {
 	return (
 		<div>
-			<p>Landing tada sans cow</p>
+			<p>Just an iframe.</p>
 			<iframe
 				title="vehicle-selector"
 				src="https://bitovi.github.io/vehicle-selector-react/"
