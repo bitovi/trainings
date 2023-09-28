@@ -1,5 +1,5 @@
 import CustomButton from "./CustomButton"
-// import styles from "./SearchBarThing.module.css"
+import styles from "./SearchBarThing.module.css"
 
 const SearchBarThing = () =>{
   return (

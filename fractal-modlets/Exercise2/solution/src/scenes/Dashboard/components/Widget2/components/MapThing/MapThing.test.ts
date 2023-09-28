@@ -1,3 +1,3 @@
-// import MapThing from "./MapThing";
+import MapThing from "./MapThing";
 
 // tests for MapThing go here 

@@ -1,4 +1,4 @@
-// import styles from "./WidgetButtons.module.css"
+import styles from "./WidgetButtons.module.css"
 import CustomButton from "../../../../shared/CustomButton/CustomButton"
 const WidgetButtons = () =>{
   return(

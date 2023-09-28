@@ -1,5 +1,5 @@
 import WidgetButtons from "../../../../shared/components/WidgetButtons/WidgetButtons";
-// import styles from "./SomeControlPanel1.module.css"
+import styles from "./SomeControlPanel1.module.css"
 
 const SomeControlPanel1 = () => {
   return (

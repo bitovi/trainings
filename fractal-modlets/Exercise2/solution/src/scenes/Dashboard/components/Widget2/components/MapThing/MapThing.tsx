@@ -1,4 +1,4 @@
-// import styles from "./MapThing.module.css"
+import styles from "./MapThing.module.css"
 
 const MapThing = () =>{
   return(
