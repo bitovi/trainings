@@ -1,0 +1,9 @@
+{
+    "title": "Basic Modlet",
+    "description": "Part of the Organize and Simply React w/ Fractal Modlets workshop.",
+    "iconUrl": "https://www.bitovi.com/favicon.ico",
+    "tags": [
+        "react"
+    ],
+    "published": false
+}
