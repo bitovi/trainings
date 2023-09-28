@@ -1,11 +1,12 @@
-import { helloWorld } from "./index";
+import { greeting } from "./index";
 import { isColorInArray } from "./index";
 
-// 1. What does this test for? What purpose does it serve?
-
-describe("hello world", () => {
-	test("should not fail immediately", () => {
-		const result = helloWorld();
+// 1. Here is an example of a poorly documented test.
+// Question: What does this test for? What purpose does it serve?
+// Rename this test to something more descriptive.
+describe("first function", () => {
+	test("passes test", () => {
+		const result = greeting();
 		expect(result);
 	});
 });

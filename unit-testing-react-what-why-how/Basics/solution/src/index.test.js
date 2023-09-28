@@ -8,7 +8,7 @@ import { helloWorld, isColorInArray } from "./index";
 
 // Note: acceptable test names could be "passes smoke test" or "is not on fire"
 describe("hello world", () => {
-		test("Badly named initial test", () => {
+		it("does not break immediately", () => {
 
 			const result = helloWorld();
 
@@ -18,7 +18,7 @@ describe("hello world", () => {
 
 // 2. Write a smoke test for the `isColorInArray` function
 describe("isColorInArray", () => {
-		test("is not on fire", () => {
+		it("is not on fire", () => {
 
 			const result = isColorInArray({string: "red", colors: ["red", "blue", "green"]});
 			
@@ -28,7 +28,7 @@ describe("isColorInArray", () => {
 
 // 3. Write a comprehensive test for the `isColorInArray` function
 describe("isColorInArray", () => {
-		test("returns true when `potentialColor` is in `colors`", () => {
+		it("returns true when `potentialColor` is in `colors`", () => {
 
 			// Arrange - group inputs and comparison values
 			const potentialColor = "red";

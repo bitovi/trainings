@@ -1,10 +1,9 @@
 import {buildDropdownList} from "./index.js"
 
-// 1. Complete this smoke test for the buildDropdownList function.
 describe('element', () => {
-  test('does something', () => { 
+  // 1. Complete this smoke test for the buildDropdownList function.
+  test('does something', () => {     
 
-    
 
   })
   
