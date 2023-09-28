@@ -1,11 +1,11 @@
 /* 
 Create a new object type in which the keys are the ids of the users and the values are the User type.
-Currently the UserMap type is unknown. Which utility type can we use here in conjunction with the Person type
-to create the appropriate UserMap type?
+Currently the PersonMap type is unknown. Which utility type can we use here in conjunction with the Person type
+to create the appropriate PersonMap type?
 
-Our UserMap should look like this:
+Our PersonMap should look like this:
 ```
-    data: UserMap = {
+    data: PersonMap = {
         1: {
             role: ...
             email: ...
@@ -34,7 +34,7 @@ type Person =
       isVerified: boolean;
     };
 
-type UserMap = Record<Person["id"], Person>; // Fix this!
+type PersonMap = Record<Person["id"], Person>; // Fix this!
 
 const people: Person[] = [
   {
@@ -71,7 +71,7 @@ const people: Person[] = [
   },
 ];
 
-const userMap: UserMap = people.reduce((acc, person) => {
+const userMap: PersonMap = people.reduce((acc, person) => {
   acc[person.id] = { ...person };
   return acc;
 }, {});
