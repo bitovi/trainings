@@ -1,5 +1,5 @@
-import {buildDropdownList} from "./index.js"
-
+import {buildDropdownList} from "./index.ts"
+// TODO: Write solutions
 describe('element', () => {
   // 1. Complete this smoke test for the buildDropdownList function.
   test('does something', () => {     

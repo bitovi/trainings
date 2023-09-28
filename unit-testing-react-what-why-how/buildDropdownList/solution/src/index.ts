@@ -1,13 +1,10 @@
-import React from "react";
+export function buildDropdownList(items?: Array<string | number>) {
+	if (!items) {
+		return [];
+	}
 
-interface ButtonProps {
-	label: string;
-	onClick: () => void;
+	return items.map((item) => ({
+		label: item.toString(),
+		value: item.toString(),
+	}));
 }
-
-export const Button: React.FC<ButtonProps> = ({
-	label,
-	onClick,
-}: ButtonProps) => {
-	return <a onclick={() => onClick()}> {label} </a>;
-};

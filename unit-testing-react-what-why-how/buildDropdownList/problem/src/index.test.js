@@ -1,4 +1,4 @@
-import {buildDropdownList} from "./index.js"
+import {buildDropdownList} from "./index.ts"
 
 // 1. Complete this smoke test for the buildDropdownList function.
 describe('element', () => {
