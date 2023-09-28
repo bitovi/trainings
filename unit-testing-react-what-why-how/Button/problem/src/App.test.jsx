@@ -1,3 +1,10 @@
+import { render } from "@testing-library/react";
+import App from "./App";
+
+test("renders todos", async () => {
+  render(<App />);
+});
+
 // 1. Improve naming if desired
 describe('element', () => {
   test('onclick invokes handle', () => { 
