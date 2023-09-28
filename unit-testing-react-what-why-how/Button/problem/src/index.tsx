@@ -9,5 +9,5 @@ export const Button: React.FC<ButtonProps> = ({
 	label,
 	onClick,
 }: ButtonProps) => {
-	return <a onclick={() => onClick()}> {label} </a>;
+	return <a onClick={() => onClick()}> {label} </a>;
 };
