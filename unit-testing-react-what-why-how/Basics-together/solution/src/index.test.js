@@ -1,4 +1,4 @@
-// Potential Solutions.
+import {sum} from "./index" /// Potential Solutions.
 describe("the sum function", () => {
 
   // Test broken into AAA pattern
@@ -12,23 +12,23 @@ describe("the sum function", () => {
     
     // Assert
     expect(result).toBe(3)
-  })
+  });
   
   // Condensed tests:
 
   // Smoke Test
-  test("isn't on fire 🔥"), () => {
+  it("isn't on fire 🔥", () => {
     sum([ 1, 2 ])
-  }
+  })
 
   // Contract Test
-  test("returns a number"), () => {
+  it("returns a number", () => {
     expect(typeof sum([ 1, 2 ])).toBe("number")
-  }
+  })
 
   // Comprehensive Test
-  test("adds the numbers"), () => {
+  it("adds the numbers", () => {
     expect(sum([ 1, 2 ])).toBe(3)
-  }
+  })
 
 }) 
