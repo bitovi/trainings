@@ -123,7 +123,7 @@ export const Game = ({
 	);
 };
 
-const RockPaperScissors = () => {
+const App = () => {
 	const [player1, setPlayer1] = useState<Player>();
 	const [player2, setPlayer2] = useState<Player>();
 
@@ -142,3 +142,5 @@ const RockPaperScissors = () => {
 		</div>
 	);
 };
+
+export default App;
