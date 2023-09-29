@@ -1,4 +1,3 @@
-// TODO: Complicate me
 import { useState } from "react";
 
 interface Player {
@@ -145,4 +144,4 @@ const RockPaperScissors = () => {
 	);
 };
 
-export default RockPaperScissors
+export default RockPaperScissors;
