@@ -3,7 +3,7 @@
   "version": "0.0.3",
   "description": "First exercise in the UX of Data Fetching Training",
   "keywords": [],
-  "main": "src/index.js",
+  "main": "src/src/RockPaperScissors.tsx",
   "dependencies": {
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "13.2.0",
