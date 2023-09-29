@@ -1,7 +1,7 @@
 {
-  "name": "exercise-1",
-  "version": "0.0.3",
-  "description": "First exercise in the UX of Data Fetching Training",
+  "name": "TODO",
+  "version": "1.0.0",
+  "description": "",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {

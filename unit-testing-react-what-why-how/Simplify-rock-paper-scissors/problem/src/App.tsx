@@ -1,19 +1,11 @@
 // TODO: Complicate me
-import { useState } from "react";
 
+import { useState } from "react";
 interface Player {
 	name: string;
 	score: number;
 	cards: ("rock" | "paper" | "scissors")[];
 }
-
-const generatePlayer = (name: string): Player => {
-	return {
-		name: name,
-		score: 0,
-		cards: ["rock", "paper", "scissors"],
-	};
-};
 
 const StartGame = ({
 	onStart,
@@ -52,6 +44,14 @@ const StartGame = ({
 			</form>
 		</div>
 	);
+};
+
+const generatePlayer = (name: string): Player => {
+	return {
+		name: name,
+		score: 0,
+		cards: ["rock", "paper", "scissors"],
+	};
 };
 
 export const Scoreboard = ({
