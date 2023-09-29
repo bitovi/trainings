@@ -5,6 +5,14 @@ interface Player {
 	cards: ("rock" | "paper" | "scissors")[];
 }
 
+const generatePlayer = (name: string): Player => {
+	return {
+		name: name,
+		score: 0,
+		cards: ["rock", "paper", "scissors"],
+	};
+};
+
 const StartGame = ({
 	onStart,
 }: {
@@ -42,14 +50,6 @@ const StartGame = ({
 			</form>
 		</div>
 	);
-};
-
-const generatePlayer = (name: string): Player => {
-	return {
-		name: name,
-		score: 0,
-		cards: ["rock", "paper", "scissors"],
-	};
 };
 
 export const Scoreboard = ({
