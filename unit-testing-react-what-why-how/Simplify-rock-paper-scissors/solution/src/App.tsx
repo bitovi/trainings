@@ -1,5 +1,7 @@
-import RockPaperScissors from "./src/RockPaperScissors"
+import RockPaperScissors from "./src/RockPaperScissors";
 
-const App = () => <RockPaperScissors/>
+// 1. Open RockPaperScissors.tsx to see solution
+
+const App = () => <RockPaperScissors />;
 
 export default App;
