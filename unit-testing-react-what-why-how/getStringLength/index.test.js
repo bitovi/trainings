@@ -1,4 +1,4 @@
-
+// What is this for?
 function getStringLength(inputString) {
   return inputString.length;
 }
