@@ -1,14 +1,13 @@
 {
-  "name": "exercise-1",
-  "version": "0.0.3",
-  "description": "First exercise in the UX of Data Fetching Training",
+  "name": "TODO",
+  "version": "1.0.0",
+  "description": "",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "13.2.0",
     "@testing-library/user-event": "14.1.1",
-    "msw": "0.39.2",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-scripts": "4.0.0",
@@ -29,8 +28,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "msw": {
-    "workerDirectory": "public"
-  }
+  ]
 }
