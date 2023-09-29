@@ -29,7 +29,6 @@ const RockPaperScissors = () => {
 
 	return (
 		<div>
-			frient
 			{player1 && player2 ? (
 				<>
 					<div>
@@ -60,7 +59,6 @@ const RockPaperScissors = () => {
 				</>
 			) : (
 				<div>
-					hello
 					<form onSubmit={onSubmit}>
 						<label htmlFor="name1">Player 1</label>
 						<input
