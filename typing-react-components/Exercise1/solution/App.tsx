@@ -1,5 +1,5 @@
 // 1. Add appropriate type to the Message component to get rid of TS errors.
-//    The type should not allow Message to be rendered without "children" i.e.
+//    The type require Message to be rendered with "children" i.e.
 //    the third Message render call in the code should be invalid.
 //   
 // 2. Update the component render calls in order to get the desired result.
