@@ -1,3 +1,5 @@
-import ProductDetails from "../components/ProductDetails"
+import ProductDetails from "../components/ProductDetails";
 
-// product details tests go here
+test('is defined', () => {
+  expect(ProductDetails).toBeDefined;
+});

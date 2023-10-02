@@ -1,3 +1,5 @@
-import CartButton from "../components/CartButton"
+import CartButton from "../components/CartButton";
 
-// cart button tests go here
+test('is defined', () => {
+  expect(CartButton).toBeDefined;
+});
