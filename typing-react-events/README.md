@@ -2,5 +2,5 @@
 
 **Exercise**
 
-- Problem :TODO - add link after commit merged into main
-- Solution :TODO - add link after commit merged into main
+- [Problem](https://codesandbox.io/s/github/bitovi/trainings/tree/main/typing-react-events/Exercise1/problem)
+- [Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/typing-react-events/Exercise1/solution)
