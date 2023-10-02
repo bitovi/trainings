@@ -1,3 +1,5 @@
-import ImageCarousel from "../components/ImageCarousel"
+import ImageCarousel from "../components/ImageCarousel";
 
-// image carousel tests go here
+test('is defined', () => {
+  expect(ImageCarousel).toBeDefined;
+});
