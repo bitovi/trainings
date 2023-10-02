@@ -1,8 +1,8 @@
-import {useLoggedInUser} from './index.js'
+import { renderHook } from "@testing-library/react-hooks";
+import { useLoggedInUser } from "./index.tsx";
 
-// note: renderHook’s return value is actually the “result.current”
+// hint: renderHook’s return value is actually the “result.current”
 
-test('returns logged in user', () => {
-// write tests here...
-})
-
+test("returns logged in user", () => {
+	// write tests here...
+});

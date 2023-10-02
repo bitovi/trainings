@@ -1,4 +1,6 @@
-import {useLoggedInUser} from './index.js'
+import { renderHook } from '@testing-library/react-hooks'
+import {useLoggedInUser} from './index.tsx'
+
 
 // renderHook’s return value is actually the “result.current”
 
