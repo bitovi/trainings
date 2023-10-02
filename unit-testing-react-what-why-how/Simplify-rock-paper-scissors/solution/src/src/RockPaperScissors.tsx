@@ -1,5 +1,7 @@
 import { useState } from "react";
+import React from "react";
 
+// Note: these should also go into separate fractal modlets.
 interface Player {
 	name: string;
 	score: number;

@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 
 interface Player {
@@ -89,7 +90,7 @@ const PlayerInfo = ({
 	);
 };
 
-const HandCards = ({ cards }: { cards: Player["cards"] }) => {
+export const HandCards = ({ cards }: { cards: Player["cards"] }) => {
 	return (
 		<div className="poker-hand">
 			<h2>Player's Hand</h2>

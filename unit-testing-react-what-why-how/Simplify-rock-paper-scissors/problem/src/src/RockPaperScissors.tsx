@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 
 interface Player {
@@ -17,7 +18,9 @@ const RockPaperScissors = () => {
 
 	const [player1, setPlayer1] = useState<Player>();
 	const [player2, setPlayer2] = useState<Player>();
-	const [currentPlayer, setCurrentPlayer] = useState<Player>(player1);
+	const [currentPlayer, setCurrentPlayer] = useState<Player | undefined>(
+		player1
+	);
 	const [winner, setWinner] = useState<Player>();
 	const [name1, setName1] = useState("");
 	const [name2, setName2] = useState("");
@@ -49,11 +52,12 @@ const RockPaperScissors = () => {
 					<div className="poker-hand">
 						<h2>Player's Hand</h2>
 						<div className="card-container">
-							{currentPlayer.cards.map((card, index) => (
-								<div className="card" key={index}>
-									{card}
-								</div>
-							))}
+							{currentPlayer &&
+								currentPlayer.cards.map((card, index) => (
+									<div className="card" key={index}>
+										{card}
+									</div>
+								))}
 						</div>
 					</div>
 				</>
