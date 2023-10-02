@@ -1,8 +1,6 @@
-import { renderHook } from "@testing-library/react-hooks";
-import { useLoggedInUser } from "./index.tsx";
+import { renderHook } from '@testing-library/react'
+import { useFormattedDate } from './index.ts'
 
-// hint: renderHook’s return value is actually the “result.current”
-
-test("returns logged in user", () => {
-	// write tests here...
+describe('useFormattedDate hook', () => {
+  // TODO: write tests here!
 });
