@@ -1,0 +1,15 @@
+{
+  "name": "typing-react-components",
+  "version": "1.0.0",
+  "main": "index.tsx",
+  "dependencies": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-scripts": "4.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "17.0.0",
+    "@types/react-dom": "17.0.0",
+    "typescript": "4.1.3"
+  }
+}
