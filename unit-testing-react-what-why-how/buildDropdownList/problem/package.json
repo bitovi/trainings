@@ -1,19 +1,23 @@
 {
-  "name": "jest-and-typescript",
+  "name": "@bitovi/trainings-unit-testing-react-what-why-how-buildDropdownList",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.html",
-  "scripts": {
-    "start": "parcel index.html --open",
-    "build": "parcel build index.html"
+  "author": {
+    "email": "contact@bitovi.com",
+    "name": "Bitovi",
+    "url": "https://www.bitovi.com/services/training/react"
   },
   "dependencies": {
-    "jest": "26.6.3"
+    "@babel/preset-env": "^7.22.20",
+    "@babel/preset-typescript": "^7.23.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
   },
-  "devDependencies": {
-    "@types/jest": "^29.5.5",
-    "parcel-bundler": "^1.6.1",
-    "typescript": "^5.2.2"
+  "jest": {
+    "testEnvironment": "jsdom"
   },
-  "keywords": []
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "test": "jest"
+  }
 }
