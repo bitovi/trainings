@@ -1,9 +1,5 @@
-import { render } from "@testing-library/react";
-import App from "./App";
-
-test("renders App", async () => {
-	render(<App />);
-});
+import { fireEvent, render, screen } from "@testing-library/react";
+import { Button } from "./index";
 
 // 1. Improve naming if desired
 describe("element", () => {

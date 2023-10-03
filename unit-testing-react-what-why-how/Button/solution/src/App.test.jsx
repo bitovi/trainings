@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { Button } from "./index";
 
 describe("the button", () => {
@@ -14,9 +14,14 @@ describe("the button", () => {
 		const button = screen.getByText("Click Me!");
 
 		// Act
-		user.click(button);
+		fireEvent.click(button);
+
+		// userEvent is actually better than fireEvent
+		// we're using fireEvent purely for simplicity in this training
+		// "fireEvent dispatches DOM events, whereas user-event simulates full interactions, which may fire multiple events and do additional checks along the way."
+		// from the [docs](https://testing-library.com/docs/user-event/intro/#:~:text=fireEvent%20dispatches%20DOM%20events%2C%20whereas,additional%20checks%20along%20the%20way)
 
 		// Assert
-		expect(handler).toHaveBeenCalledTimes(1);
+		expect(handler).toHaveBeenCalledTimes(2);
 	});
 });

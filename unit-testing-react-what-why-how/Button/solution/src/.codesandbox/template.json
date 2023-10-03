@@ -1,10 +1,9 @@
 {
-  "title": "Exercise 1",
-  "description": "First exercise in the UX of Data Fetching Training",
+  "title": "button",
+  "description": "Part of the “Unit Testing React: What, Why, How” training.",
   "iconUrl": "https://www.bitovi.com/favicon.ico",
   "tags": [
-    "Typescript",
-    "React"
+      "html"
   ],
   "published": false
 }
