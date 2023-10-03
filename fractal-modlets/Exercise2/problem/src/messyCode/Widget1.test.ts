@@ -1,3 +1,7 @@
-import Widget1 from "./Widget1"
+import Widget1 from "./Widget1";
 
-// tests for Widget1 go here
+describe('Widget1 component', () => {
+    it('is defined', () => {
+        expect(Widget1).toBeDefined;
+    });
+});

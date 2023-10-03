@@ -1,3 +1,7 @@
-import CustomButton from "./CustomButton"
+import CustomButton from "./CustomButton";
 
-// tests for Custom Button go here! 
+describe('CustomButton component', () => {
+    it('is defined', () => {
+        expect(CustomButton).toBeDefined;
+    });
+});

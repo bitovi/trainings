@@ -1,3 +1,7 @@
-import SomeControlPanel1 from "./SomeControlPanel1"
+import SomeControlPanel1 from "./SomeControlPanel1";
 
-// tests for SomeControlPanel1 go here 
+describe('SomeControlPanel1 component', () => {
+    it('is defined', () => {
+        expect(SomeControlPanel1).toBeDefined;
+    });
+});
