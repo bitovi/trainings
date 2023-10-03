@@ -1,8 +1,8 @@
 import styles from "./ProductDetails.module.css"
 
-const ProductDetails = () => { 
+const ProductDetails = () => {
   return (
-    <div> This is a product Details component!</div>
+    <p className={styles.weighty}>This is a product Details component!</p>
   )
 }
 

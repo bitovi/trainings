@@ -1,9 +1,8 @@
-import styles from CartButton.module.css
+import styles from "./CartButton.module.css";
 
 const CartButton = () => {
-
-  return(
-    <button> add to cart!</button>
+  return (
+    <button className={styles.weighty}>Add to cart!</button>
   )
 }
 

@@ -1,7 +1,9 @@
-//import styles from "./ImageCarousel.module.css"
+import styles from "./ImageCarousel.module.css"
 
 const ImageCarousel = () => {
-  return <div>This is an image carousel component!</div>;
+  return (
+    <p className={styles.weighty}>This is an image carousel component!</p>
+  );
 };
 
 export default ImageCarousel
