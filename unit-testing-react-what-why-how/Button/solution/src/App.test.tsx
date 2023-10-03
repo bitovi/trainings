@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { Button } from "./index";
+import { Button } from "./App";
+import "@testing-library/jest-dom";
 
 describe("the button", () => {
 	it("will call it's handler when clicked", () => {
