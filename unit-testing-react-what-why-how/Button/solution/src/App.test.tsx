@@ -23,6 +23,6 @@ describe("the button", () => {
 		// from the [docs](https://testing-library.com/docs/user-event/intro/#:~:text=fireEvent%20dispatches%20DOM%20events%2C%20whereas,additional%20checks%20along%20the%20way)
 
 		// Assert
-		expect(handler).toHaveBeenCalledTimes(2);
+		expect(handler).toHaveBeenCalledTimes(1);
 	});
 });
