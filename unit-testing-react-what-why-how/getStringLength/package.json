@@ -1,0 +1,22 @@
+{
+  "name": "@bitovi/trainings-unit-testing-react-what-why-how-getStringLength",
+  "version": "1.0.0",
+  "author": {
+    "email": "contact@bitovi.com",
+    "name": "Bitovi",
+    "url": "https://www.bitovi.com/services/training/react"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.22.20",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "test": "jest"
+  }
+}

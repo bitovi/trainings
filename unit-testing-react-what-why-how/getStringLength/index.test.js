@@ -1,7 +1,4 @@
-// What is this for?
-function getStringLength(inputString) {
-  return inputString.length;
-}
+import { getStringLength } from './index';
 
 describe("getStringLength", () => {
 	it("is not broken, passes smoke test", () => {
