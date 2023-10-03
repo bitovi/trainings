@@ -74,7 +74,7 @@ const App = () => {
       >
         Is this right?
       </button>
-      <div>{state?.name}</div>
+      <p>{state?.name}</p>
     </>
   );
 };

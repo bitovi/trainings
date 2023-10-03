@@ -1,9 +1,9 @@
 // Add/Correct the types and get rid of TypeScript errors
 // Things to take care of -
 //  - companyDescription should be allowed to be set to null
-//  - The Reset button has a setCompanyDetails call. Something here
-//    will have to be changed after you have added the correct
-//    type to the useState hook for companyDetails.
+//  - The "Reset Company Details" button has a setCompanyDetails call. Something here
+//    will have to be changed after you have added the correct type to the
+//    useState hook for companyDetails.
 
 import "./styles.css";
 import React, { useState, useEffect } from "react";

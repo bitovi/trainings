@@ -1,4 +1,5 @@
 // Make changes to the useRefs in order to correct TS errors
+// Take note of the state's structure while adding types.
 // Bonus question - What happens if we use useState
 // instead of useRef?
 

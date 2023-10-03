@@ -56,7 +56,7 @@ const App = () => {
       >
         Reset
       </button>
-      <div>{state?.name}</div>
+      <p>{state?.name}</p>
     </>
   );
 };
