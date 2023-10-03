@@ -54,7 +54,6 @@ describe("RockPaperScissors", () => {
 
 	it("can submit player names", async () => {
 		render(<RockPaperScissors />);
-		// const user = userEvent.setup();
 
 		const player1Input = screen.getByText(/Player 1/i);
 		const player2Input = screen.getByText(/Player 2/i);
