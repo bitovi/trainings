@@ -1,6 +1,8 @@
 import { useState } from "react";
+import React from "react";
 
-interface Player {
+// Note: these should also go into separate fractal modlets.
+export interface Player {
 	name: string;
 	score: number;
 	cards: ("rock" | "paper" | "scissors")[];
@@ -89,13 +91,13 @@ const PlayerInfo = ({
 	);
 };
 
-const HandCards = ({ cards }: { cards: Player["cards"] }) => {
+export const HandCards = ({ cards }: { cards: Player["cards"] }) => {
 	return (
 		<div className="poker-hand">
 			<h2>Player's Hand</h2>
-			<div className="card-container">
+			<div data-testid="card-container" className="card-container">
 				{cards.map((card, index) => (
-					<div className="card" key={index}>
+					<div data-testid="card" className="card" key={index}>
 						{card}
 					</div>
 				))}
@@ -124,7 +126,7 @@ export const Game = ({
 	);
 };
 
-const RockPaperScissors = () => {
+export const RockPaperScissors = () => {
 	const [player1, setPlayer1] = useState<Player>();
 	const [player2, setPlayer2] = useState<Player>();
 
@@ -143,5 +145,3 @@ const RockPaperScissors = () => {
 		</div>
 	);
 };
-
-export default RockPaperScissors;
