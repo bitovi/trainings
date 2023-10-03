@@ -1,5 +1,4 @@
-import { greeting } from "./index";
-import { isColorInArray } from "./index";
+import { greeting, isColorInArray } from "./index";
 
 // 1. Here is an example of a poorly documented test.
 // Question: What does this test for? What purpose does it serve?
