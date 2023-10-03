@@ -26,10 +26,10 @@ const CustomParent = ({
 
 }) => {
   return (
-    <div style={{backgroundColor}}>
-      <div>{message}</div>
-      <div>{children}</div>
-    </div>
+    <p style={{ backgroundColor }}>
+      <h4>{message}</h4>
+      {children}
+    </p>
   );
 };
 
