@@ -4,7 +4,7 @@ import {
 	RockPaperScissors,
 	Player,
 } from "./RockPaperScissors";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 
@@ -62,7 +62,7 @@ describe("RockPaperScissors", () => {
 
 		userEvent.type(player1Input, playerJane.name);
 		userEvent.type(player2Input, playerJeff.name);
-		userEvent.click(submitButton);
+		fireEvent.click(submitButton);
 
 		expect(await screen.findByText(/Player's Hand/i)).toBeInTheDocument();
 	});
