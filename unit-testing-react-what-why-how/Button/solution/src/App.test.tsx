@@ -3,7 +3,7 @@ import { Button } from "./App";
 import "@testing-library/jest-dom";
 
 describe("the button", () => {
-	it("will call it's handler when clicked", () => {
+	it("will call its handler when clicked", () => {
 		// Arrange
 		// jest.fn() creates a mock function
 		const handler = jest.fn();
