@@ -1,3 +1,7 @@
 import SearchBarThing from "./SearchBarThing";
 
-// tests for SearchBarThing go here 
+describe('SearchBarThing component', () => {
+    it('is defined', () => {
+        expect(SearchBarThing).toBeDefined;
+    });
+});

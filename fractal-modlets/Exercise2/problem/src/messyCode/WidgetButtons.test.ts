@@ -1,3 +1,7 @@
-import WidgetButtons from "./WidgetButtons"
+import WidgetButtons from "./WidgetButtons";
 
-// tests for WidgetButtons goes here
+describe('WidgetButtons component', () => {
+    it('is defined', () => {
+        expect(WidgetButtons).toBeDefined;
+    });
+});
