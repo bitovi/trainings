@@ -1,8 +1,6 @@
 {
   "name": "ux-of-data-fetching-training",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
   "main": "src/index.js",
   "dependencies": {
     "@testing-library/jest-dom": "5.16.4",
