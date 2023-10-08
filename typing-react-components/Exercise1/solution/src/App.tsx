@@ -1,38 +1,57 @@
-// 1. Add appropriate type to the Message component to get rid of TS errors.
-//    The type should require Message to be rendered with "children" i.e.
-//    the third Message render call in the code should remain invalid.
-//   
-// 2. Update the component render calls in order to get the desired result.
-//    Desired result - 
-//    You can probably ignore this: Don't forget to subscribe to the newsletter.
-//    Please take action immediately: Your payment is due today!
+/*
+
+Exercise:
+
+1) Replace the `never` type with an interface that requires children.
+
+2) Fix the uses of the Message component so the first usage shows as high priority
+   and the others appear as low priority.
+
+*/
 
 import React, { ReactNode } from "react";
 
 interface MessageProps {
-  isLowPriority: boolean;
+  isHighPriority: boolean;
   children: ReactNode
 };
 
-const Message = ({ isLowPriority, children }: MessageProps) => {
+const Message = ({ isHighPriority, children }: MessageProps) => {
   // CANNOT use PropsWithChildren since it types "children" as an optional property.  
-  return isLowPriority ? (
-    <p>You can probably ignore this: {children}</p>
+  return isHighPriority ? (
+    <p className="alert alert-warning d-flex align-items-center" role="alert">
+      <svg className="bi flex-shrink-0 me-2" height="16" role="img" viewBox="0 0 16 16" width="16">
+        <title>High priority:</title>
+        <use xlinkHref="../node_modules/bootstrap-icons/bootstrap-icons.svg#exclamation-triangle-fill" />
+      </svg>
+      {children}
+    </p>
   ) : (
-    <p style={{ color: "red" }}>Please take action immediately: {children}</p>
+    <p className="alert alert-primary d-flex align-items-center" role="alert">
+      <svg className="bi flex-shrink-0 me-2" height="16" role="img" viewBox="0 0 16 16" width="16">
+        <title>Low priority:</title>
+        <use xlinkHref="../node_modules/bootstrap-icons/bootstrap-icons.svg#info-circle-fill" />
+      </svg>
+      {children}
+    </p>
   );
 };
 
 const App = () => {
   return (
     <>
-      <Message isLowPriority={true}>
-        Don't forget to subscribe to the newsletter.
+      {/* This should NOT error and appear as high priority. */}
+      <Message isHighPriority={true}>
+        Your payment is due today!
       </Message>
-      <Message isLowPriority={false}>
-        <strong style={{ color: "red" }}>Your payment is due today!</strong>
+
+      {/* This should NOT error and appear as low priority. */}
+      <Message isHighPriority={false}>
+        Don’t forget to subscribe to the newsletter.
       </Message>
-      <Message isLowPriority={true} />
+
+      {/* This SHOULD error and appear as low priority. */}
+      <Message isHighPriority={false} />
     </>
   );
 };
