@@ -5,26 +5,13 @@
 //    will have to be changed after you have added the correct type to the
 //    useState hook for companyDetails.
 
-import "./styles.css";
 import React, { useState, useEffect } from "react";
 
-interface CompanyDetailProps {
-  size: number;
-  owner: string;
-  departments: string[];
-};
-
 const App = () => {
-  const [companyName, setCompanyName] = useState("");
-  const [companyDescription, setCompanyDescription] = useState<string | null>(
-    null
-  );
-  const [companyDetails, setCompanyDetails] = useState<CompanyDetailProps>({
-    size: 0,
-    owner: "",
-    departments: []
-  });
-  const [employees, setEmployees] = useState<string[]>();
+  const [companyName, setCompanyName] = useState();
+  const [companyDescription, setCompanyDescription] = useState(null);
+  const [companyDetails, setCompanyDetails] = useState({});
+  const [employees, setEmployees] = useState([]);
 
   useEffect(() => {
     setCompanyName("ABC Inc.");
@@ -70,9 +57,9 @@ const App = () => {
           <button
             onClick={() =>
               setCompanyDetails({
-                size: 0,
-                owner: "",
-                departments: []
+                size: "",
+                owner: 0,
+                departments: 0
               })
             }
           >
