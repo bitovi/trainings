@@ -7,13 +7,14 @@
 //    You can probably ignore this: Don't forget to subscribe to the newsletter.
 //    Please take action immediately: Your payment is due today!
 
+import React from "react";
 
 const Message = ({ isLowPriority, children }) => {
   return isLowPriority ? (
-      <p>You can probably ignore this: {children}</p>
-    ) : (
-      <p style={{ color: "red" }}>Please take action immediately: {children}</p>
-    );
+    <p>You can probably ignore this: {children}</p>
+  ) : (
+    <p style={{ color: "red" }}>Please take action immediately: {children}</p>
+  );
 };
 
 const App = () => {
