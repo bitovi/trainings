@@ -1,80 +1,92 @@
-// Correct the Action type so that TypeScript can
-// catch errors in the second and third dispatch calls.
-// If the Action type is correctly written -
-//    - you will need to make changes to the second
-//      dispatch call in order to correct the error
-//      that TypeScript shows. Clicking the "Reset" button
-//      should reset "name" to an empty string.
-//    - TypeScript will complain about the “type” property
-//      in the third dispatch call. This dispatch will
-//      have to be deleted entirely.
+/*
+
+Exercise:
+
+1) Fix only the `CartAction` type to resolve all the TypeScript errors.
+
+*/
 
 import React, { useReducer } from "react";
 
-type State = {
+interface Product {
+  id: number;
   name: string;
 };
 
-type Action = {
+interface CartItem {
+  productId: number;
+  quantity: number;
+};
+
+type CartAction = {
   type: string;
-  payload: {
-    name: string;
-  };
+  payload?: {
+    id: number;
+    quantity?: number
+  }
+};
+
+const products: Product[] = [
+  { id: 1, name: "Product A" },
+  { id: 2, name: "Product B" },
+  { id: 3, name: "Product C" }
+];
+
+function cartReducer(state: CartItem[], action: CartAction): CartItem[] {
+  switch (action.type) {
+    case "ADD_TO_CART":
+      return [...state, { productId: action.payload.id, quantity: 1 }];
+    case "REMOVE_FROM_CART":
+      return state.filter(item => item.productId !== action.payload.id);
+    case "RESET_CART":
+      return [];
+    case "UPDATE_QUANTITY":
+      return state.map(item => {
+        if (item.productId === action.payload.id) {
+          return { ...item, quantity: action.payload.quantity }
+        }
+        return item;
+      });
+    default:
+      return state;
+  }
 };
 
 const App = () => {
-  function appReducer(state: State, action: Action): State {
-    switch (action.type) {
-      case "updateName":
-        return { ...state, name: action.payload.name };
-      case "reset":
-        return { ...state, name: action.payload.name };
-      default:
-        return state;
-    }
-  }
+  const [cart, dispatch] = useReducer(cartReducer, []);
 
-  const [state, dispatch] = useReducer(appReducer, { name: "" });
+  const handleQuantityChange = (productId: number, change: number) => {
+    const cartItem = cart.find(item => item.productId === productId);
+    if (cartItem) {
+      const newQuantity = cartItem.quantity + change;
+      if (newQuantity === 0) {
+        dispatch({ type: "REMOVE_FROM_CART", payload: { id: productId } });
+      } else {
+        dispatch({ type: "UPDATE_QUANTITY", payload: { id: productId, quantity: newQuantity } });
+      }
+    } else if (change === 1) {
+      dispatch({ type: "ADD_TO_CART", payload: { id: productId } });
+    }
+  };
 
   return (
     <>
-      <button
-        onClick={() =>
-          dispatch({
-            type: "updateName",
-            payload: {
-              name: "Michael P."
-            }
-          })
-        }
-      >
-        Update Name
-      </button>
-      <button
-        onClick={() =>
-          dispatch({
-            type: "reset",
-            payload: {
-              name: "Something Fishy"
-            }
-          })
-        }
-      >
-        Reset
-      </button>
-      <button
-        onClick={() =>
-          dispatch({
-            type: "randomType",
-            payload: {
-              name: "Not Correct"
-            }
-          })
-        }
-      >
-        Is this right?
-      </button>
-      <p>{state?.name}</p>
+      <h1>Shopping cart</h1>
+      <form>
+        <ul>
+          {products.map(product => (
+            <li key={product.id}>
+              <p>
+                <strong>{product.name}</strong>
+                <button onClick={() => handleQuantityChange(product.id, -1)} type="button">-</button>
+                {cart.find(item => item.productId === product.id)?.quantity || 0}
+                <button onClick={() => handleQuantityChange(product.id, 1)} type="button">+</button>
+              </p>
+            </li>
+          ))}
+        </ul>
+        <p><button onClick={() => dispatch({ type: "RESET_CART" })} type="button">Reset cart</button></p>
+      </form>
     </>
   );
 };
