@@ -1,28 +1,33 @@
-// Add/Correct the types and get rid of TypeScript errors
-// Things to take care of -
-//  - companyDescription should be allowed to be set to null
-//  - The "Reset Company Details" button has a setCompanyDetails call. Something here
-//    will have to be changed after you have added the correct type to the
-//    useState hook for companyDetails.
+/*
 
-import React, { useState, useEffect } from "react";
+Exercise:
+
+1) Fix the `companyDescription` state to allow a string or null value.
+2) Add an interface for the `companyDetails` state.
+3) Fix the `companyName` state to infer the correct type.
+4) Add the correct type for the `employees` state.
+5) Fix the values used when the “Reset company details” button is triggered.
+
+*/
+
+import React, { useEffect, useState } from "react";
 
 interface CompanyDetailProps {
-  size: number;
-  owner: string;
   departments: string[];
+  owner: string;
+  size: number;
 };
 
 const App = () => {
-  const [companyName, setCompanyName] = useState("");
   const [companyDescription, setCompanyDescription] = useState<string | null>(
     null
   );
   const [companyDetails, setCompanyDetails] = useState<CompanyDetailProps>({
-    size: 0,
+    departments: [],
     owner: "",
-    departments: []
+    size: 0,
   });
+  const [companyName, setCompanyName] = useState("");
   const [employees, setEmployees] = useState<string[]>();
 
   useEffect(() => {
@@ -40,32 +45,42 @@ const App = () => {
   }, []);
 
   return (
-    <>
-      <section>Company Name: {companyName}</section>
-      <section>
-        Company Description:{" "}
-        {companyDescription ? companyDescription : "No description"}
-        <div>
-          <button onClick={() => setCompanyDescription(null)}>
-            Reset Company Description
+    <form>
+      <fieldset>
+        <legend>Description</legend>
+        <dl>
+          <dt>Company name</dt>
+          <dd><p>{companyName}</p></dd>
+          <dt>Company description</dt>
+          <dd><p>{companyDescription ? companyDescription : "No description."}</p></dd>
+        </dl>
+        <p>
+          <button onClick={() => setCompanyDescription(null)} type="button">
+            Reset company description
           </button>
-        </div>
-      </section>
-      <section>
-        <div> Size: {companyDetails.size} </div>
-
-        <div>
-          <div> Owner: {companyDetails.owner || " Not Known"} </div>
-        </div>
-
-        <div>
-          Departments:
-          {companyDetails.departments?.map((department) => (
-            <div key={department}>{department}</div>
-          ))}
-          {/* Property 'departments' does not exist on type '{}'. */}
-        </div>
-        <div>
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>Details</legend>
+        <dl>
+          <dt>Size</dt>
+          <dd><p>{companyDetails.size}</p></dd>
+          <dt>Owner</dt>
+          <dd><p>{companyDetails.owner || "Owner unknown."}</p></dd>
+          <dt>Departments</dt>
+          <dd>
+            {companyDetails.departments.length > 0 ? (
+              <ul>
+                {companyDetails.departments?.map((department) => {
+                  return <li key={department}>{department}</li>;
+                })}
+              </ul>
+            ) : (
+              <p>No departments.</p>
+            )}
+          </dd>
+        </dl>
+        <p>
           <button
             onClick={() =>
               setCompanyDetails({
@@ -74,25 +89,30 @@ const App = () => {
                 departments: []
               })
             }
+            type="button"
           >
-            Reset Company Details
+            Reset company details
           </button>
-        </div>
-      </section>
-      <section>
-        Employee List:
-        {employees ? (
-          employees?.map((employee) => <div key={employee}>{employee}</div>)
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>Employee list</legend>
+        {employees && employees.length > 0 ? (
+          <ul>
+            {employees?.map((employee) => {
+              return <li key={employee}>{employee}</li>;
+            })}
+          </ul>
         ) : (
-          <div>No employees</div>
+          <p>No employees.</p>
         )}
-        <div>
-          <button onClick={() => setEmployees(undefined)}>
-            Reset Employee List
+        <p>
+          <button onClick={() => setEmployees(undefined)} type="button">
+            Reset employee list
           </button>
-        </div>
-      </section>
-    </>
+        </p>
+      </fieldset>
+    </form>
   );
 };
 
