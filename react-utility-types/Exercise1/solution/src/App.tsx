@@ -7,11 +7,11 @@
 //    Using other attributes like "href" as a prop should throw
 //    an error.
 
-import React, { PropsWithChildren, ComponentPropsWithoutRef } from "react";
+import React, { ComponentPropsWithoutRef, PropsWithChildren } from "react";
 
 interface CustomParentType {
-  message: string;
   backgroundColor: string;
+  header: string;
 }
 
 type CustomElementProps<T extends React.ElementType> = {
@@ -19,15 +19,15 @@ type CustomElementProps<T extends React.ElementType> = {
 } & ComponentPropsWithoutRef<T>;
 
 const CustomParent = ({
-  message,
   backgroundColor,
+  header,
   children
 }: PropsWithChildren<CustomParentType>) => {
   return (
-    <p style={{ backgroundColor }}>
-      <h4>{message}</h4>
+    <section style={{ backgroundColor }}>
+      <h2>{header}</h2>
       {children}
-    </p>
+    </section>
   );
 };
 
@@ -36,28 +36,30 @@ const CustomElement = <T extends React.ElementType>({
   children,
   ...restOfProps
 }: CustomElementProps<T>) => {
-  const Component = as || "div";
+  const Component = as || "p";
 
   return <Component {...restOfProps}>{children}</Component>;
 };
 
 const App = () => {
   return (
-    <CustomParent message="This is a button" backgroundColor="red">
-      <CustomElement as="button" href="www.google.com">
-      {/* Type '{ children: string; as: "button"; href: string; }' 
-      is not assignable to type 'IntrinsicAttributes & 
-      { as?: "button" | undefined; } & 
-      Omit<DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, 
-      HTMLButtonElement>, "ref">'.
-      
-      Property 'href' does not exist on type 'IntrinsicAttributes 
-      & { as?: "button" | undefined; } & 
-      Omit<DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, 
-      HTMLButtonElement>, "ref">'. */}
-        What element am I?
-      </CustomElement>
-    </CustomParent>
+    <>
+      <h1>React Utility Types</h1>
+
+      <CustomParent backgroundColor="lightblue" header="Anchor element">
+        {/* This should NOT error. */}
+        <CustomElement as="a" href="https://www.bitovi.com">
+          Bitovi
+        </CustomElement>
+      </CustomParent>
+
+      <CustomParent backgroundColor="pink" header="Button element">
+        {/* This SHOULD error. */}
+        <CustomElement as="button" href="https://www.bitovi.com">
+          Bitovi
+        </CustomElement>
+      </CustomParent>
+    </>
   );
 };
 
