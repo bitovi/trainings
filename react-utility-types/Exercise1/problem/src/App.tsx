@@ -11,25 +11,18 @@ import React from "react";
 
 type CustomElementProps<T extends React.ElementType> = {
   as?: T,
-} & React.AnchorHTMLAttributes<HTMLDivElement>
-// Do you recall a similar “bad type” from earlier?
+} & React.AnchorHTMLAttributes<HTMLDivElement>;
 
 const CustomParent = ({
-  message,
-  // Binding element 'message' implicitly has an 'any' type.
-
   backgroundColor,
-  // Binding element 'backgroundColor' implicitly has an 'any' type.
-
+  header,
   children
-  // Binding element 'children' implicitly has an 'any' type.
-
 }) => {
   return (
-    <p style={{ backgroundColor }}>
-      <h4>{message}</h4>
+    <section style={{ backgroundColor }}>
+      <h2>{header}</h2>
       {children}
-    </p>
+    </section>
   );
 };
 
@@ -38,7 +31,7 @@ const CustomElement = <T extends React.ElementType>({
   children,
   ...restOfProps }: CustomElementProps<T>
 ) => {
-  const Component = as || "div";
+  const Component = as || "p";
 
   return (
     <Component {...restOfProps}>
@@ -49,11 +42,23 @@ const CustomElement = <T extends React.ElementType>({
 
 const App = () => {
   return (
-    <CustomParent message="Hi there!" backgroundColor="red">
-      <CustomElement as="button" href="www.google.com">
-        What element am I?
-      </CustomElement>
-    </CustomParent>
+    <>
+      <h1>React Utility Types</h1>
+
+      <CustomParent backgroundColor="lightblue" header="Anchor element">
+        {/* This should NOT error. */}
+        <CustomElement as="a" href="https://www.bitovi.com">
+          Bitovi
+        </CustomElement>
+      </CustomParent>
+
+      <CustomParent backgroundColor="pink" header="Button element">
+        {/* This SHOULD error. */}
+        <CustomElement as="button" href="https://www.bitovi.com">
+          Bitovi
+        </CustomElement>
+      </CustomParent>
+    </>
   );
 }
 
