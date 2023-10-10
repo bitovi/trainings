@@ -1,0 +1,29 @@
+.text label {
+    display: block;
+    margin: 0.5rem 0;
+}
+
+.text label {
+    color: green;
+}
+
+.text .required {
+    color: crimson;
+}
+
+.text label input {
+    display: block;
+}
+
+.colorExample {
+    background: #00f;
+}
+
+.fontExample {
+    background: green;
+}
+
+.text blockquote p {
+    hyphens: none;
+    white-space: nowrap;
+}
