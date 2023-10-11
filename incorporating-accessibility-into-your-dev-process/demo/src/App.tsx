@@ -1,17 +1,17 @@
 import React from "react";
 
-import Audio from "./Audio/Audio";
-import ButtonsAndLinks from "./ButtonsAndLinks/ButtonsAndLinks";
-import ClearLanguage from "./ClearLanguage/ClearLanguage";
-import ConsistentDesign from "./ConsistentDesign/ConsistentDesign";
-import Forms from "./Forms/Forms";
-import Images from "./Images/Images";
-import KeyboardNavigation from "./KeyboardNavigation/KeyboardNavigation";
-import ReduceMotion from "./ReduceMotion/ReduceMotion";
-import SemanticSections from "./SemanticSections/SemanticSections";
-import TargetSize from "./TargetSize/TargetSize";
-import Text from "./Text/Text";
-import Video from "./Video/Video";
+import Audio from "./Audio";
+import ButtonsAndLinks from "./ButtonsAndLinks";
+import ClearLanguage from "./ClearLanguage";
+import ConsistentDesign from "./ConsistentDesign";
+import Forms from "./Forms";
+import Images from "./Images";
+import KeyboardNavigation from "./KeyboardNavigation";
+import ReduceMotion from "./ReduceMotion";
+import SemanticSections from "./SemanticSections";
+import TargetSize from "./TargetSize";
+import Text from "./Text";
+import Video from "./Video";
 
 const App = () => {
   return (
