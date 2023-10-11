@@ -7,10 +7,10 @@ import { LocationProvider } from "./providers/locationProvider";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <LocationProvider>
-      <CowbirdProvider>
-        <App />
-      </CowbirdProvider>
-    </LocationProvider>
+    {/* <LocationProvider> */}
+    <CowbirdProvider>
+      <App />
+    </CowbirdProvider>
+    {/* </LocationProvider> */}
   </React.StrictMode>
 );
