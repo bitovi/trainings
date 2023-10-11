@@ -1,0 +1,7 @@
+{
+  "title": "Exercise 1",
+  "description": "First exercise for Unit Testing with Jest Mocks and Spies",
+  "iconUrl": "https://www.bitovi.com/favicon.ico",
+  "tags": ["Typescript", "React"],
+  "published": false
+}
