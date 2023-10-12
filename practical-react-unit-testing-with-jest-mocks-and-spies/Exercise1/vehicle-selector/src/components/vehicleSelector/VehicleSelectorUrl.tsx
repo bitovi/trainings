@@ -1,33 +1,33 @@
-import { useLocation } from "@/providers/locationProvider";
+import { useLocation } from "../../providers/locationProvider";
 import { Make } from "./components/Make";
 import { Model } from "./components/Model";
 import { Year } from "./components/Year";
 
 export function VehicleSelectorUrl() {
-  const { searchParams, setSearchParams } = useLocation()
+  const { searchParams, setSearchParams } = useLocation();
 
-  const year = searchParams.get("year") || ""
-  const make = searchParams.get("make") || ""
-  const model = searchParams.get("model") || ""
+  const year = searchParams.get("year") || "";
+  const make = searchParams.get("make") || "";
+  const model = searchParams.get("model") || "";
 
   const onChangeYear = (year: string) => {
     setSearchParams({
       year,
       make: "",
-      model: ""
-    })
-  }
+      model: "",
+    });
+  };
 
   const onChangeMake = (make: string) => {
     setSearchParams({
       make,
-      model: ""
-    })
-  }
+      model: "",
+    });
+  };
 
   const onChangeModel = (model: string) => {
-    setSearchParams({ model })
-  }
+    setSearchParams({ model });
+  };
 
   return (
     <div>
@@ -40,5 +40,5 @@ export function VehicleSelectorUrl() {
         <Model year={year} make={make} model={model} onChange={onChangeModel} />
       </div>
     </div>
-  )
+  );
 }

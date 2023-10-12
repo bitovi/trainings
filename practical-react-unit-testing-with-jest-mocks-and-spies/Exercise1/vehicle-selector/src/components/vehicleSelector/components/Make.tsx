@@ -1,11 +1,11 @@
-import { useMakes } from "@/hooks/useMakes";
-import { toSelectOptions } from "@/utils/toSelectOptions";
-import { Select } from "@components/Select";
+import { useMakes } from "../../../hooks/useMakes";
+import { toSelectOptions } from "../../../utils/toSelectOptions";
+import { Select } from "../../../components/Select";
 
 export function Make({
   year,
   make,
-  onChange
+  onChange,
 }: {
   year: string;
   make: string;
@@ -22,5 +22,5 @@ export function Make({
       onChange={onChange}
       disabled={makes.length === 0}
     />
-  )
+  );
 }

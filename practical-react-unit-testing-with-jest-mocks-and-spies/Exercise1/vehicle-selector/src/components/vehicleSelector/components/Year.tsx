@@ -1,10 +1,10 @@
-import { Select } from "@components/Select";
-import { useYears } from "@/hooks/useYears";
-import { toSelectOptions } from "@/utils/toSelectOptions";
+import { Select } from "../../../components/Select";
+import { useYears } from "../../../hooks/useYears";
+import { toSelectOptions } from "../../../utils/toSelectOptions";
 
 export function Year({
   year,
-  onChange
+  onChange,
 }: {
   year: string;
   onChange?: (year: string) => void;
@@ -20,5 +20,5 @@ export function Year({
       onChange={onChange}
       disabled={years.length === 0}
     />
-  )
+  );
 }

@@ -1,12 +1,12 @@
-import { useModels } from "@/hooks/useModels";
-import { toSelectOptions } from "@/utils/toSelectOptions";
-import { Select } from "@components/Select";
+import { useModels } from "../../../hooks/useModels";
+import { toSelectOptions } from "../../../utils/toSelectOptions";
+import { Select } from "../../../components/Select";
 
 export function Model({
   year,
   make,
   model,
-  onChange
+  onChange,
 }: {
   year: string;
   make: string;
@@ -23,5 +23,5 @@ export function Model({
       onChange={onChange}
       disabled={models.length === 0}
     />
-  )
+  );
 }
