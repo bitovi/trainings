@@ -1,9 +1,10 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 
 import styles from "./ButtonsAndLinks.module.css";
 
 const ButtonsAndLinks = () => {
-  const firstDialog = useRef<HTMLDialogElement>(null);
+  const [count, setCount] = useState(0);
+
   return (
     <>
       <h2>Buttons and Links</h2>
@@ -14,16 +15,11 @@ const ButtonsAndLinks = () => {
       </p>
       <p><a className={styles.button} href="https://www.bitovi.com/academy/#courses-section">Browse the courses</a></p>
 
-      <dialog id="firstDialog" ref={firstDialog}>
-        <h3>Dialog header</h3>
-        <form method="dialog">
-          <div onClick={() => { firstDialog.current?.close() }}>Close dialog</div>
-        </form>
-      </dialog>
-
-      <div onClick={() => { firstDialog.current?.showModal() }}>
-        Open the dialog
+      <div onClick={() => { setCount(count + 1) }}>
+        Increase the count
       </div>
+
+      <p>Count: {count}</p>
     </>
   );
 };
