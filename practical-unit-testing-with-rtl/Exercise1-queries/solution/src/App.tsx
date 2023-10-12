@@ -1,7 +1,7 @@
 import React from "react"
 
 const Button = () => {
-  return <button> Click me to submit!</button>;
+  return <button type="button"> Click me to submit!</button>;
 };
 
 const TextInput = () => {
@@ -44,3 +44,5 @@ const App = () => {
     </>
   );
 };
+
+export default App
