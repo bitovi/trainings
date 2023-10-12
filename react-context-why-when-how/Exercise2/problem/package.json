@@ -1,0 +1,26 @@
+{
+  "name": "@bitovi/react-context-why-when-how-2",
+  "description": "React Context: Exercise 2",
+  "version": "1.0.0",
+  "author": {
+    "email": "contact@bitovi.com",
+    "name": "Bitovi",
+    "url": "https://www.bitovi.com/services/training/react"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.25",
+    "@types/react-dom": "^18.2.10",
+    "@vitejs/plugin-react": "^4.0.4",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.11"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "vite"
+  }
+}
