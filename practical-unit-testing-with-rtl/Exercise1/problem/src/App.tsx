@@ -1,3 +1,5 @@
+import React from "react"
+
 const Button = () => {
   return <button> Click me to submit!</button>;
 };
@@ -42,3 +44,5 @@ const App = () => {
     </>
   );
 };
+
+export default App;
