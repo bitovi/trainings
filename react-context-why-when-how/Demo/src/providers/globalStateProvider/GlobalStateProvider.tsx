@@ -1,12 +1,14 @@
 import { createContext, useState } from "react";
 
 type State = [
-  value: number | null,
+  value: number,
   setValue: (newValue: any) => void
 ]
 
+const initialNumber = Math.floor(Math.random() * 100);
+
 export const GlobalStateContext = createContext<State>([
-  null,
+  initialNumber,
   (_value: any) => { },
 ]);
 
@@ -17,7 +19,7 @@ interface GlobalStateProviderProps {
 export function GlobalStateProvider({
   children
 }: GlobalStateProviderProps) {
-  const [state, setState] = useState<number>()
+  const [state, setState] = useState<number>(initialNumber)
 
   return (
     <GlobalStateContext.Provider value={[
