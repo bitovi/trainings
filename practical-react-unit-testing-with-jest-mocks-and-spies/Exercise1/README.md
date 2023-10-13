@@ -5,9 +5,13 @@
 **Exercises**
 
 Manual Mocks
-    toSelectOptions
+    __mocks__/toSelectOptions.ts
+    toSelectOptions.test.ts (test 1)
+
+    [Exercise](https://codesandbox.io/s/github/bitovi/trainings/tree/compendium-226/jest-mocks/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/problem/toSelectOptions.test.ts)
 
 Bypassing Mocks
+    toSelectOptions.test.ts (test 2)
 
 Mocking API calls
     get-data.test.ts
@@ -18,11 +22,12 @@ Mocking Classes, Objects, Hooks
     Manual Mocking
         useYears.test.ts
     Mock using callback
+        Vehicle.test.ts
 
 Replace with mockImplementation or mockImplementationOnce
 
 Mocking Methods Not Implemented By JSDOM
-    jest.config.ts
+    jest.config.ts  <-- not implemented anywhere
     jest.setup.ts
 
 Node Module Mocking
@@ -31,3 +36,6 @@ Node Module Mocking
 User Modules
 
 Spies
+    VideoPlayer.ts
+
+Timer Mocks
