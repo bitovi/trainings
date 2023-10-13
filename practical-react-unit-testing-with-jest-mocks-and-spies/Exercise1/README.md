@@ -5,37 +5,43 @@
 **Exercises**
 
 Manual Mocks
-    __mocks__/toSelectOptions.ts
-    toSelectOptions.test.ts (test 1)
 
-    [Exercise](https://codesandbox.io/s/github/bitovi/trainings/tree/compendium-226/jest-mocks/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/problem/toSelectOptions.test.ts)
+[Exercise](https://codesandbox.io/s/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/problem?file=/vehicle-selector/src/utils/toSelectOptions.test.tsx)
+
+[Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/solution?file=/vehicle-selector/src/utils/toSelectOptions.test.tsx)
 
 Bypassing Mocks
-    toSelectOptions.test.ts (test 2)
+
+[Exercise](https://codesandbox.io/s/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/problem?file=/vehicle-selector/src/utils/toSelectOptions.test.tsx)
+
+[Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/solution?file=/vehicle-selector/src/utils/toSelectOptions.test.tsx)
 
 Mocking API calls
-    get-data.test.ts
 
-Mocking Classes, Objects, Hooks
-    Automatic Mocking
-        Select.test.tsx
-    Manual Mocking
-        useYears.test.ts
-    Mock using callback
-        Vehicle.test.ts
+[Exercise](https://codesandbox.io/s/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/problem?file=/vehicle-selector/src/components/vehicleSelector/endpoints/get-data.test.ts)
 
-Replace with mockImplementation or mockImplementationOnce
+[Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/solution?file=/vehicle-selector/src/components/vehicleSelector/endpoints/get-data.test.ts)
 
-Mocking Methods Not Implemented By JSDOM
-    jest.config.ts  <-- not implemented anywhere
-    jest.setup.ts
+Automatic Mocking
 
-Node Module Mocking
-    __mocks__/lodash.js <-- not implemented anywhere
+[Exercise](https://codesandbox.io/s/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/problem?file=/vehicle-selector/src/components/vehicleSelector/Select.test.tsx)
 
-User Modules
+[Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/solution?file=/vehicle-selector/src/components/vehicleSelector/Select.test.tsx)
+
+Manual Mocking
+
+[Exercise](https://codesandbox.io/s/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/problem?file=/vehicle-selector/src/hooks/useYears.test.ts)
+
+[Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/solution?file=/vehicle-selector/src/hooks/useYears.test.ts)
+
+Mock using callback
+
+[Exercise](https://codesandbox.io/s/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/problem?file=/vehicle-selector/src/classes/Vehicle.test.ts)
+
+[Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/solution?file=/vehicle-selector/src/classes/Vehicle.test.ts)
 
 Spies
-    VideoPlayer.ts
 
-Timer Mocks
+[Exercise](https://codesandbox.io/s/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/problem?file=/vehicle-selector/src/classes/VideoPlayer.test.ts)
+
+[Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/solution?file=/vehicle-selector/src/classes/VideoPlayer.test.ts)

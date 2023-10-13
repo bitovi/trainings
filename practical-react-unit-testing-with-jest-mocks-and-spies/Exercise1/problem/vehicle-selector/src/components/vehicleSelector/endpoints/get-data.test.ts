@@ -2,12 +2,8 @@ import { getData } from "./get-data";
 
 
 const resolvedData = ["2020", "2021", "2022"]
-Object.defineProperty(global, "fetch", {
-    writable: true,
-    value: jest.fn(() => Promise.resolve({
-        json: () => resolvedData
-    }))
-  });
+
+//mock the global.fetch using Object.defineProperty to return the resolvedData
 
 
 it("finds years", async () => {

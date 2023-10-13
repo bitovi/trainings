@@ -6,18 +6,10 @@ import { renderHook, waitFor } from '@testing-library/react';
 import { useCowbird } from "../providers/CowbirdProvider";
 
 const data = ["2020", "2021", "2022", "2023"];
-Object.defineProperty(window, "fetch", {
-  writable: true,
-  value: jest.fn(() =>
-    Promise.resolve({
-      ...data,
-    })
-  ),
-});
 
-jest.mock('../providers/CowbirdProvider', () => ({
-    useCowbird: jest.fn().mockImplementation(() => ({cbFetch: () => ({ json: () => ({data}) })}))
-  }));
+//mock window.fetch using Object.defineProperty
+
+//mock the cowbird provider here
 
 it("returns the years", async () => {
 
@@ -32,5 +24,3 @@ it("returns the years", async () => {
       expect(result.current.years).toEqual(data);
     });
   });
-
-  //add another test for mockImplementationOnce

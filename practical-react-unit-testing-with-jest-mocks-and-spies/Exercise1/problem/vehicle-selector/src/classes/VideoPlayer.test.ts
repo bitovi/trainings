@@ -1,9 +1,13 @@
 import VideoPlayer from "./VideoPlayer";
 
+
+//spy on the getter and setter of the VideoPlayer class in the tests below
   describe('Uses global setup', () => {
     it('returns value of volume', () => {
         const videoPlayer = new VideoPlayer(false, 100)
-        const getVolumeSpy = jest.spyOn(videoPlayer, 'getVolume');
+
+        //spy here
+        const getVolumeSpy = jest.fn();
         const volume = videoPlayer.getVolume();
         
         expect(getVolumeSpy).toHaveBeenCalledTimes(1);
@@ -12,8 +16,10 @@ import VideoPlayer from "./VideoPlayer";
 
     it('updates value of play and returns the value', () => {
         const videoPlayer = new VideoPlayer(false, 100)
-        const videoGetterSpy = jest.spyOn(videoPlayer, 'getPlay');
-        const videoSetterSpy = jest.spyOn(videoPlayer, 'setPlay');
+
+        //spy here
+        const videoGetterSpy = jest.fn();
+        const videoSetterSpy = jest.fn();
         
         // triggering the getter we spied on
         const isPlaying = videoPlayer.getPlay();
