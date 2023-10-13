@@ -11,12 +11,13 @@ export function useYears() {
 
   useEffect(() => {
     const fetchYears = async () => {
-      const response = await cbFetch(`${baseUrl}/years`)
+      const response = await fetch(`${baseUrl}/years`)
       const data = await response.json()
+    
       setYears(data.data)
     }
     fetchYears()
-  }, [cbFetch])
+  }, [])
 
   return {
     years,

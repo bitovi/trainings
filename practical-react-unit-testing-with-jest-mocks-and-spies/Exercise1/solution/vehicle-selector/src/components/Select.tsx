@@ -1,4 +1,4 @@
-import { useId } from "react"
+import { useId } from "react";
 
 export function Select({
   label,
@@ -6,17 +6,17 @@ export function Select({
   value,
   options,
   disabled,
-  onChange
+  onChange,
 }: {
-  label: string
-  name: string
-  value: string
-  options: Array<{ value: string, label: string }>
-  disabled?: boolean
+  label: string;
+  name: string;
+  value: string;
+  options: Array<{ value: string; label: string }>;
+  disabled?: boolean;
   onChange?: (
     value: string,
     event?: React.ChangeEvent<HTMLSelectElement>
-  ) => void
+  ) => void;
 }) {
   const id = useId();
 
@@ -38,5 +38,5 @@ export function Select({
         ))}
       </select>
     </div>
-  )
+  );
 }
