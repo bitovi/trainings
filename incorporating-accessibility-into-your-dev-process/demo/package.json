@@ -23,6 +23,7 @@
     "@typescript-eslint/eslint-plugin": "^6.7.5",
     "@typescript-eslint/parser": "^6.7.5",
     "axe-result-pretty-print": "^1.0.2",
+    "chrome-launcher": "^1.1.0",
     "eslint": "^8.51.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
@@ -30,6 +31,7 @@
     "jest": "^29.7.0",
     "jest-axe": "^8.0.0",
     "jest-environment-jsdom": "^29.7.0",
+    "lighthouse": "^11.2.0",
     "typescript": "^5.2.2",
     "vite": "^4.4.11"
   },
@@ -44,6 +46,7 @@
   "scripts": {
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "start": "vite",
-    "test": "npm run lint && jest"
+    "test": "npm run lint && jest",
+    "test:lighthouse": "vite build && node lighthouse.mjs"
   }
 }
