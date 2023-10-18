@@ -23,7 +23,7 @@ try {
 }
 
 function extractLocalhostUrl(data) {
-    const match = data.match(/Local:   (http:\/\/localhost:\d+\/)/);
+    const match = data.match(/Local:\s*([\w-]+:\/\/[\w-.]+:\d+\/)/);
     return match && match[1];
 }
 
