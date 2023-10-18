@@ -1,5 +1,5 @@
 {
-  "name": "vehicle-selector",
+  "name": "@bitovi/practical-react-unit-testing-with-jest-mocks-and-spies",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
