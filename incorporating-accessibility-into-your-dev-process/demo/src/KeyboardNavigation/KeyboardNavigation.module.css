@@ -44,14 +44,14 @@
     background: crimson;
     list-style: none;
     margin: 0;
-    padding-left: 0;
+    padding-inline-start: 0;
 }
 
 .keyboardNavigation nav li {
     background: crimson;
     color: #fff;
     display: block;
-    float: left;
+    float: inline-start;
     padding: 1rem;
     position: relative;
     text-decoration: none;
@@ -76,8 +76,8 @@
 .keyboardNavigation nav ul li ul {
     background: orange;
     display: none;
-    left: 0;
-    margin-top: 1rem;
+    inset-inline-start: 0;
+    margin-block-start: 1rem;
     min-width: 5rem;
     opacity: 0;
     position: absolute;
