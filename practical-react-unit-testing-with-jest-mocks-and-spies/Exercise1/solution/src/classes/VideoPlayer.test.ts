@@ -1,6 +1,6 @@
 import VideoPlayer from "./VideoPlayer";
 
-  describe('Uses global setup', () => {
+  describe('VideoPlayer component', () => {
     it('returns value of volume', () => {
         const videoPlayer = new VideoPlayer(false, 100)
         const getVolumeSpy = jest.spyOn(videoPlayer, 'getVolume');

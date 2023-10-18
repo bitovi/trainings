@@ -1,11 +1,10 @@
 import Vehicle from "./Vehicle";
 
-jest.mock('./Vehicle', () => jest.fn().mockImplementation(() => ({
-    getVehicle: jest.fn().mockImplementation(() => "Wrangler")
-})));
+
+//mock implementation of the Vehicle class here
 
 
-describe('Uses global setup', () => {
+describe('Vehicle Component', () => {
     it('uses global mock', () => {
       const instance = new Vehicle('Renegade');
       instance.getVehicle();

@@ -4,28 +4,28 @@ import { Model } from "./components/Model";
 import { Year } from "./components/Year";
 
 export function VehicleSelectorBetterUseState() {
-  const [year, setYear] = useState<string>("")
-  const [make, setMake] = useState<string>("")
-  const [model, setModel] = useState<string>("")
+  const [year, setYear] = useState<string>("");
+  const [make, setMake] = useState<string>("");
+  const [model, setModel] = useState<string>("");
 
   /*
   Notice that these functions handle all related state changes at once, instead of relying on useEffect to handle them later. This can be a better pattern because it keeps the state changes together, and it also is marginally more efficient as it avoids unnecessary renders.
   */
 
   const onChangeYear = (year: string) => {
-    setYear(year)
-    setMake("")
-    setModel("")
-  }
+    setYear(year);
+    setMake("");
+    setModel("");
+  };
 
   const onChangeMake = (make: string) => {
-    setMake(make)
-    setModel("")
-  }
+    setMake(make);
+    setModel("");
+  };
 
   const onChangeModel = (model: string) => {
-    setModel(model)
-  }
+    setModel(model);
+  };
 
   return (
     <div>
@@ -38,5 +38,5 @@ export function VehicleSelectorBetterUseState() {
         <Model year={year} make={make} model={model} onChange={onChangeModel} />
       </div>
     </div>
-  )
+  );
 }

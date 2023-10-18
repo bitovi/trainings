@@ -1,6 +1,6 @@
 import { useModels } from "../../../hooks/useModels";
 import { toSelectOptions } from "../../../utils/toSelectOptions";
-import { Select } from "../../../components/Select";
+import { Select } from "../../Select";
 
 export function Model({
   year,

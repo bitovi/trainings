@@ -1,6 +1,6 @@
 import { useMakes } from "../../../hooks/useMakes";
 import { toSelectOptions } from "../../../utils/toSelectOptions";
-import { Select } from "../../../components/Select";
+import { Select } from "../../Select";
 
 export function Make({
   year,

@@ -1,4 +1,4 @@
-import { Select } from "../../../components/Select";
+import { Select } from "../../Select";
 import { useYears } from "../../../hooks/useYears";
 import { toSelectOptions } from "../../../utils/toSelectOptions";
 
