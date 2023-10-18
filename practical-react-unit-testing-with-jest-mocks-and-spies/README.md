@@ -1,44 +1,47 @@
 # Code Sandbox links
 
+## Part 1
+
 **Exercises**
 
-**Exercise 1**
 Manual Mocks
-    __mocks__/toSelectOptions.ts
-    toSelectOptions.test.ts (test 1)
 
-**Exercise 2**
+[Exercise](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/problem?file=/vehicle-selector/src/utils/toSelectOptions.test.tsx)
+
+[Solution](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/solution?file=/vehicle-selector/src/utils/toSelectOptions.test.tsx)
+
 Bypassing Mocks
-    toSelectOptions.test.ts (test 2)
 
-**Exercise 3**
+[Exercise](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/problem?file=/vehicle-selector/src/utils/toSelectOptions.test.tsx)
+
+[Solution](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/solution?file=/vehicle-selector/src/utils/toSelectOptions.test.tsx)
+
 Mocking API calls
-    get-data.test.ts
 
-Mocking Classes, Objects, Hooks
-**Exercise 4**
-    Automatic Mocking
-        Select.test.tsx
+[Exercise](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/problem?file=/vehicle-selector/src/components/vehicleSelector/endpoints/get-data.test.ts)
 
-**Exercise 5**
-    Manual Mocking
-        useYears.test.ts
-**Exercise 6**
-    Mock using callback
-        Vehicle.test.ts
+[Solution](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/solution?file=/vehicle-selector/src/components/vehicleSelector/endpoints/get-data.test.ts)
 
-**Exercise 7**
-Replace with mockImplementation or mockImplementationOnce
+Automatic Mocking
 
-**Exercise 8**
-Mocking Methods Not Implemented By JSDOM
-    jest.config.ts  <-- not implemented anywhere
-    jest.setup.ts
+[Exercise](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/problem?file=/vehicle-selector/src/components/vehicleSelector/Select.test.tsx)
 
-**Exercise 9**
-Node Module Mocking
-    __mocks__/lodash.js <-- not implemented anywhere
+[Solution](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/solution?file=/vehicle-selector/src/components/vehicleSelector/Select.test.tsx)
 
-**Exercise 10**
+Manual Mocking
+
+[Exercise](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/problem?file=/vehicle-selector/src/hooks/useYears.test.ts)
+
+[Solution](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/solution?file=/vehicle-selector/src/hooks/useYears.test.ts)
+
+Mock using callback
+
+[Exercise](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/problem?file=/vehicle-selector/src/classes/Vehicle.test.ts)
+
+[Solution](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/solution?file=/vehicle-selector/src/classes/Vehicle.test.ts)
+
 Spies
-    VideoPlayer.ts
+
+[Exercise](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/problem?file=/vehicle-selector/src/classes/VideoPlayer.test.ts)
+
+[Solution](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise1/solution?file=/vehicle-selector/src/classes/VideoPlayer.test.ts)
