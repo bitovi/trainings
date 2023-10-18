@@ -27,7 +27,7 @@ table {
 }
 
 tr {
-  border-bottom: 1px solid #eee;
+  border-block-end: 1px solid #eee;
   height: 40px;
 }
 tr:nth-child(even) {
@@ -42,19 +42,19 @@ td {
 th:first-child,
 td:first-child {
   width: 120px;
-  text-align: left;
+  text-align: start;
 }
 
 th:nth-child(2),
 td:nth-child(2) {
   width: 50px;
-  text-align: right;
+  text-align: end;
 }
 
 th:nth-child(3),
 td:nth-child(3) {
   width: 180px;
-  text-align: left;
+  text-align: start;
 }
 
 button {
