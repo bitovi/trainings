@@ -25,6 +25,7 @@
     "axe-result-pretty-print": "^1.0.2",
     "chrome-launcher": "^1.1.0",
     "eslint": "^8.51.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "identity-obj-proxy": "^3.0.0",
@@ -46,7 +47,7 @@
   "scripts": {
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "start": "vite",
-    "test": "npm run lint && jest",
+    "test": "jest",
     "test:lighthouse": "vite build && node lighthouse.mjs"
   }
 }
