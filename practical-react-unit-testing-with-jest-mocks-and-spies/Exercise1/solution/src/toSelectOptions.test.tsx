@@ -12,7 +12,7 @@ describe("Manually mock and bypass toSelectOptions", () => {
   });
 
   test("Bypassing the mock", () => {
-    const actualModule = jest.requireActual("../utils/toSelectOptions");
+    const actualModule = jest.requireActual("./toSelectOptions");
     expect(actualModule.toSelectOptions(["2000"])).toEqual([
       { label: "2000", value: "2000" },
     ]);
