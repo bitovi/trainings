@@ -1,3 +1,5 @@
+// Update the types in this file to make the code below error where it
+// should and not error where it shouldn't!
 interface OverwriteLabelColumn {
   field: string;
   label: string;
@@ -58,10 +60,20 @@ const extraColumn2: CustomColumn = {
   prepend: false,
 };
 
-function getExtraColumns(columns: CustomColumn[]): CustomColumn[] {
+export function isExtraColumn(column: CustomColumn): column is ExtraColumn {
+  /* TODO */
+}
+
+export function getExtraColumns(columns: CustomColumn[]): CustomColumn[] {
   return columns.filter((column) => isExtraColumn(column));
 }
 
-function isExtraColumn(column: CustomColumn): column is ExtraColumn {
-  /* TODO */
-}
+console.log(
+  overwriteLabelColumn1,
+  overwriteLabelColumn2,
+  overwriteRenderColumn1,
+  overwriteRenderColumn2,
+  overwriteRenderColumn3,
+  extraColumn1,
+  extraColumn2
+);

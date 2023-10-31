@@ -68,10 +68,20 @@ const extraColumn2: CustomColumn = {
   prepend: false,
 };
 
+function isExtraColumn(column: CustomColumn): column is ExtraColumn {
+  return column.type === "extra";
+}
+
 function getExtraColumns(columns: CustomColumn[]): CustomColumn[] {
   return columns.filter((column) => isExtraColumn(column));
 }
 
-function isExtraColumn(column: CustomColumn): column is ExtraColumn {
-  return column.type === "extra";
-}
+console.log(
+  overwriteLabelColumn1,
+  overwriteLabelColumn2,
+  overwriteRenderColumn1,
+  overwriteRenderColumn2,
+  overwriteRenderColumn3,
+  extraColumn1,
+  extraColumn2
+);
