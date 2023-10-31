@@ -73,5 +73,5 @@ function getExtraColumns(columns: CustomColumn[]): CustomColumn[] {
 }
 
 function isExtraColumn(column: CustomColumn): column is ExtraColumn {
-  /* TODO */
+  return column.type === "extra";
 }
