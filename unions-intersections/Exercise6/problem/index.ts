@@ -1,5 +1,7 @@
-// Update the types in this file to make the code below error where it
-// should and not error where it shouldn't!
+// 1. Fix the types so the variables error where the comments
+// say `should error!`, and don't error where the comments say
+// `should not error!`.
+// 2. Update the type-guard `isExtraColumn`.
 interface OverwriteLabelColumn {
   field: string;
   label: string;
