@@ -1,28 +1,38 @@
 {
-  "name": "ux-of-data-fetching-training",
+  "name": "@bitovi/trainings-ux-of-data-fetching",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "author": {
+    "email": "contact@bitovi.com",
+    "name": "Bitovi",
+    "url": "https://www.bitovi.com/services/training/react"
+  },
   "dependencies": {
-    "@testing-library/jest-dom": "5.16.4",
-    "@testing-library/react": "13.2.0",
-    "@testing-library/user-event": "14.1.1",
-    "msw": "0.39.2",
-    "react": "18.0.0",
-    "react-dom": "18.0.0",
-    "react-scripts": "4.0.0",
-    "typescript": "5.0.2"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@babel/runtime": "7.13.8",
-    "typescript": "4.1.3"
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-react": "^7.22.15",
+    "@babel/preset-typescript": "^7.23.2",
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/react": "^14.0.0",
+    "@types/react": "^18.2.25",
+    "@types/react-dom": "^18.2.10",
+    "@vitejs/plugin-react": "^4.1.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jsdom": "^22.1.0",
+    "msw": "^2.0.2",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.11",
+    "vitest": "^0.34.6"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
+  "license": "UNLICENSED",
   "msw": {
     "workerDirectory": "public"
+  },
+  "private": true,
+  "scripts": {
+    "start": "vite",
+    "test": "vitest"
   }
 }

@@ -1,4 +1,4 @@
-import { rest } from "msw";
+import { delay, http, HttpResponse } from "msw";
 
 const peopleData = [
   { name: "Luke Skywalker", age: 21, occupation: "Jedi" },
@@ -14,21 +14,24 @@ const peopleData = [
 ];
 
 export const handlers = [
-  rest.get("/api/people", (req, res, ctx) => {
-    const revalidate = req.url.searchParams.get("revalidate");
-    const error = req.url.searchParams.get("error");
-    const empty = req.url.searchParams.get("empty");
+  http.get("/api/people", async ({ request }) => {
+    const url = new URL(request.url)
+    const revalidate = url.searchParams.get("revalidate");
+    const error = url.searchParams.get("error");
+    const empty = url.searchParams.get("empty");
 
     if (empty === "true") {
-      return res(ctx.delay(1500), ctx.status(200), ctx.json([]));
+      await delay(1500);
+      return new HttpResponse(JSON.stringify([]), {
+        status: 200,
+      });
     }
 
     if (error === "true") {
-      return res(
-        ctx.delay(2000),
-        ctx.status(500),
-        ctx.json({ message: "Too many requests. Please try again!" })
-      );
+      await delay(2000);
+      return new HttpResponse(JSON.stringify({ message: "Too many requests. Please try again!" }), {
+        status: 500,
+      });
     }
 
     if (revalidate === "true") {
@@ -51,6 +54,9 @@ export const handlers = [
       peopleData[9].occupation = "Captain";
     }
 
-    return res(ctx.delay(2000), ctx.status(200), ctx.json(peopleData));
+    await delay(2000);
+    return new HttpResponse(JSON.stringify(peopleData), {
+      status: 200,
+    });
   }),
 ];
