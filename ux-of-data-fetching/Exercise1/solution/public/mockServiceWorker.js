@@ -74,10 +74,12 @@ self.addEventListener('message', async function (event) {
       const remainingClients = allClients.filter((client) => {
         return client.id !== clientId
       })
+      console.log('remainingClients:', remainingClients);
 
       // Unregister itself when there are no more clients
       if (remainingClients.length === 0) {
-        self.registration.unregister()
+        debugger;
+        // self.registration.unregister()
       }
 
       break
