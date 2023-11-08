@@ -1,0 +1,80 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 60ch;
+  text-align: center;
+}
+
+table {
+  border: 1px solid #eee;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: start;
+}
+
+th {
+  text-align: start;
+}
+th[scope="row"] {
+  font-weight: normal;
+}
+
+tr {
+  border-block-end: 1px solid #eee;
+  line-height: 2;
+}
+
+tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+@media (prefers-color-scheme: dark) {
+  tr:nth-child(even) {
+    background-color: #333;
+  }
+}
+
+th,
+td {
+  padding: 0 1rem;
+}
+
+button {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.error {
+  color: #ff4136;
+}
+
+.sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+[aria-busy="true"] {
+  opacity: .5;
+}
+
+@media (prefers-color-scheme: dark) {
+  [aria-busy="true"] {
+    opacity: .7;
+  }
+}
