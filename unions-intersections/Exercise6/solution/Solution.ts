@@ -1,87 +1,53 @@
-interface OverwriteLabelColumn {
-  type: "overwrite-label";
-  field: string;
-  label: string;
+interface Circle {
+  type: "circle";
+  radius: number;
 }
 
-interface OverwriteRenderColumn {
-  type: "overwrite-render";
-  field: string;
-  label?: string;
-  render: Function;
+interface Rectangle {
+  type: "rectangle";
+  width: number;
+  height: number;
 }
 
-interface ExtraColumn {
-  type: "extra";
-  label: string;
-  render: Function;
-  prepend: boolean;
+interface Triangle {
+  type: "triangle";
+  base: number;
+  height: number;
 }
 
-type CustomColumn = OverwriteLabelColumn | OverwriteRenderColumn | ExtraColumn;
+type Shape = Circle | Rectangle | Triangle;
 
-// should error!
-const overwriteLabelColumn1: CustomColumn = {
-  type: "overwrite-label",
-  field: "id",
-  label: "ID",
-  render: () => {},
-};
-// should not error!
-const overwriteLabelColumn2: CustomColumn = {
-  type: "overwrite-label",
-  field: "id",
-  label: "ID",
-};
-
-// should error!
-const overwriteRenderColumn1: CustomColumn = {
-  type: "overwrite-render",
-  field: "name",
-  render: () => {},
-  prepend: false,
-};
-// should not error!
-const overwriteRenderColumn2: CustomColumn = {
-  type: "overwrite-render",
-  field: "address",
-  render: () => {},
-};
-// should not error!
-const overwriteRenderColumn3: CustomColumn = {
-  type: "overwrite-render",
-  field: "employer",
-  label: "Company",
-  render: () => {},
-};
-
-// should error!
-const extraColumn1: CustomColumn = {
-  type: "extra",
-  render: () => {},
-};
-// should not error!
-const extraColumn2: CustomColumn = {
-  type: "extra",
-  label: "Actions",
-  render: () => {},
-  prepend: false,
-};
-
-function isExtraColumn(column: CustomColumn): column is ExtraColumn {
-  return column.type === "extra";
+export function isCircle(shape: Shape): shape is Circle {
+  return shape.type === "circle";
 }
 
-function getExtraColumns(columns: CustomColumn[]): CustomColumn[] {
-  return columns.filter((column) => isExtraColumn(column));
+export function isRectangle(shape: Shape): shape is Rectangle {
+  return shape.type === "rectangle";
 }
 
-console.log(
-  overwriteLabelColumn1,
-  overwriteLabelColumn2,
-  overwriteRenderColumn1,
-  overwriteRenderColumn2,
-  overwriteRenderColumn3,
-  extraColumn1,
-  extraColumn2
-);
+export function isTriangle(shape: Shape): shape is Triangle {
+  return shape.type === "triangle";
+}
+
+export function calculateTotalArea(shapes: Shape[]) {
+  shapes.reduce((total, shape) => {
+    if (isCircle(shape)) {
+      return total + Math.PI * shape.radius ** 2;
+    } else if (isRectangle(shape)) {
+      return total + shape.width * shape.height;
+    }
+
+    return total + (shape.base * shape.height) / 2;
+  }, 0);
+}
+
+const shapes: Shape[] = [
+  { type: "circle", radius: 10 },
+  { type: "rectangle", width: 10, height: 10 },
+  { type: "triangle", base: 10, height: 10 },
+  { type: "circle", radius: 5 },
+  { type: "rectangle", width: 5, height: 5 },
+  { type: "triangle", base: 5, height: 5 },
+];
+
+console.log("total area:", calculateTotalArea(shapes));

@@ -1,81 +1,50 @@
-// 1. Fix the types so the variables error where the comments
-// say `should error!`, and don't error where the comments say
-// `should not error!`.
-// 2. Update the type-guard `isExtraColumn`.
-interface OverwriteLabelColumn {
-  field: string;
-  label: string;
+// 1. Fill out the type guards: isCircle, isRectangle, and isTriangle.
+// 2. Update the calculateTotalArea function to use the type guards
+//    and calculate the total area of all shapes.
+
+interface Circle {
+  radius: number;
 }
 
-interface OverwriteRenderColumn {
-  field: string;
-  label?: string;
-  render: Function;
+interface Rectangle {
+  width: number;
+  height: number;
 }
 
-interface ExtraColumn {
-  label: string;
-  render: Function;
-  prepend: boolean;
+interface Triangle {
+  base: number;
+  height: number;
 }
 
-type CustomColumn = OverwriteLabelColumn | OverwriteRenderColumn | ExtraColumn;
+type Shape = Circle | Rectangle | Triangle;
 
-// should error!
-const overwriteLabelColumn1: CustomColumn = {
-  field: "id",
-  label: "ID",
-  render: () => {},
-};
-// should not error!
-const overwriteLabelColumn2: CustomColumn = {
-  field: "id",
-  label: "ID",
-};
-
-// should error!
-const overwriteRenderColumn1: CustomColumn = {
-  field: "name",
-  render: () => {},
-  prepend: false,
-};
-// should not error!
-const overwriteRenderColumn2: CustomColumn = {
-  field: "address",
-  render: () => {},
-};
-// should not error!
-const overwriteRenderColumn3: CustomColumn = {
-  field: "employer",
-  label: "Company",
-  render: () => {},
-};
-
-// should error!
-const extraColumn1: CustomColumn = {
-  render: () => {},
-};
-// should not error!
-const extraColumn2: CustomColumn = {
-  label: "Actions",
-  render: () => {},
-  prepend: false,
-};
-
-export function isExtraColumn(column: CustomColumn): column is ExtraColumn {
+export function isCircle(shape: Shape): shape is Circle {
   /* TODO */
 }
 
-export function getExtraColumns(columns: CustomColumn[]): CustomColumn[] {
-  return columns.filter((column) => isExtraColumn(column));
+export function isRectangle(shape: Shape): shape is Rectangle {
+  /* TODO */
 }
 
-console.log(
-  overwriteLabelColumn1,
-  overwriteLabelColumn2,
-  overwriteRenderColumn1,
-  overwriteRenderColumn2,
-  overwriteRenderColumn3,
-  extraColumn1,
-  extraColumn2
-);
+export function isTriangle(shape: Shape): shape is Triangle {
+  /* TODO */
+}
+
+export function calculateTotalArea(shapes: Shape[]) {
+  shapes.reduce((total, shape) => {
+    // circle area = total + Math.PI * shape.radius ** 2
+    // rectangle area = total + shape.width * shape.height
+    // triangle area = total + (shape.base * shape.height) / 2
+  }, 0);
+}
+
+const shapes: Shape[] = [
+  { radius: 10 },
+  { width: 10, height: 10 },
+  { base: 10, height: 10 },
+  { radius: 5 },
+  { width: 5, height: 5 },
+  { base: 5, height: 5 },
+];
+
+console.log("total area:", calculateTotalArea(shapes));
