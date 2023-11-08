@@ -1,16 +1,25 @@
+// Solution #1
+//  - Use type discrimnation: unique type property on each shape
+//  - Update type guard to check for unique type property
+// Solution #2
+//  - Update type guard to check whether shape has radius, width, or base
+
 interface Circle {
-  type: "circle";
+  shape: "circle";
+  color: string;
   radius: number;
 }
 
 interface Rectangle {
-  type: "rectangle";
+  shape: "rectangle";
+  color: string;
   width: number;
   height: number;
 }
 
 interface Triangle {
-  type: "triangle";
+  shape: "triangle";
+  color: string;
   base: number;
   height: number;
 }
@@ -18,15 +27,21 @@ interface Triangle {
 type Shape = Circle | Rectangle | Triangle;
 
 export function isCircle(shape: Shape): shape is Circle {
-  return shape.type === "circle";
+  return shape.shape === "circle";
+  // or
+  // return "radius" in shape;
 }
 
 export function isRectangle(shape: Shape): shape is Rectangle {
-  return shape.type === "rectangle";
+  return shape.shape === "rectangle";
+  // or
+  // return "width" in shape;
 }
 
 export function isTriangle(shape: Shape): shape is Triangle {
-  return shape.type === "triangle";
+  return shape.shape === "triangle";
+  // or
+  // return "base" in shape;
 }
 
 export function calculateTotalArea(shapes: Shape[]) {
@@ -36,18 +51,17 @@ export function calculateTotalArea(shapes: Shape[]) {
     } else if (isRectangle(shape)) {
       return total + shape.width * shape.height;
     }
-
     return total + (shape.base * shape.height) / 2;
   }, 0);
 }
 
 const shapes: Shape[] = [
-  { type: "circle", radius: 10 },
-  { type: "rectangle", width: 10, height: 10 },
-  { type: "triangle", base: 10, height: 10 },
-  { type: "circle", radius: 5 },
-  { type: "rectangle", width: 5, height: 5 },
-  { type: "triangle", base: 5, height: 5 },
+  { shape: "circle", color: "red", radius: 10 },
+  { shape: "rectangle", color: "green", width: 10, height: 10 },
+  { shape: "triangle", color: "blue", base: 10, height: 10 },
+  { shape: "circle", color: "orange", radius: 5 },
+  { shape: "rectangle", color: "yellow", width: 5, height: 5 },
+  { shape: "triangle", color: "purple", base: 5, height: 5 },
 ];
 
-console.log("total area:", calculateTotalArea(shapes));
+calculateTotalArea(shapes);

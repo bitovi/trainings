@@ -3,15 +3,18 @@
 //    and calculate the total area of all shapes.
 
 interface Circle {
+  color: string;
   radius: number;
 }
 
 interface Rectangle {
+  color: string;
   width: number;
   height: number;
 }
 
 interface Triangle {
+  color: string;
   base: number;
   height: number;
 }
@@ -32,19 +35,19 @@ export function isTriangle(shape: Shape): shape is Triangle {
 
 export function calculateTotalArea(shapes: Shape[]) {
   shapes.reduce((total, shape) => {
-    // circle area = total + Math.PI * shape.radius ** 2
-    // rectangle area = total + shape.width * shape.height
-    // triangle area = total + (shape.base * shape.height) / 2
+    // circle -> total + Math.PI * shape.radius ** 2;
+    // rectangle -> total + shape.width * shape.height;
+    // triangle -> total + (shape.base * shape.height) / 2;
   }, 0);
 }
 
 const shapes: Shape[] = [
-  { radius: 10 },
-  { width: 10, height: 10 },
-  { base: 10, height: 10 },
-  { radius: 5 },
-  { width: 5, height: 5 },
-  { base: 5, height: 5 },
+  { color: "red", radius: 10 },
+  { color: "green", width: 10, height: 10 },
+  { color: "blue", base: 10, height: 10 },
+  { color: "orange", radius: 5 },
+  { color: "yellow", width: 5, height: 5 },
+  { color: "purple", base: 5, height: 5 },
 ];
 
-console.log("total area:", calculateTotalArea(shapes));
+calculateTotalArea(shapes);
