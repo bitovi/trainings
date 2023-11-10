@@ -1,3 +1,14 @@
+/*
+
+Exercise:
+
+1) Use `aria-describedby` and `aria-invalid` attributes on the inputs.
+2) If a field is invalid, show an error under the field only after the form has been submitted at least once.
+3) After the form is successfully submitted, give focus to the “success” paragraph.
+
+The tests should pass after completing the steps above.
+
+*/
 import React, { FormEvent, useId, useRef, useState } from "react";
 
 interface FormState {
