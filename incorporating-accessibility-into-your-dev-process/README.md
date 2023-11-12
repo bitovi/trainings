@@ -4,6 +4,6 @@
 
 | Exercise | Problem | Solution |
 | --- | --- | --- |
-| Linting and tests | [Problem](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/incorporating-accessibility-into-your-dev-process/linting-and-tests/problem?file=src/App.test.tsx) | [Solution](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/incorporating-accessibility-into-your-dev-process/linting-and-tests/solution?file=src/App.test.tsx) |
+| Linting and tests | None | [Solution](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/incorporating-accessibility-into-your-dev-process/linting-and-tests/solution?file=src/App.test.tsx) |
 | Data fetching | [Problem](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/incorporating-accessibility-into-your-dev-process/data-fetching/problem?file=src/App.tsx) | [Solution](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/incorporating-accessibility-into-your-dev-process/data-fetching/solution?file=src/App.tsx) |
 | Forms | [Problem](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/incorporating-accessibility-into-your-dev-process/forms/problem?file=src/App.tsx) | [Solution](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/incorporating-accessibility-into-your-dev-process/forms/solution?file=src/App.tsx) |
