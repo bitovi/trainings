@@ -1,7 +1,7 @@
 import React from "react"
 
 const Button = () => {
-  return <button> Click me to submit!</button>;
+  return <button> Click me to submit! </button>;
 };
 
 const TextInput = () => {
