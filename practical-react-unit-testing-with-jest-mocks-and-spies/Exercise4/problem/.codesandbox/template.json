@@ -1,6 +1,6 @@
 {
   "title": "Exercise 4",
-  "description": "Mocking Hooks",
+  "description": "Mocking with spies",
   "iconUrl": "https://www.bitovi.com/favicon.ico",
   "tags": ["Typescript"],
   "published": false

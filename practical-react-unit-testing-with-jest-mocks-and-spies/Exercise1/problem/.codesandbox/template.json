@@ -1,6 +1,6 @@
 {
   "title": "Exercise 1",
-  "description": "First exercise in the Mocks and Spies training",
+  "description": "Manual mocking with jest.fn",
   "iconUrl": "https://www.bitovi.com/favicon.ico",
   "tags": ["Typescript"],
   "published": false
