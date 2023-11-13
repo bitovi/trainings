@@ -1,13 +1,26 @@
 /**
  * @jest-environment jsdom
  */
-//manually mocking toSelectOptions
 
-import { render } from "@testing-library/react";
+ /* 
+  
+ Exercise 1: 
+  
+ 1) Use jest.mock() to create a mock of the toSelectOptions module
+ 2) use a factory function in the jest.mock() call to create a default
+      mock implementation of toSelectOptions
+ 3) use .mockImplementationOnce() to override the mock implementation
+      for just one test
+  
+ The tests should pass after completing the steps above. 
+  
+ */ 
+
+import { render, screen } from "@testing-library/react";
 import { Select } from "./Select";
 import { toSelectOptions } from "./toSelectOptions";
 
-// mock the toSelectOptions module with a callback that returns a mock module
+// mock the toSelectOptions module with a factory function that returns a mock module
 //   mocking the toSelectOptions function
 
 describe("Year", () => {

@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import { getData } from "./get-data";
 
 const resolvedData = ["2020", "2021", "2022"];
