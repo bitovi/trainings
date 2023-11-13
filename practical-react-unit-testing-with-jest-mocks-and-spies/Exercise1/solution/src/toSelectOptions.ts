@@ -4,6 +4,6 @@ export function toSelectOptions(items?: Array<string | number>) {
   }
   return items.map((item) => ({
     label: item.toString(),
-    value: item.toString()
+    value: item.toString(),
   }));
 }

@@ -8,8 +8,8 @@ const resolvedData = ["2020", "2021", "2022"];
 Object.defineProperty(global, "fetch", {
   writable: true,
   value: jest.fn().mockResolvedValue({
-    json: () => resolvedData
-  })
+    json: () => resolvedData,
+  }),
 });
 
 it("finds years", async () => {

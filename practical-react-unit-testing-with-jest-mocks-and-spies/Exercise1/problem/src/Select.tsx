@@ -6,7 +6,7 @@ export function Select({
   value,
   options,
   disabled,
-  onChange
+  onChange,
 }: {
   label: string;
   name: string;

@@ -8,8 +8,8 @@ const data = ["2020", "2021", "2022", "2023"];
 
 jest.mock("./provider", () => ({
   _currentValue: {
-    cbFetch: () => ({ json: () => ({ data }) })
-  }
+    cbFetch: () => ({ json: () => ({ data }) }),
+  },
 }));
 
 it("returns the years", async () => {

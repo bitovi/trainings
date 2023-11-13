@@ -11,8 +11,8 @@ jest.mock("./toSelectOptions", () => ({
   toSelectOptions: jest.fn().mockReturnValue([
     { label: "2021", value: "2021" },
     { label: "2022", value: "2022" },
-    { label: "2023", value: "2023" }
-  ])
+    { label: "2023", value: "2023" },
+  ]),
 }));
 describe("Year", () => {
   test("Year works with one-off mocked values", () => {

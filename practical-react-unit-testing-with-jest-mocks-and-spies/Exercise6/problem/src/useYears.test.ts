@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
- /* 
+/* 
   
  Exercise 6: 
   
@@ -12,7 +12,7 @@
   
  The tests should pass after completing the steps above. 
   
- */ 
+ */
 import { useYears } from "./useYears";
 import { renderHook, waitFor } from "@testing-library/react";
 

@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
- /* 
+/* 
   
  Exercise 2: 
   
@@ -13,7 +13,7 @@
   
  The tests should pass after completing the steps above. 
   
- */ 
+ */
 import { getData } from "./get-data";
 
 const resolvedData = ["2020", "2021", "2022"];

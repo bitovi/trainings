@@ -6,7 +6,7 @@ type Message = { id: string; value: ReactNode };
 
 export function CowbirdProvider({
   children,
-  messageTimeout = 3000
+  messageTimeout = 3000,
 }: {
   children: React.ReactNode;
   messageTimeout?: number;

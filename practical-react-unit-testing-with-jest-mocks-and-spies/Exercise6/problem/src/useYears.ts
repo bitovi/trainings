@@ -20,6 +20,6 @@ export function useYears() {
   }, [cbFetch]);
 
   return {
-    years
+    years,
   };
 }

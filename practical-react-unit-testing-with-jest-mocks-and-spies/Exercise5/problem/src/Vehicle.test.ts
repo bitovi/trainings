@@ -1,4 +1,4 @@
- /* 
+/* 
   
  Exercise 5: 
   
@@ -12,7 +12,7 @@
   
  The tests should pass after completing the steps above. 
   
- */ 
+ */
 import Vehicle from "./Vehicle";
 
 jest.mock("./Vehicle");

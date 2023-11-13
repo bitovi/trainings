@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
- /* 
+/* 
   
  Exercise 1: 
   
@@ -14,7 +14,7 @@
   
  The tests should pass after completing the steps above. 
   
- */ 
+ */
 
 import { render, screen } from "@testing-library/react";
 import { Select } from "./Select";
