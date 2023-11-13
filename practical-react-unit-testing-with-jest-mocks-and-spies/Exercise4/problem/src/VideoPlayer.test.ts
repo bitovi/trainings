@@ -1,8 +1,17 @@
+ /* 
+  
+ Exercise 4: 
+  
+ 1) Use jest.spyOn() to "spy" on the play() and stop() methods of VideoPlayer
+ 2) Use jest.spyOn() to "spy" on VideoPlayer's `volume` getter and setter.
+  
+ The tests should pass after completing the steps above. 
+  
+ */ 
 import VideoPlayer from "./VideoPlayer";
 
 //spy on the volume getter and setter, and the play function
 //  of the VideoPlayer class in the tests below
-import VideoPlayer from "./VideoPlayer";
 
 describe("VideoPlayer component", () => {
   it("updates value of play and returns the value", () => {
