@@ -1,6 +1,6 @@
 {
-  "title": "Exercise 1",
-  "description": "First exercise in the Mocks and Spies training",
+  "title": "Exercise 3",
+  "description": "Automatic Mocking",
   "iconUrl": "https://www.bitovi.com/favicon.ico",
   "tags": ["Typescript"],
   "published": false
