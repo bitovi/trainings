@@ -1,6 +1,6 @@
 {
   "title": "Exercise 5",
-  "description": "Mocking with a callback",
+  "description": "Automatic class mocking and requireActual",
   "iconUrl": "https://www.bitovi.com/favicon.ico",
   "tags": ["Typescript"],
   "published": false
