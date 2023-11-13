@@ -1,19 +1,19 @@
-const toSelectOptions = require("./toSelectOptions");
+const { toSelectOptions } = require("./toSelectOptions");
 
-jest.mock("./toSelectOptions");
+jest.mock("./getDefaultSelectOptions");
 
-describe("Manually mock and bypass toSelectOptions", () => {
-  test("Manual Mock test of toSelectOptions", () => {
-    expect(toSelectOptions).toEqual([
+describe("toSelectOptions with dependencies manually mocked", () => {
+  test("Unmocked test of toSelectOptions", () => {
+    expect(toSelectOptions(["2021", "2022", "2023"])).toEqual([
       { label: "2021", value: "2021" },
       { label: "2022", value: "2022" },
       { label: "2023", value: "2023" },
     ]);
   });
 
-  test("Bypassing the mock", () => {
-    const actualModule = jest.requireActual("./toSelectOptions");
-    expect(actualModule.toSelectOptions(["2000"])).toEqual([
+  test("With mock default values", () => {
+    //use the mocked version of getDefaultSelectOptions()
+    expect(toSelectOptions()).toEqual([
       { label: "2000", value: "2000" },
     ]);
   });

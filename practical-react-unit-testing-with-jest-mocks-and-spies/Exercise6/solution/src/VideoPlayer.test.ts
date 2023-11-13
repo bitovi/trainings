@@ -1,30 +1,26 @@
 import VideoPlayer from "./VideoPlayer";
 
-  describe('VideoPlayer component', () => {
-    it('returns value of volume', () => {
-        const videoPlayer = new VideoPlayer(false, 100)
-        const getVolumeSpy = jest.spyOn(videoPlayer, 'getVolume');
-        const volume = videoPlayer.getVolume();
-        
-        expect(getVolumeSpy).toHaveBeenCalledTimes(1);
-        expect(volume).toBe(100);
-    });
+describe('VideoPlayer component', () => {
+  it('updates value of play and returns the value', () => {
+      const videoPlayer = new VideoPlayer(false, 100)
+      const videoPlaySpy = jest.spyOn(videoPlayer, 'play');
+      const videoStopSpy = jest.spyOn(videoPlayer, 'stop');
+      
+      videoPlayer.togglePlay();
+      
+      expect(videoPlaySpy).toHaveBeenCalledTimes(1);
+      expect(videoStopSpy).toHaveBeenCalledTimes(0);
+      expect(videoPlayer.isPlaying).toEqual(true);  
+  });
 
-    it('updates value of play and returns the value', () => {
-        const videoPlayer = new VideoPlayer(false, 100)
-        const videoGetterSpy = jest.spyOn(videoPlayer, 'getPlay');
-        const videoSetterSpy = jest.spyOn(videoPlayer, 'setPlay');
-        
-        // triggering the getter we spied on
-        const isPlaying = videoPlayer.getPlay();
-        
-        expect(videoGetterSpy).toHaveBeenCalledTimes(1);
-        expect(isPlaying).toEqual(false);
-        
-        // triggering the setter we spied on
-        videoPlayer.setPlay();
-        
-        expect(videoSetterSpy).toHaveBeenCalledTimes(1);
-        expect(videoPlayer.play).toEqual(true);  
-    })
+  it('does not increase volume past 100', () => {
+      const videoPlayer = new VideoPlayer(false, 100);
+      const getVolumeSpy = jest.spyOn(videoPlayer, 'volume', 'get');
+      const setVolumeSpy = jest.spyOn(videoPlayer, 'volume', 'set');
+
+      videoPlayer.increaseVolume();
+      expect(getVolumeSpy).toHaveBeenCalledTimes(1);
+      expect(setVolumeSpy).toHaveBeenCalledTimes(0);
+      expect(videoPlayer.volume).toBe(100);
+  });
 })

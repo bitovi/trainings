@@ -1,3 +1,7 @@
+export function toString(this: Vehicle): string {
+  return `[Vehicle ${this.getVehicle()}]`;
+}
+
 export default class Vehicle {
     vehicle: string;
    
@@ -8,5 +12,7 @@ export default class Vehicle {
     getVehicle() {
       return this.vehicle;
     }
+
   }
+Vehicle.prototype.toString = toString;
   

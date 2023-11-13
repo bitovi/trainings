@@ -1,36 +1,32 @@
 import VideoPlayer from "./VideoPlayer";
 
+//spy on the volume getter and setter, and the play function
+//  of the VideoPlayer class in the tests below
+import VideoPlayer from "./VideoPlayer";
 
-//spy on the getter and setter of the VideoPlayer class in the tests below
-describe("VideoPlayer", () => {
-  it("returns value of volume", () => {
-    const videoPlayer = new VideoPlayer(false, 100)
-  
-    //spy here
-    const getVolumeSpy = jest.fn()
-    const volume = videoPlayer.getVolume()
-  
-    expect(getVolumeSpy).toHaveBeenCalledTimes(1)
-    expect(volume).toBe(100)
-  })
-  
-  it("updates value of play and returns the value", () => {
-    const videoPlayer = new VideoPlayer(false, 100)
-  
-    //spy here
-    const videoGetterSpy = jest.fn()
-    const videoSetterSpy = jest.fn()
-  
-    // triggering the getter we spied on
-    const isPlaying = videoPlayer.getPlay()
-  
-    expect(videoGetterSpy).toHaveBeenCalledTimes(1)
-    expect(isPlaying).toEqual(false)
-  
-    // triggering the setter we spied on
-    videoPlayer.setPlay()
-  
-    expect(videoSetterSpy).toHaveBeenCalledTimes(1)
-    expect(videoPlayer.play).toEqual(true)
-  })
+describe('VideoPlayer component', () => {
+  it('updates value of play and returns the value', () => {
+      const videoPlayer = new VideoPlayer(false, 100);
+      // spy here
+      const videoPlaySpy = jest.fn();
+      const videoStopSpy = jest.fn();
+      
+      videoPlayer.togglePlay();
+      
+      expect(videoPlaySpy).toHaveBeenCalledTimes(1);
+      expect(videoStopSpy).toHaveBeenCalledTimes(0);
+      expect(videoPlayer.isPlaying).toEqual(true);  
+  });
+
+  it('does not increase volume past 100', () => {
+      const videoPlayer = new VideoPlayer(false, 100);
+      // getter and setter spy here
+      const getVolumeSpy = jest.fn();
+      const setVolumeSpy = jest.fn();
+
+      videoPlayer.increaseVolume();
+      expect(getVolumeSpy).toHaveBeenCalledTimes(1);
+      expect(setVolumeSpy).toHaveBeenCalledTimes(0);
+      expect(videoPlayer.volume).toBe(100);
+  });
 })

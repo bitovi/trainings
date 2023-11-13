@@ -1,26 +1,51 @@
 export default class VideoPlayer {
-    play: boolean
-    volume: number
+    #playState: boolean
+    #volume: number
    
     constructor(play: boolean, vol: number) {
-      this.play = play;
-      this.volume = vol;
+      this.#playState = play;
+      this.#volume = vol;
     }
    
-    getVolume() {
-      return this.volume;
+    // volume getter/setter and increment functions
+    get volume() {
+      return this.#volume;
+    }
+    set volume(vol: number) {
+        if (vol >= 0 && vol <= 100) {
+            this.#volume = vol;
+        }
     }
 
-    setVolume(vol: number) {
-        this.volume = vol;
+    increaseVolume() {
+        if(this.volume < 100) {
+            this.volume++;
+        }
+    }
+    decreaseVolume() {
+        if(this.volume > 0) {
+            this.volume--;
+        }
+    }
+ 
+    // play state functions and isPlaying getter
+    get isPlaying() {
+        return this.#playState;
+    }
+    play() {
+        this.#playState = true;
     }
 
-    getPlay() {
-        return this.play;
+    stop() {
+        this.#playState = false;
     }
 
-    setPlay() {
-        this.play = !this.play;
+    togglePlay() {
+        if (!this.isPlaying) {
+            this.play();
+        } else {
+            this.stop();
+        }
     }
   }
   

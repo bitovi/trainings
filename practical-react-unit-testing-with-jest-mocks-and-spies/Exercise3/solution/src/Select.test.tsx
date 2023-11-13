@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-//auto mocking toSelectOptions
+//manually mocking toSelectOptions
 
 import { render } from "@testing-library/react";
 import { Select } from "./Select";
@@ -15,8 +15,12 @@ jest.mock("./toSelectOptions", () => ({
   ]),
 }));
 describe("Year", () => {
-  test("Year works with mocked values", () => {
-    render(
+  test("Year works with one-off mocked values", () => {
+    toSelectOptions.mockImplementationOnce(() => {
+      return [{ label: "2024", value: "2024" }]
+    })
+
+    const result = render(
       <Select
         label="Year"
         name="year"
@@ -24,5 +28,24 @@ describe("Year", () => {
         options={toSelectOptions(["2020"])}
       />
     );
+    const selector = result.getByText("Select...");
+    expect(selector).toBeDefined()
+    expect(selector.querySelector("option[value='2024']")).toBeDefined()
+  });
+
+  test("Year works with mocked values", () => {
+    const result = render(
+      <Select
+        label="Year"
+        name="year"
+        value="2023"
+        options={toSelectOptions(["2020"])}
+      />
+    );
+    const selector = result.getByText("Select...");
+    expect(selector).toBeDefined()
+    expect(selector.querySelector("option[value='2021']")).toBeDefined()
+    expect(selector.querySelector("option[value='2022']")).toBeDefined()
+    expect(selector.querySelector("option[value='2023']")).toBeDefined()
   });
 });

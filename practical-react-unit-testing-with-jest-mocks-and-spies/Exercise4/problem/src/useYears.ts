@@ -1,25 +1,25 @@
-import { useCowbird } from './provider'
-import { useEffect, useState } from 'react'
+import CowbirdContext from './provider';
+import { useContext, useEffect, useState } from 'react';
 
 type Year = string
 
-const baseUrl = "https://cowbird-staging.fly.dev/groups/bun-experiment/mocks"
+const baseUrl = "https://cowbird-staging.fly.dev/groups/bun-experiment/mocks";
 
 export function useYears() {
-  const [years, setYears] = useState<Year[]>([])
-  const { cbFetch } = useCowbird()
+  const [years, setYears] = useState<Year[]>([]);
+  const { cbFetch } = useContext(CowbirdContext);
 
   useEffect(() => {
     const fetchYears = async () => {
-      const response = await cbFetch(`${baseUrl}/years`)
-      const data = await response.json()
+      const response = await cbFetch(`${baseUrl}/years`);
+      const data = await response.json();
     
-      setYears(data.data)
+      setYears(data.data);
     }
     fetchYears()
-  }, [cbFetch])
+  }, [cbFetch]);
 
   return {
     years,
-  }
+  };
 }

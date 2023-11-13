@@ -3,29 +3,18 @@
  */
 import { useYears } from "./useYears";
 import { renderHook, waitFor } from '@testing-library/react';
-import { useCowbird } from "./provider";
 
 const data = ["2020", "2021", "2022", "2023"];
-Object.defineProperty(window, "fetch", {
-  writable: true,
-  value: jest.fn(() =>
-    Promise.resolve({
-      ...data,
-    })
-  ),
-});
 
 jest.mock('./provider', () => ({
-    useCowbird: jest.fn().mockImplementation(() => ({cbFetch: () => ({ json: () => ({data}) })}))
-  }));
+  _currentValue: {
+    cbFetch: () => ({ json: () => ({data}) })
+  }
+}));
 
 it("returns the years", async () => {
 
-    const { result, rerender } = renderHook(() => useYears())
-    
-    await waitFor(() => {
-        expect(useCowbird).toHaveBeenCalled();
-    });
+    const { result, rerender } = renderHook(useYears);
 
     rerender();
     await waitFor(() => {
@@ -33,4 +22,3 @@ it("returns the years", async () => {
     });
   });
 
-  //add another test for mockImplementationOnce
