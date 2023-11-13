@@ -6,17 +6,14 @@ export function Select({
   value,
   options,
   disabled,
-  onChange,
+  onChange
 }: {
   label: string;
   name: string;
   value: string;
   options: Array<{ value: string; label: string }>;
   disabled?: boolean;
-  onChange?: (
-    value: string,
-    event?: React.ChangeEvent<HTMLSelectElement>
-  ) => void;
+  onChange?: (value: string, event?: React.ChangeEvent<HTMLSelectElement>) => void;
 }) {
   const id = useId();
 
@@ -32,7 +29,10 @@ export function Select({
       >
         <option value="">Select...</option>
         {options.map((option) => (
-          <option key={option.value} value={option.value}>
+          <option
+            key={option.value}
+            value={option.value}
+          >
             {option.label}
           </option>
         ))}

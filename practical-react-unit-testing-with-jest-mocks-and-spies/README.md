@@ -16,24 +16,24 @@ Mocking API calls and fetch
 
 Mocking with mock files
 
-[Exercise](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise3/problem?file=/src/getDefaultSelectOptions.tsx)
+[Exercise](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise3/problem?file=/src/getDefaultSelectOptions.test.tsx)
 
 [Solution](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise3/solution?file=/src/getDefaultSelectOptions.test.tsx)
 
 Spies
 
-[Exercise](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise4/problem?file=/src/VideoPlayer.ts)
+[Exercise](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise4/problem?file=/src/VideoPlayer.test.ts)
 
 [Solution](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise4/solution?file=/src/VideoPlayer.test.ts)
 
 Automatic class mocks
 
-[Exercise](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise5/problem?file=/src/Vehicle.ts)
+[Exercise](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise5/problem?file=/src/Vehicle.test.ts)
 
 [Solution](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise5/solution?file=/src/Vehicle.test.ts)
 
 Mocking React contexts
 
-[Exercise](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise6/problem?file=/src/provider.tsx)
+[Exercise](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise6/problem?file=/src/useYears.test.ts)
 
 [Solution](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise6/solution?file=/src/useYears.test.ts)

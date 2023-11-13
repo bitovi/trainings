@@ -1,10 +1,4 @@
-import {
-  ReactNode,
-  createContext,
-  useCallback,
-  useContext,
-  useState,
-} from "react";
+import { ReactNode, createContext, useCallback, useContext, useState } from "react";
 
 const CowbirdContext = createContext({ cbFetch: window.fetch });
 
@@ -12,7 +6,7 @@ type Message = { id: string; value: ReactNode };
 
 export function CowbirdProvider({
   children,
-  messageTimeout = 3000,
+  messageTimeout = 3000
 }: {
   children: React.ReactNode;
   messageTimeout?: number;
@@ -22,14 +16,9 @@ export function CowbirdProvider({
   const cbFetch: typeof window.fetch = useCallback(
     (...args) => {
       const id = Math.random().toString(36).slice(2);
-      setMessages((messages) => [
-        ...messages,
-        { id, value: "Mock data loaded on page" },
-      ]);
+      setMessages((messages) => [...messages, { id, value: "Mock data loaded on page" }]);
       setTimeout(() => {
-        setMessages((messages) =>
-          messages.filter((message) => message.id !== id)
-        );
+        setMessages((messages) => messages.filter((message) => message.id !== id));
       }, messageTimeout);
       return window.fetch(...args);
     },
@@ -41,7 +30,10 @@ export function CowbirdProvider({
       {messages.length > 0 && (
         <div className="messages">
           {messages.map(({ id, value }) => (
-            <div key={id} className="message">
+            <div
+              key={id}
+              className="message"
+            >
               {value}
             </div>
           ))}

@@ -13,7 +13,8 @@ import { toSelectOptions } from "./toSelectOptions";
 describe("Year", () => {
   test("Year works with one-off mocked values", () => {
     // Use mockImplementationOnce to get a 2024 value for just this one render
-    const result = render(
+
+    render(
       <Select
         label="Year"
         name="year"
@@ -21,13 +22,11 @@ describe("Year", () => {
         options={toSelectOptions(["2020"])}
       />
     );
-    const selector = result.getByText("Select...");
-    expect(selector).toBeDefined()
-    expect(selector.querySelector("option[value='2024']")).toBeDefined()
+    expect(screen.getByText("2024")).toEqual(expect.any(HTMLOptionElement));
   });
 
   test("Year works with mocked values", () => {
-    const result = render(
+    render(
       <Select
         label="Year"
         name="year"
@@ -35,10 +34,8 @@ describe("Year", () => {
         options={toSelectOptions(["2020"])}
       />
     );
-    const selector = result.getByText("Select...");
-    expect(selector).toBeDefined()
-    expect(selector.querySelector("option[value='2021']")).toBeDefined()
-    expect(selector.querySelector("option[value='2022']")).toBeDefined()
-    expect(selector.querySelector("option[value='2023']")).toBeDefined()
+    expect(screen.getByText("2021")).toEqual(expect.any(HTMLOptionElement));
+    expect(screen.getByText("2022")).toEqual(expect.any(HTMLOptionElement));
+    expect(screen.getByText("2023")).toEqual(expect.any(HTMLOptionElement));
   });
 });
