@@ -10,6 +10,7 @@ describe("the app doesnt crash", () => {
     render(<App />);
 
     expect(screen.getAllByRole("heading")).toBeTruthy();
+
   });
 });
 
