@@ -1,0 +1,9 @@
+{
+    "title": "Testing with RTL",
+    "description": "Part of the Practical Unit Testing with Jest and RTL workshop.",
+    "iconUrl": "https://www.bitovi.com/favicon.ico",
+    "tags": [
+        "react"
+    ],
+    "published": false
+}
