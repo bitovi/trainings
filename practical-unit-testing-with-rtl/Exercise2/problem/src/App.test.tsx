@@ -9,7 +9,8 @@ describe("the app doesnt crash", () => {
     // const user = userEvent.setup()
     render(<App />);
 
-    expect(screen.getAllByRole("h1")).toBeTruthy();
+    expect(screen.getAllByRole("heading")).toBeTruthy();
+
   });
 });
 
