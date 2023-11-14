@@ -1,4 +1,5 @@
 import { useScore } from "./scoreContext";
+import React from "react";
 
 import styles from "./Score.module.css";
 interface DisplayProps {

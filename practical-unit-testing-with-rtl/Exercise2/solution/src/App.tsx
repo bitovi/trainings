@@ -1,5 +1,6 @@
 import Board from "./components/Board";
 import Score, { ScoreContextProvider } from "./components/Score";
+import React from "react";
 
 import styles from "./App.module.css";
 

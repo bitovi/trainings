@@ -1,6 +1,7 @@
 import Square from "./Square";
 import { useTicTacToe } from "../../hooks/useTicTacToe";
 import GameInformation from "./GameInformation";
+import React from "react";
 
 import styles from "./Board.module.css";
 

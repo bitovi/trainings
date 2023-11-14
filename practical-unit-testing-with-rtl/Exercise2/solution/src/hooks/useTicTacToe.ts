@@ -7,11 +7,11 @@ import { useScore } from "../components/Score";
 
 const createNewTicTacToeBoard = () => Array(9).fill(null);
 
-const fetchWinCheck = async (url: string, data: any) => {
-  const response = await fetch(url, data);
-  const finalData = await response.json();
-  return finalData;
-};
+// const fetchWinCheck = async (url: string, data: any) => {
+//   const response = await fetch(url, data);
+//   const finalData = await response.json();
+//   return finalData;
+// };
 
 export const useTicTacToe = () => {
   const { addWinO, addWinX } = useScore();
@@ -19,10 +19,11 @@ export const useTicTacToe = () => {
   const [isX, setIsX] = useState(true);
   const [winner, setWinner] = useState<BoardSquareValue>(null);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [playerNames, setPlayerNames] = useState({});
-
+  
   const currentTurn: BoardSquareValue = isX ? "X" : "O";
-  const setBoard = (board: any) => {
+  const setBoard = (board: TicTacToeBoard) => {
     _setBoard(board);
   };
   const handleSquareSelect = useCallback(
@@ -60,5 +61,6 @@ export const useTicTacToe = () => {
     winner,
     isGameOver: isGameOver(board),
     setPlayerNames,
+    playerNames
   };
 };

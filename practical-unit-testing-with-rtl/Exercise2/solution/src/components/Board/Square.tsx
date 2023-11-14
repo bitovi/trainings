@@ -1,6 +1,7 @@
 import type { BoardSquareValue } from "@utilities/ticTacToe";
 
 import styles from "./Square.module.css";
+import React from "react";
 
 interface BoardSquareProps {
   onSquareSelect: () => void;

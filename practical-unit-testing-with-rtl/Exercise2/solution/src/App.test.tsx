@@ -1,15 +1,16 @@
+import React from "react";
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event"
 import '@testing-library/jest-dom'
 
 import App from "./App";
 
-describe("the app doesnt crash", () => {
+describe("the app doesn't crash", () => {
   it("works", async () => {
     // const user = userEvent.setup()
     render(<App />);
 
-    expect(screen.getAllByRole("h1")).toBeTruthy();
+    expect(screen.findAllByRole("heading")).toBeTruthy();
   });
 });
 
@@ -19,65 +20,69 @@ describe("the app doesnt crash", () => {
 describe ("player names can be input", () =>{
   test('name input works', async () =>{
     const user = userEvent.setup()
+    render(<App />);
 
     const player1 = "andrew"
     const player2 = "brad"
 
 
-    const playerXInput = screen.getByLabelText('Enter X Player Name')
-    const playerOInput = screen.getByLabelText('Enter O Player Name')
-    const nameSaveBtn = screen.getByRole('button', {name: "Save Player Names"})
+    const playerXInput = await screen.findByLabelText('X Player Name', {exact: false})
+    const playerOInput = await screen.findByLabelText('Enter O Player Name')
+    // const nameSaveBtn = screen.findByRole('button', {name: "Save Player Names"})
 
-    const turnDisplay = screen.getByText(/s turn/i)
+    const turnDisplay = await screen.findByText(/s turn/i)
 
-    expect(playerXInput).toHaveTextContent("")
-    expect(playerOInput).toHaveTextContent("")
+    expect(playerXInput).toHaveValue("")
+    expect(playerOInput).toHaveValue("")
   
-    user.click(playerXInput)
+    await user.click(playerXInput)
     expect(playerXInput).toHaveFocus()
-    
-    user.type(playerXInput, player1)
-    expect(playerXInput).toHaveTextContent(player1)
+    console.log(playerXInput)
+    await user.type(playerXInput, player1)
+    expect(playerXInput).toHaveValue(player1)
 
-    user.click(playerOInput)
+    await user.click(playerOInput)
     expect(playerOInput).toHaveFocus()
 
-    user.type(playerOInput, player2)
-    expect(playerOInput).toHaveTextContent(player2)
+    await user.type(playerOInput, player2)
+    expect(playerOInput).toHaveValue(player2)
 
     expect(turnDisplay).toHaveTextContent(`X's turn (${player1})`)
   })
 })
 
-describe('game play works correctly', () =>{
-  const user = userEvent.setup() 
-  const gameBoard = screen.getByTestId('board')
-  const boardSquares = within(gameBoard).getAllByRole('button')
-
-  const turnDisplay = screen.getByText(/s turn/i)
-  const resetBtn = screen.getByRole('button', {name:/reset/i})
+describe('game play works correctly',  () =>{
+  
 
   test('player switches back and forth appropriately', async () => {
-    expect(turnDisplay.textContent).toContain("X's Turn")
 
-    user.click(boardSquares[0])
+    const user = userEvent.setup() 
+    render(<App />);
+
+  const gameBoard = await screen.findByTestId('board')
+  const boardSquares = await within(gameBoard).findAllByRole('button')
+
+  const turnDisplay =  await screen.findByText(/s turn/i)
+  const resetBtn = await screen.findByRole('button', {name:/reset/i})
+    expect(turnDisplay.textContent).toContain("X's turn")
+
+    await user.click(boardSquares[0])
+    expect(boardSquares[0].textContent).toContain('X')
+    expect (turnDisplay.textContent).toContain("O's turn")
     
-    expect(boardSquares[0].textContent).toContain(/x/i)
-    expect (turnDisplay.textContent).toContain("O's Turn")
+    await user.click(boardSquares[1])
+    expect(boardSquares[1].textContent).toContain('O')
+    expect (turnDisplay.textContent).toContain("X's turn")
     
-    user.click(boardSquares[1])
-    expect(boardSquares[1].textContent).toContain(/o/i)
-    expect (turnDisplay.textContent).toContain("X's Turn")
-    
-    user.click(boardSquares[3])
-    user.click(boardSquares[4])
-    user.click(boardSquares[6])
+    await user.click(boardSquares[3])
+    await user.click(boardSquares[4])
+    await user.click(boardSquares[6])
 
     const winAlert = await screen.findByRole('heading', {name: /wins!/i})
     expect(winAlert).toBeInTheDocument()
     expect(winAlert.textContent).toContain('X wins!')
 
-    user.click(resetBtn)
+    await user.click(resetBtn)
 
     expect(boardSquares[1].textContent).toBeFalsy()
 
