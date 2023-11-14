@@ -23,7 +23,7 @@ const GameInformation = ({
 
   const [xName, setXName] = useState("");
   const [oName, setOName] = useState("");
-  const { savePlayerNames } = useTicTacToe();
+  const { setPlayerNames } = useTicTacToe();
 
   return (
     <>
@@ -37,7 +37,7 @@ const GameInformation = ({
 
         <label htmlFor="oPlayer">Enter O Player Name</label>
         <input type="text" id="oPlayer" onChange={(e)=>setOName(e.target.value)}/>
-        <button onClick={() => savePlayerNames({x:xName, o: oName})}>Save Player Names</button>
+        <button onClick={() => setPlayerNames({x:xName, o: oName})}>Save Player Names</button>
       </div>
       {showGameOver && <h2>Game Over</h2>}
       {winner && <h2>{winner} wins!</h2>}
