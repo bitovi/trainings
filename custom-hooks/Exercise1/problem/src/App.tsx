@@ -1,24 +1,23 @@
+import React from 'react';
 import './App.css'
 import Toggle from './Toggle'
-import { useToggle } from './useToggle';
 
 function App() {
-  const [on, toggle] = useToggle(true);
 
   return (
       <section>
         <h1>UseToggle</h1>
-        <button disabled={on} onClick={() => toggle(true)}>
+        <button disabled={true} onClick={()=>{}}>
           Turn On
         </button>
-        <button disabled={!on} onClick={() => toggle(false)}>
+        <button disabled={true} onClick={()=>{}}>
           Turn Off
         </button>
-        <button onClick={toggle}>
+        <button onClick={()=>{}}>
           Toggle
         </button>
      
-        <Toggle toggle={toggle} on={on} />
+        <Toggle toggle={()=>{}} on={true} />
       </section>
   )
 }
