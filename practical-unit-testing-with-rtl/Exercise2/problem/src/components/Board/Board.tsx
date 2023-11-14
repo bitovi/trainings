@@ -1,3 +1,5 @@
+import React from "react";
+
 import Square from "./Square";
 import { useTicTacToe } from "../../hooks/useTicTacToe";
 import GameInformation from "./GameInformation";

@@ -1,4 +1,5 @@
 import type { BoardSquareValue } from "@utilities/ticTacToe";
+import React from "react";
 
 import styles from "./Square.module.css";
 
