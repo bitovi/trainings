@@ -1,0 +1,19 @@
+p[tabindex] {
+  border-radius: 3px;
+  outline: none;
+  padding: 0.5rem;
+}
+
+p[tabindex]:focus {
+  box-shadow: 0 0 0 3px green;
+}
+
+.error {
+  color: crimson;
+}
+
+@media (prefers-color-scheme: dark) {
+  .error {
+    color: orangered;
+  }
+}

@@ -1,16 +1,14 @@
 import Vehicle from "./Vehicle";
 
-jest.mock('./Vehicle', () => jest.fn().mockImplementation(() => ({
-    getVehicle: jest.fn().mockImplementation(() => "Wrangler")
-})));
+jest.mock("./Vehicle");
 
+describe("Vehicle component", () => {
+  it("uses global mock", () => {
+    const instance = new Vehicle("Renegade");
+    instance.getVehicle.mockImplementation(() => "Wrangler");
+    const toString = jest.requireActual("./Vehicle").toString;
 
-describe('Vehicle component', () => {
-    it('uses global mock', () => {
-      const instance = new Vehicle('Renegade');
-      instance.getVehicle();
-
-      expect(instance.getVehicle).toHaveBeenCalled();
-      expect(instance.getVehicle()).toEqual("Wrangler")
-    });
+    expect(toString.call(instance)).toEqual("[Vehicle Wrangler]");
+    expect(instance.getVehicle).toHaveBeenCalled();
   });
+});

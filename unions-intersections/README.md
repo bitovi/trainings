@@ -29,3 +29,8 @@
 
 - [Problem](https://codesandbox.io/s/github/bitovi/trainings/tree/main/unions-intersections/Exercise5/problem)
 - [Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/unions-intersections/Exercise5/solution)
+
+**Exercise 6**
+
+- [Problem](https://codesandbox.io/s/github/bitovi/trainings/tree/main/unions-intersections/Exercise6/problem)
+- [Solution](https://codesandbox.io/s/github/bitovi/trainings/tree/main/unions-intersections/Exercise6/solution)
