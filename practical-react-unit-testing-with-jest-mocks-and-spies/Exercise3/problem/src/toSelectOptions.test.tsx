@@ -1,6 +1,10 @@
  /* 
   
  Exercise 3: 
+
+ This test covers the use of __mocks__ folders to provide mock implementations of 
+   modules, that automatically replace the real implementations when modules are 
+   mocked with jest.mock().
   
  1) Implement MockMoment#year() in the __mocks__/moment.ts file
  2) Implement getDefaultSelectOptions() in the src/__mocks__/getDefaultSelectOptions.ts file

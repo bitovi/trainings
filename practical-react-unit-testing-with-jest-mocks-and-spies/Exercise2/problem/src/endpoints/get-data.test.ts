@@ -5,6 +5,8 @@
 /* 
   
  Exercise 2: 
+
+ This test covers mocking API calls by mocking the global fetch() function.
   
  1) Create a mock of window.fetch using Object.defineProperty()
  2) Use .mockResolvedValue() to have the mock fetch resolve to 

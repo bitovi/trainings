@@ -16,9 +16,9 @@ Mocking API calls and fetch
 
 Mocking with mock files
 
-[Exercise](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise3/problem?file=/src/getDefaultSelectOptions.test.tsx)
+[Exercise](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise3/problem?file=/src/toSelectOptions.test.tsx)
 
-[Solution](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise3/solution?file=/src/getDefaultSelectOptions.test.tsx)
+[Solution](https://codesandbox.io/p/sandbox/github/bitovi/trainings/tree/main/practical-react-unit-testing-with-jest-mocks-and-spies/Exercise3/solution?file=/src/toSelectOptions.test.tsx)
 
 Spies
 

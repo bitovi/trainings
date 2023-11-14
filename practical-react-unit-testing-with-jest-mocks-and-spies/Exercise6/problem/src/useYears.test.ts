@@ -5,6 +5,9 @@
 /* 
   
  Exercise 6: 
+
+ This exercise covers the mocking of a React context with a minimal
+   mock implementation.
   
  1) mock CowbirdContext from ./provider.tsx
  2) use a minimal mock implementation of CowbirdContext 

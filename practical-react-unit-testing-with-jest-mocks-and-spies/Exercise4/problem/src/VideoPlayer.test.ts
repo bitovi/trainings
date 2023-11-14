@@ -1,6 +1,9 @@
  /* 
   
  Exercise 4: 
+
+ This test covers spies, which provide the instrumentation of mocks (i.e. recording
+   calls and returns) without replacing the original implementation of a method.
   
  1) Use jest.spyOn() to "spy" on the play() and stop() methods of VideoPlayer
  2) Use jest.spyOn() to "spy" on VideoPlayer's `volume` getter and setter.

@@ -5,6 +5,8 @@
 /* 
   
  Exercise 1: 
+
+ This test covers basic mocks and mock implementations defined inline.
   
  1) Use jest.mock() to create a mock of the toSelectOptions module
  2) use a factory function in the jest.mock() call to create a default

@@ -2,8 +2,12 @@
   
  Exercise 5: 
   
+  This exercise covers the automatic mocking of ES6 classes
+    when they are the default export of a module, and the use of
+    jest.requireActual() to get a module's non-mocked implementation.
+
   The Vehicle class is automatically mocked by Jest but the
-    mock class's methods have no implementation
+    mock class's methods have no implementation yet.
 
  1) use .mockImplementation() to make .getVehicle() return "Wrangler"
  2) use jest.requireActual() to get the *real* implementation of toString()
