@@ -11,19 +11,6 @@ const peopleData = [
   { name: "Jack Sparrow", age: 35, occupation: "Pirate" },
 ];
 
-const revalidatedData = [
-  { name: "Luke Skywalker", age: 32, occupation: "Jedi Knight" },
-  { name: "John Snow", age: 28, occupation: "King in the North" },
-  { name: "Buzz Lightyear", age: 32, occupation: "Space Ranger" },
-  { name: "John McClane", age: 55, occupation: "Retired Cop" },
-  { name: "Frodo Baggins", age: 60, occupation: "Ring Bearer" },
-  { name: "Harry Potter", age: 25, occupation: "Auror" },
-  { name: "Indiana Jones", age: 45, occupation: "Professor" },
-  { name: "James Bond", age: 45, occupation: "Double O Agent" },
-  { name: "Bruce Wayne", age: 45, occupation: "Batman" },
-  { name: "Jack Sparrow", age: 45, occupation: "Captain" },
-];
-
 let delayTime = 1522;// Default for the app
 
 export function setDelayTime(timeInMilliseconds) {
@@ -60,7 +47,7 @@ export const fetch = async (url: string) => {
     } else if (url.includes("revalidate")) {
       status = 200;
       statusText = "OK";
-      responseData = await delay(revalidatedData);
+      responseData = await delay(shuffleArray(peopleData));
     } else {
       status = 200;
       statusText = "OK";
@@ -85,3 +72,17 @@ export const fetch = async (url: string) => {
     };
   }
 };
+
+function shuffleArray<T>(array: T[]): T[] {
+  let shuffledArray = [...array];
+
+  for (let i = shuffledArray.length - 1; i > 0; i--) {
+    // Generating a random index
+    const j = Math.floor(Math.random() * (i + 1));
+
+    // Swapping elements i and j
+    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+  }
+
+  return shuffledArray;
+}

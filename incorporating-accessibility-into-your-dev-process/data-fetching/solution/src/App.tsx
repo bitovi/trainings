@@ -5,6 +5,8 @@ Exercise:
 1) Announce the existing error, loading, and “no records” states to screenreaders.
 2) Add a new paragraph that tells screenreaders when the data has been reloaded.
 3) Use `aria-busy` to visually indicate when the table is being reloaded.
+4) Use the `sr-only` class to visually hide text that communicates info that is
+   represented visually in other ways (e.g. the loading state).
 
 The tests should pass after completing the steps above.
 
@@ -23,17 +25,17 @@ function App() {
   const [data, setData] = useState<Array<Person> | undefined>(undefined);
   const [error, setError] = useState<Error | undefined>(undefined);
   const [loading, setLoading] = useState(false);
-  const [reloading, setReloading] = useState(false);
+  const [reloadRequested, setReloadRequested] = useState(false);
 
   useEffect(() => {
     fetchData(false, "/api/people");
   }, []);
 
-  function fetchData(reloading: boolean, url: string) {
+  function fetchData(reloadRequested: boolean, url: string) {
     if (!loading) {
       setError(undefined);
       setLoading(true);
-      setReloading(reloading);
+      setReloadRequested(reloadRequested);
       fetch(`${window.location.origin}${url}`)
         .then(async (response) => {
           if (!response.ok) {
@@ -75,21 +77,21 @@ function App() {
       </nav>
 
       {error ? (
-        <p className="error" aria-live="polite" role="region">{error.message}</p>
+        <p className="error" aria-live="polite">{error.message}</p>
       ) : null}
 
       {loading ? (
-        <p aria-live="polite" className={data && data.length > 0 ? "sr-only" : ""} role="region">Loading…</p>
+        <p aria-live="polite" className={data && data.length > 0 ? "sr-only" : ""}>Loading…</p>
       ) : null}
 
       {data ? (
         data.length === 0 ? (
           <>
-            {!loading && <p aria-live="polite" role="region">No records found.</p>}
+            {!loading && <p aria-live="polite">No records found.</p>}
           </>
         ) : (
           <>
-            {!loading && reloading && <p aria-live="polite" className="sr-only" role="region">Reloaded data.</p>}
+            {!loading && reloadRequested && <p aria-live="polite" className="sr-only">Reloaded data.</p>}
             <table>
               <thead>
                 <tr>

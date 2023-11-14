@@ -5,6 +5,8 @@ Exercise:
 1) Announce the existing error, loading, and “no records” states to screenreaders.
 2) Add a new paragraph that tells screenreaders when the data has been reloaded.
 3) Use `aria-busy` to visually indicate when the table is being reloaded.
+4) Use the `sr-only` class to visually hide text that communicates info that is
+   represented visually in other ways (e.g. the loading state).
 
 The tests should pass after completing the steps above.
 
@@ -23,15 +25,17 @@ function App() {
   const [data, setData] = useState<Array<Person> | undefined>(undefined);
   const [error, setError] = useState<Error | undefined>(undefined);
   const [loading, setLoading] = useState(false);
+  const [reloadRequested, setReloadRequested] = useState(false);
 
   useEffect(() => {
-    fetchData("/api/people");
+    fetchData(false, "/api/people");
   }, []);
 
-  function fetchData(url: string) {
+  function fetchData(reloadRequested: boolean, url: string) {
     if (!loading) {
       setError(undefined);
       setLoading(true);
+      setReloadRequested(reloadRequested);
       fetch(`${window.location.origin}${url}`)
         .then(async (response) => {
           if (!response.ok) {
@@ -53,19 +57,19 @@ function App() {
     <>
       <nav>
         <button
-          onClick={() => fetchData("/api/people?revalidate=true")}
+          onClick={() => fetchData(true, "/api/people?revalidate=true")}
           type="button"
         >
           Reload data (revalidate)
         </button>
         <button
-          onClick={() => fetchData("/api/people?error=true")}
+          onClick={() => fetchData(false, "/api/people?error=true")}
           type="button"
         >
           Simulate error
         </button>
         <button
-          onClick={() => fetchData("/api/people?empty=true")}
+          onClick={() => fetchData(false, "/api/people?empty=true")}
           type="button"
         >
           Simulate empty
