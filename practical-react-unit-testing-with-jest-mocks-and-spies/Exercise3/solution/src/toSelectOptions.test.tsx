@@ -13,8 +13,6 @@ describe("toSelectOptions with dependencies manually mocked", () => {
 
   test("With mock default values", () => {
     //use the mocked version of getDefaultSelectOptions()
-    expect(toSelectOptions()).toEqual([
-      { label: "2000", value: "2000" },
-    ]);
+    expect(toSelectOptions()).toEqual([{ label: "2000", value: "2000" }]);
   });
 });
