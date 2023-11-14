@@ -2,8 +2,8 @@
 
 Exercise:
 
-1) Use `aria-describedby` and `aria-invalid` attributes on the inputs.
-2) If a field is invalid, show an error under the field only after the form has been submitted at least once.
+1) If a field is invalid, show an error under the field only after the form has been submitted at least once.
+2) Use `aria-describedby` and `aria-invalid` attributes on the inputs.
 3) After the form is successfully submitted, give focus to the “success” paragraph.
 
 The tests should pass after completing the steps above.
@@ -32,19 +32,19 @@ const App = () => {
     // Keep track of when the form has been submitted
     setSubmittedFormState({
       firstName: firstNameRef.current?.value,
-      isValid: (event.target as HTMLFormElement).checkValidity(),
+      isValid: (event.target as HTMLFormElement).validity.valid,
       lastName: firstNameRef.current?.value,
     });
 
     // Give focus to the first input element that isn’t valid
     if (
       firstNameRef.current &&
-      firstNameRef.current.checkValidity() === false
+      firstNameRef.current.validity.valid === false
     ) {
       firstNameRef.current.focus();
     } else if (
       lastNameRef.current &&
-      lastNameRef.current.checkValidity() === false
+      lastNameRef.current.validity.valid === false
     ) {
       lastNameRef.current.focus();
     }
