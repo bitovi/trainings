@@ -32,7 +32,7 @@ const App = () => {
     // Keep track of when the form has been submitted
     setSubmittedFormState({
       firstName: firstNameRef.current?.value,
-      isValid: (event.target as HTMLFormElement).validity.valid,
+      isValid: (event.target as HTMLFormElement).checkValidity(),
       lastName: firstNameRef.current?.value,
     });
 
