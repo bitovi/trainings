@@ -1,0 +1,17 @@
+{
+  "name": "@bitovi/trainings-intro-to-accessibility-first-reduce-motion",
+  "version": "1.0.0",
+  "author": {
+    "email": "contact@bitovi.com",
+    "name": "Bitovi",
+    "url": "https://www.bitovi.com/services/training/react"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "http-server"
+  }
+}
