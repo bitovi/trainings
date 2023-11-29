@@ -1,178 +1,188 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<!--
-    Exercise:
+  <!--
+  Exercise:
     1) Fix any tab focus order issues.
     2) Add a skip link to the main content.
     3) Make the dropdowns work with just keyboard navigation.
 -->
 
-<head>
-    <meta charset="utf-8" />
-    <title>Keyboard Navigation</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-        html {
-            font-family: system-ui, sans-serif;
-        }
+  <meta charset="utf-8" />
+  <title>Keyboard Navigation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    html {
+      font-family: system-ui, sans-serif;
+    }
 
-        body {
-            column-gap: 5ch;
-            display: grid;
-            grid-template-columns: 2fr fr;
-            margin: 0 auto;
-            max-width: 110ch;
-            padding: 0 2ch;
-        }
+    body {
+      column-gap: 5ch;
+      display: grid;
+      grid-template-columns: 2fr fr;
+      margin: 0 auto;
+      max-width: 110ch;
+      padding: 0 2ch;
+    }
 
-        /* Links with this class will only appear for keyboard users */
-        .skip-link {
-            overflow: hidden;
-            position: absolute;
-            white-space: nowrap;
-        }
+    /* Links with this class will only appear for keyboard users */
+    .skip-link {
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+    }
 
-        .skip-link:not(:focus):not(:active) {
-            clip: rect(0 0 0 0);
-            clip-path: inset(50%);
-            height: 1px;
-            width: 1px;
-        }
+    .skip-link:not(:focus):not(:active) {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      width: 1px;
+    }
 
-        header {
-            grid-column-start: 1;
-            grid-column-end: 3;
-        }
+    header {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
 
-        header p {
-            font-size: 2rem;
-            text-align: center;
-        }
+    header p {
+      font-size: 2rem;
+      text-align: center;
+    }
 
-        header p a {
-            padding: 1rem 2rem;
-        }
+    header p a {
+      padding: 1rem 2rem;
+    }
 
-        nav {
-            grid-column-start: 1;
-            grid-column-end: 3;
-        }
+    nav {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
 
-        nav ul {
-            background: crimson;
-            list-style: none;
-            margin: 0;
-            padding-inline-start: 0;
-        }
+    nav ul {
+      background: crimson;
+      list-style: none;
+      margin: 0;
+      padding-inline-start: 0;
+    }
 
-        nav li {
-            background: crimson;
-            color: #fff;
-            display: block;
-            float: inline-start;
-            padding: 1rem;
-            position: relative;
-            text-decoration: none;
-            transition-duration: 0.5s;
-        }
+    nav li {
+      background: crimson;
+      color: #fff;
+      display: block;
+      float: inline-start;
+      padding: 1rem;
+      position: relative;
+      text-decoration: none;
+      transition-duration: 0.5s;
+    }
 
-        nav li a {
-            color: #fff;
-            text-decoration: none;
-        }
+    nav li a {
+      color: #fff;
+      text-decoration: none;
+    }
 
-        nav li:hover,
-        nav li:focus-within {
-            background: darkred;
-            cursor: pointer;
-        }
+    nav li:hover,
+    nav li:focus-within {
+      background: darkred;
+      cursor: pointer;
+    }
 
-        nav li:focus-within a {
-            outline: none;
-        }
+    nav li:focus-within a {
+      outline: none;
+    }
 
-        nav ul li ul {
-            background: orange;
-            display: none;
-            inset-inline-start: 0;
-            margin-block-start: 1rem;
-            min-width: 5rem;
-            opacity: 0;
-            position: absolute;
-            transition: all 0.5s ease;
-            visibility: hidden;
-        }
+    nav ul li ul {
+      background: orange;
+      display: none;
+      inset-inline-start: 0;
+      margin-block-start: 1rem;
+      min-width: 5rem;
+      opacity: 0;
+      position: absolute;
+      transition: all 0.5s ease;
+      visibility: hidden;
+    }
 
-        /* These styles make the dropdown visible */
-        nav ul li:hover>ul,
-        nav ul li ul:hover {
-            display: block;
-            opacity: 1;
-            visibility: visible;
-        }
+    /* These styles make the dropdown visible */
+    nav ul li:hover > ul,
+    nav ul li ul:hover {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+    }
 
-        nav ul li ul li {
-            clear: both;
-            width: 100%;
-        }
+    nav ul li ul li {
+      clear: both;
+      width: 100%;
+    }
 
-        footer {
-            grid-column-start: 1;
-            grid-column-end: 3;
-        }
-    </style>
+    footer {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  </style>
 
-</head>
-
-<body>
-    <header>
-        <p><a href="https://www.bitovi.com">Bitovi</a></p>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="https://www.bitovi.com/digital-consulting-services">Services</a></li>
-            <li><a href="https://www.bitovi.com/web-application-consulting-work">Client Work</a></li>
-            <li><a href="#" aria-haspopup="true">More</a>
-                <ul class="dropdown" aria-label="submenu">
-                    <li><a href="https://www.bitovi.com/about">Our Team</a></li>
-                    <li><a href="https://www.bitovi.com/blog">Blog</a></li>
-                    <li><a href="https://www.bitovi.com/academy/">Academy</a></li>
-                </ul>
-            </li>
+  <header>
+    <p><a href="https://www.bitovi.com">Bitovi</a></p>
+  </header>
+  <nav>
+    <ul>
+      <li>
+        <a href="https://www.bitovi.com/digital-consulting-services"
+          >Services</a
+        >
+      </li>
+      <li>
+        <a href="https://www.bitovi.com/web-application-consulting-work"
+          >Client Work</a
+        >
+      </li>
+      <li>
+        <a href="#" aria-haspopup="true">More</a>
+        <ul class="dropdown" aria-label="submenu">
+          <li><a href="https://www.bitovi.com/about">Our Team</a></li>
+          <li><a href="https://www.bitovi.com/blog">Blog</a></li>
+          <li><a href="https://www.bitovi.com/academy/">Academy</a></li>
         </ul>
-    </nav>
-    <main>
-        <h1>An exceptional app is essential to your success</h1>
-        <p>
-            If you’re looking for a collaborative, validation-driven team of experts who can
-            help you swiftly deliver your next app, you’ve found us. How can we help?
-        </p>
-        <h2>Building Yum!’s global ecommerce platform from the ground up</h2>
-        <p>
-            <a href="https://www.yum.com/">Yum!</a> came to us with a big, audacious goal: to build
-            a global ecommerce platform to power their four major brands across 50,000 locations in
-            145 countries. From building the infrastructure to scaling a team to launch, Yum! says
-            we were the perfect partner to help them deliver on this ambitious project.
-        </p>
-    </main>
-    <aside>
-        <h2>Community • Tools • Resources</h2>
-        <h3>App Development Checklists</h3>
-        <p>
-            <a href="https://www.bitovi.com/downloads/web-app-development-checklist">
-                Download our free tools for making great applications!
-            </a>
-        </p>
-        <h3>Talk with us on Discord</h3>
-        <p><a href="https://discord.gg/J7ejFsZnJ4" tabindex="-1">Join the Bitovi server</a></p>
-    </aside>
-    <footer>
-        <h2>Contact Bitovi</h2>
-        <p><a href="mailto:contact@bitovi.com" tabindex="1">contact@bitovi.com</a></p>
-    </footer>
-</body>
-
+      </li>
+    </ul>
+  </nav>
+  <main>
+    <h1>An exceptional app is essential to your success</h1>
+    <p>
+      If you’re looking for a collaborative, validation-driven team of experts
+      who can help you swiftly deliver your next app, you’ve found us. How can
+      we help?
+    </p>
+    <h2>Building Yum!’s global ecommerce platform from the ground up</h2>
+    <p>
+      <a href="https://www.yum.com/">Yum!</a> came to us with a big, audacious
+      goal: to build a global ecommerce platform to power their four major
+      brands across 50,000 locations in 145 countries. From building the
+      infrastructure to scaling a team to launch, Yum! says we were the perfect
+      partner to help them deliver on this ambitious project.
+    </p>
+  </main>
+  <aside>
+    <h2>Community • Tools • Resources</h2>
+    <h3>App Development Checklists</h3>
+    <p>
+      <a href="https://www.bitovi.com/downloads/web-app-development-checklist">
+        Download our free tools for making great applications!
+      </a>
+    </p>
+    <h3>Talk with us on Discord</h3>
+    <p>
+      <a href="https://discord.gg/J7ejFsZnJ4" tabindex="-1"
+        >Join the Bitovi server</a
+      >
+    </p>
+  </aside>
+  <footer>
+    <h2>Contact Bitovi</h2>
+    <p>
+      <a href="mailto:contact@bitovi.com" tabindex="1">contact@bitovi.com</a>
+    </p>
+  </footer>
 </html>
 
 <!--

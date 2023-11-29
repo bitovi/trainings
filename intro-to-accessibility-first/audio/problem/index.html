@@ -1,53 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <meta charset="utf-8" />
+  <title>Audio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    html {
+      font-family: system-ui, sans-serif;
+    }
 
-<head>
-    <meta charset="utf-8" />
-    <title>Audio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-        html {
-            font-family: system-ui, sans-serif;
-        }
+    code {
+      font-family: ui-monospace, monospace;
+    }
+  </style>
 
-        code {
-            font-family: ui-monospace, monospace;
-        }
-    </style>
-</head>
+  <h1>Audio</h1>
+  <!--
+      Exercise:
+      1) Allow the browser to display its default controls.
+      2) Add the audio sources.
+      3) Add native captions.
+      4) Add fallback content (in case the audio can’t be played).
+      5) Make sure the user is aware of the transcript.
 
-<body>
-    <h1>Audio</h1>
-    <!--
-        Exercise:
-        1) Allow the browser to display its default controls.
-        2) Add the audio sources.
-        3) Add native captions.
-        4) Add fallback content (in case the audio can’t be played).
-        5) Make sure the user is aware of the transcript.
+      Audio sources:
+      - audio/ogg: https://upload.wikimedia.org/wikipedia/en/5/55/HemingwayNobelSpeechIntro.ogg
+      - audio/mpeg: https://upload.wikimedia.org/wikipedia/en/transcoded/5/55/HemingwayNobelSpeechIntro.ogg/HemingwayNobelSpeechIntro.ogg.mp3
 
-        Audio sources:
-        - audio/ogg: https://upload.wikimedia.org/wikipedia/en/5/55/HemingwayNobelSpeechIntro.ogg
-        - audio/mpeg: https://upload.wikimedia.org/wikipedia/en/transcoded/5/55/HemingwayNobelSpeechIntro.ogg/HemingwayNobelSpeechIntro.ogg.mp3
-
-        Captions source: ../HemingwayNobelSpeechIntro.ogg.en.srt.vtt
-    -->
-    <figure>
-        <figcaption><code>audio</code> element</figcaption>
-        <audio>
-        </audio>
-    </figure>
-    <figure>
-        <figcaption><code>video</code> element</figcaption>
-        <video height="320" width="480">
-        </video>
-    </figure>
-    <h2>Transcription</h2>
-    <p>
-        No writer who knows the great writers who did not receive the prize can accept it other than with humility.
-        There is no need to list these writers.
-        Everyone here may make his own list according to his knowledge and his conscience.
-    </p>
-</body>
-
+      Captions source: ../HemingwayNobelSpeechIntro.ogg.en.srt.vtt
+  -->
+  <figure>
+    <figcaption><code>audio</code> element</figcaption>
+    <audio></audio>
+  </figure>
+  <figure>
+    <figcaption><code>video</code> element</figcaption>
+    <video height="320" width="480"></video>
+  </figure>
+  <h2>Transcription</h2>
+  <p>
+    No writer who knows the great writers who did not receive the prize can
+    accept it other than with humility. There is no need to list these writers.
+    Everyone here may make his own list according to his knowledge and his
+    conscience.
+  </p>
 </html>

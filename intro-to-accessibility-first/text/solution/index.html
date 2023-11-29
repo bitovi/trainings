@@ -1,94 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <meta charset="utf-8" />
+  <title>Text Size, Color, and Contrast</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    html {
+      font-family: system-ui, sans-serif;
+    }
 
-<head>
-    <meta charset="utf-8" />
-    <title>Text Size, Color, and Contrast</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-        html {
-            font-family: system-ui, sans-serif;
-        }
+    label {
+      display: block;
+      margin: 0.5rem 0;
+    }
 
-        label {
-            display: block;
-            margin: 0.5rem 0;
-        }
+    label.required {
+      color: crimson;
+    }
 
-        label.required {
-            color: crimson;
-        }
+    label:not(.required) {
+      color: green;
+    }
 
-        label:not(.required) {
-            color: green;
-        }
+    label input {
+      display: block;
+    }
 
-        label input {
-            display: block;
-        }
+    .color-example {
+      background: #00f;
+    }
 
-        .color-example {
-            background: #00f;
-        }
+    .font-example {
+      background: green;
+    }
+  </style>
 
-        .font-example {
-            background: green;
-        }
-    </style>
-</head>
+  <h1>Text Size, Color, and Contrast</h1>
+  <!--
+      You can use your browser’s DevTools or an online tool to fix contrast issues:
+      https://webaim.org/resources/contrastchecker/
 
-<body>
-    <h1>Text Size, Color, and Contrast</h1>
-    <!--
-        You can use your browser’s DevTools or an online tool to fix contrast issues:
-        https://webaim.org/resources/contrastchecker/
+      Exercise:
+      1) Don’t rely on color to convey information.
+      2) Fix the text colors to provide enough contrast.
+      3) Fix the text size to provide enough contrast.
+      4) Avoid horizontal scrolling.
+  -->
 
-        Exercise:
-        1) Don’t rely on color to convey information.
-        2) Fix the text colors to provide enough contrast.
-        3) Fix the text size to provide enough contrast.
-        4) Avoid horizontal scrolling.
-    -->
+  <section>
+    <form>
+      <p>Required fields are marked with red labels.</p>
+      <label class="required">
+        Email (required)
+        <input required type="email" />
+      </label>
+      <label>
+        Name
+        <input type="text" />
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
 
-    <section>
-        <form>
-            <p>Required fields are marked with red labels.</p>
-            <label class="required">
-                Email (required)
-                <input required type="email">
-            </label>
-            <label>
-                Name
-                <input type="text">
-            </label>
-            <button type="submit">Submit</button>
-        </form>
-    </section>
+  <section class="color-example">
+    <h2 style="color: #999">Header text (minimum 3:1 ratio)</h2>
+    <p style="color: #ccc">Paragraph text (minimum 4.5:1 ratio).</p>
+  </section>
 
-    <section class="color-example">
-        <h2 style="color: #999">Header text (minimum 3:1 ratio)</h2>
-        <p style="color: #ccc">Paragraph text (minimum 4.5:1 ratio).</p>
-    </section>
+  <section class="font-example">
+    <p style="font-size: 2rem">X</p>
+  </section>
 
-    <section class="font-example">
-        <p style="font-size: 2rem">X</p>
-    </section>
-
-    <figure>
-        <blockquote cite="https://en.wikipedia.org/wiki/Llanfairpwllgwyngyll">
-            <p>
-                Llanfairpwllgwyngyll, or Llanfair Pwllgwyngyll (Welsh: [ɬan.ˌvair.puɬˈɡwɨ̞n.ɡɨ̞ɬ]),
-                is a large village and community on the island of Anglesey, Wales, on the Menai Strait
-                next to the Britannia Bridge and across the strait from Bangor. Both shortened
-                (Llanfairpwll or Llanfair PG) and lengthened
-                (Llanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch)
-                forms of the placename are used in various contexts
-                (with the longer form pronounced
-                [ˌɬan.vair.pʊɬ.ˌɡwɨ̞ŋ.ɡɨ̞ɬ.ɡɔ.ˌɡɛ.rə.ˌχwərn.ˌdrɔ.bʊɬ.ˌɬan.tə.ˌsɪl.jɔˌɡɔ.ɡɔ.ˈɡoːχ] ⓘ).
-            </p>
-        </blockquote>
-        <figcaption><cite>Wikipedia</cite></figcaption>
-    </figure>
-</body>
-
+  <figure>
+    <blockquote cite="https://en.wikipedia.org/wiki/Llanfairpwllgwyngyll">
+      <p>
+        Llanfairpwllgwyngyll, or Llanfair Pwllgwyngyll (Welsh:
+        [ɬan.ˌvair.puɬˈɡwɨ̞n.ɡɨ̞ɬ]), is a large village and community on the
+        island of Anglesey, Wales, on the Menai Strait next to the Britannia
+        Bridge and across the strait from Bangor. Both shortened (Llanfairpwll
+        or Llanfair PG) and lengthened
+        (Llanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch)
+        forms of the placename are used in various contexts (with the longer
+        form pronounced
+        [ˌɬan.vair.pʊɬ.ˌɡwɨ̞ŋ.ɡɨ̞ɬ.ɡɔ.ˌɡɛ.rə.ˌχwərn.ˌdrɔ.bʊɬ.ˌɬan.tə.ˌsɪl.jɔˌɡɔ.ɡɔ.ˈɡoːχ]
+        ⓘ).
+      </p>
+    </blockquote>
+    <figcaption><cite>Wikipedia</cite></figcaption>
+  </figure>
 </html>

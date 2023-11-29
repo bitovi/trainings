@@ -1,71 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <meta charset="utf-8" />
+  <title>Target Size</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /*
+      Exercise:
+        1) Increase the target size of the links.
+    */
 
-<head>
-    <meta charset="utf-8" />
-    <title>Target Size</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-        /*
-            Exercise:
-            1) Increase the target size of the links.
-        */
+    html {
+      font-family: system-ui, sans-serif;
+    }
 
-        html {
-            font-family: system-ui, sans-serif;
-        }
+    body {
+      background: black;
+      color: white;
+    }
 
-        body {
-            background: black;
-            color: white;
-        }
+    ul {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+    }
 
-        ul {
-            display: flex;
-            gap: 1rem;
-            list-style: none;
-            padding: 0;
-        }
+    ul li a {
+      border: 2px solid transparent;
+      border-radius: 12px;
+      display: flex;
+      outline: none;
+      padding: 12px;
+    }
 
-        ul li a {
-            border: 2px solid transparent;
-            border-radius: 12px;
-            display: flex;
-            outline: none;
-            padding: 12px;
-        }
+    ul li a:focus,
+    ul li a:hover,
+    ul li a:active {
+      border-color: white;
+    }
 
-        ul li a:focus,
-        ul li a:hover,
-        ul li a:active {
-            border-color: white;
-        }
+    ul li a:active {
+      background-color: #555;
+    }
+  </style>
 
-        ul li a:active {
-            background-color: #555;
-        }
-    </style>
-</head>
-
-<body>
-    <p>You can find Bitovi on:</p>
-    <ul>
-        <li>
-            <a href="https://github.com/bitovi">
-                <img alt="GitHub" height="24" src="./github.png" width="25">
-            </a>
-        </li>
-        <li>
-            <a href="https://www.linkedin.com/company/bitovi">
-                <img alt="LinkedIn" height="24" src="./linkedin.png" width="25">
-            </a>
-        </li>
-        <li>
-            <a href="https://twitter.com/bitovi">
-                <img alt="Twitter" height="24" src="./twitter.png" width="24">
-            </a>
-        </li>
-    </ul>
-</body>
-
+  <p>You can find Bitovi on:</p>
+  <ul>
+    <li>
+      <a href="https://github.com/bitovi">
+        <img alt="GitHub" height="24" src="./github.png" width="25" />
+      </a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/company/bitovi">
+        <img alt="LinkedIn" height="24" src="./linkedin.png" width="25" />
+      </a>
+    </li>
+    <li>
+      <a href="https://twitter.com/bitovi">
+        <img alt="Twitter" height="24" src="./twitter.png" width="24" />
+      </a>
+    </li>
+  </ul>
 </html>

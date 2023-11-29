@@ -1,52 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <meta charset="utf-8" />
+  <title>Reduce Motion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /*
+      Exercise:
+        1) Respect the user’s prefers-reduced-motion preference.
+    */
 
-<head>
-    <meta charset="utf-8" />
-    <title>Reduce Motion</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-        /*
-            Exercise:
-            1) Respect the user’s prefers-reduced-motion preference.
-        */
+    html {
+      font-family: system-ui, sans-serif;
+    }
 
-        html {
-            font-family: system-ui, sans-serif;
-        }
+    button {
+      background: blue;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      margin: 1rem;
+      padding: 1rem;
+    }
 
-        button {
-            background: blue;
-            border: none;
-            border-radius: 5px;
-            color: white;
-            margin: 1rem;
-            padding: 1rem;
-        }
+    button:focus,
+    button:hover {
+      background: purple;
+    }
 
-        button:focus,
-        button:hover {
-            background: purple;
-        }
+    button:active {
+      background: darkblue;
+    }
 
-        button:active {
-            background: darkblue;
-        }
+    @media (prefers-reduced-motion: no-preference) {
+      button {
+        transition: all 0.3s ease-in-out;
+      }
 
-        @media (prefers-reduced-motion: no-preference) {
-            button {
-                transition: all 0.3s ease-in-out;
-            }
+      button:hover {
+        transform: scale(1.1);
+      }
+    }
+  </style>
 
-            button:hover {
-                transform: scale(1.1);
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <button>Interact with me</button>
-</body>
-
+  <button>Interact with me</button>
 </html>
