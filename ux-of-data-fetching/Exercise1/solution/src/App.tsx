@@ -37,7 +37,7 @@ function App() {
   function fetchData(url: string) {
     setLoading(true);
     setError(undefined);
-    fetch(url)
+    fetch(`${window.location.origin}${url}`)
       .then(async (res) => {
         if (res.ok) return res.json();
         // http errors
