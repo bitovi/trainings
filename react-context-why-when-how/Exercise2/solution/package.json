@@ -14,9 +14,9 @@
   "devDependencies": {
     "@types/react": "^18.2.25",
     "@types/react-dom": "^18.2.10",
-    "@vitejs/plugin-react": "^4.0.4",
+    "@vitejs/plugin-react": "^4.7.0",
     "typescript": "^5.2.2",
-    "vite": "^4.4.11"
+    "vite": "^8.0.16"
   },
   "license": "UNLICENSED",
   "private": true,
